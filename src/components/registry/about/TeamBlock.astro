@@ -34,7 +34,7 @@ const teamAvatars = props.teamAvatars ?? fallback?.teamAvatars ?? [];
         <SmartImage src={image} alt={imageAlt} width={1280} height={900} loading="eager" class="h-full min-h-80 w-full object-cover" />
       </figure>
       <div class="flex flex-col gap-4 px-0 py-6 md:p-8" data-motion-sequence="viewport" data-motion-profile="soft">
-        <Heading tag="h2" variant="section-title">{title}</Heading>
+        {title && <Heading tag="h2" variant="section-title">{title}</Heading>}
         {description?.split(/\n\s*\n/).map((paragraph) => <Text variant="lead">{paragraph}</Text>)}
         {(teamAvatars.length > 0 || teamCount) && (
         <div class="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-3 sm:gap-4">
