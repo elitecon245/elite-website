@@ -31,6 +31,9 @@ export interface Props {
   phone?: string;
   address?: string;
   mapUrl?: string;
+  /** Optional "open in Google Maps" link and labels shown with the embedded map. */
+  mapLinkUrl?: string;
+  mapLinkLabel?: string;
   formFields?: ContactField[];
   submitLabel?: string;
   submittingLabel?: string;
@@ -57,6 +60,8 @@ const {
   phone: phoneProp = "",
   address: addressProp = "",
   mapUrl = "",
+  mapLinkUrl = "",
+  mapLinkLabel = "",
   formFields = [],
   submitLabel = "",
   submittingLabel = "",
@@ -164,7 +169,7 @@ const contactItems = [
           />
         </div>
       ) : (
-        <div class="grid items-start gap-12 md:grid-cols-2">
+        <div class="grid grid-cols-1 items-start gap-12 md:grid-cols-2 [&>*]:min-w-0">
           <!-- Why: Why: split and map use the same composition, so only the right column differs. -->
           <div class="space-y-6">
             <div class="space-y-4">
@@ -199,7 +204,19 @@ const contactItems = [
                 wrapperClass="shadow-sm"
               />
             ) : (
-              <ContactDetails items={contactItems} variant="compact" />
+              <div class="space-y-6">
+                <ContactDetails items={contactItems} variant="compact" />
+                {hasMap && (
+                  <GoogleMapFrame
+                    embedUrl={mapUrl}
+                    iframeTitle={title || sectionId}
+                    externalUrl={mapLinkUrl || undefined}
+                    externalLabel={mapLinkLabel || undefined}
+                    class="min-h-[20rem]"
+                    wrapperClass="shadow-sm"
+                  />
+                )}
+              </div>
             )
           }
         </div>

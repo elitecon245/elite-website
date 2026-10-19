@@ -3,6 +3,9 @@
   "title": "Contact Us",
   "description": "Send an enquiry to Elite Consolidated Business Nig Ltd about any of our businesses.",
   "address": "Elemoro, Lekki Epe Expressway, Lagos, Nigeria",
+  "mapUrl": "https://www.google.com/maps?output=embed&q=Elemoro%2C+Lekki+Epe+Expressway%2C+Lagos%2C+Nigeria",
+  "mapLinkUrl": "https://www.google.com/maps/search/?api=1&query=Elemoro%2C+Lekki+Epe+Expressway%2C+Lagos%2C+Nigeria",
+  "mapLinkLabel": "Open in Google Maps",
   "formFields": [
     {
       "name": "name",
