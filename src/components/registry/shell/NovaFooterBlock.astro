@@ -65,7 +65,7 @@ const fullAddress = company.address
         {legalLinks.map((link) => <a href={link.href} class="inline-flex min-h-11 items-center text-sm text-brand-light/80 transition-colors hover:text-brand-accent sm:min-h-0">{link.label}</a>)}
       </nav>
       {socials.length > 0 && (
-        <ul aria-label={copy.ariaSocial} class="m-0 flex list-none items-center justify-center gap-3 p-0 sm:self-center">
+        <ul aria-label={copy.ariaSocial} class="m-0 flex list-none items-center justify-center gap-3 p-0 sm:-mt-3 sm:self-start">
           {socials.map((social) => (
             <li>
               {social.href ? (
