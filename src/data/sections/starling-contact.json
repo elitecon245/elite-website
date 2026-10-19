@@ -1,7 +1,19 @@
 {
   "id": "starling-contact",
   "title": "Contact Starling Water",
-  "description": "Our factories are at Road B, Treasure Palm, Abijo and Road 3, Divine Estate, Bogije. For product, retail, wholesale and distribution enquiries, call us on +234 705 554 8653 or 0812 934 2879.",
+  "description": "For product, retail, wholesale and distribution enquiries, call us on +234 705 554 8653 or 0812 934 2879, or visit one of our factories:",
+  "links": [
+    {
+      "label": "Abijo factory: Road B, Treasure Palm, Abijo",
+      "href": "https://www.google.com/maps/search/?api=1&query=Road+B%2C+Treasure+Palm%2C+Abijo%2C+Lagos%2C+Nigeria",
+      "srLabel": "(opens Google Maps in a new tab)"
+    },
+    {
+      "label": "Bogije factory: Road 3, Divine Estate, Bogije",
+      "href": "https://www.google.com/maps/search/?api=1&query=Road+3%2C+Divine+Estate%2C+Bogije%2C+Lagos%2C+Nigeria",
+      "srLabel": "(opens Google Maps in a new tab)"
+    }
+  ],
   "primaryLabel": "Call +234 705 554 8653",
   "primaryHref": "tel:+2347055548653",
   "secondaryLabel": "Call 0812 934 2879",
