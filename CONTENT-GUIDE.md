@@ -32,7 +32,7 @@ Each page is configured in `src/data/pages/<slug>.json` and uses three sections 
 
 ## Active sections
 
-The homepage uses navigation, hero, our businesses, values, about, FAQ and the contact footer. Testimonials are not shown because no verified reviews have been supplied; the component remains available.
+The homepage uses navigation, hero, about, our businesses, values, FAQ and the contact footer. Testimonials are not shown because no verified reviews have been supplied; the component remains available.
 
 The section order is defined in `src/data/pages/index.json`.
 

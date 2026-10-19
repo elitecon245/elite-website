@@ -7,9 +7,9 @@
   "sections": [
     { "id": "navbar", "variant": "floating" },
     { "id": "hero", "variant": "nova" },
+    { "id": "novaTeam", "variant": "default" },
     { "id": "portfolio", "variant": "nova" },
     { "id": "novaServices", "variant": "default" },
-    { "id": "novaTeam", "variant": "default" },
     { "id": "faq3", "variant": "default" },
     { "id": "footer", "variant": "nova" }
   ]
