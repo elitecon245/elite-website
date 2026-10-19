@@ -22,6 +22,8 @@ interface Props {
   image?: string;
   imageAlt?: string;
   stats?: Stat[];
+  /** "blob" (default) shows the photo in a shape on the right; "background" spreads it behind the whole hero. */
+  imageLayout?: "blob" | "background";
   sectionId?: string;
   class?: string;
 }
@@ -39,6 +41,7 @@ const trustItems = props.trustItems ?? fallback?.trustItems ?? [];
 const image = props.image ?? fallback?.image;
 const imageAlt = props.imageAlt ?? fallback?.imageAlt ?? "";
 const stats = props.stats ?? fallback?.stats ?? [];
+const isBackground = props.imageLayout === "background";
 ---
 
 <Section
@@ -50,18 +53,24 @@ const stats = props.stats ?? fallback?.stats ?? [];
   ]}
 >
   <Container class="w-full max-w-none px-0">
-    <div class="relative overflow-hidden rounded-t-xl bg-surface">
+    <div class:list={["relative overflow-hidden rounded-t-xl bg-surface", isBackground && "nova-hero--background isolate bg-brand-dark"]}>
+      {isBackground && (
+        <div class="nova-hero-bg absolute inset-0 -z-10" data-motion="fade" style="--motion-delay: 120ms">
+          <SmartImage src={image} alt={imageAlt} width={1080} height={1350} loading="eager" fetchpriority="high" sizes="100vw" class="block h-full w-full object-cover object-[70%_30%] md:object-[center_30%]" />
+          <div class="nova-hero-overlay absolute inset-0" aria-hidden="true"></div>
+        </div>
+      )}
       <div class="grid min-w-0 grid-cols-1 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:grid-cols-2">
         <div class="flex min-w-0 flex-col justify-start px-[clamp(1.25rem,5vw,5rem)] pb-[clamp(3rem,9vw,6rem)] pt-[clamp(3rem,7vw,5rem)] md:min-h-[34rem] md:px-[clamp(1.5rem,4vw,3.5rem)] md:pb-8 md:pt-10 lg:grid lg:grid-rows-[1fr_auto] lg:px-[clamp(1.5rem,5vw,5rem)] lg:pb-[clamp(2rem,3vw,3rem)] lg:pt-[clamp(4rem,5vw,5rem)]">
           <div class="flex min-w-0 flex-col justify-start gap-[clamp(1.25rem,4vw,2rem)] md:justify-center md:gap-5 lg:-translate-y-6 lg:gap-[clamp(1.25rem,2vw,2rem)]" data-motion-sequence="fade">
             {eyebrow && <Text tag="p" variant="accent-label" class="font-sans font-semibold text-brand-primary tracking-[0.18em] md:text-[0.72rem] lg:text-[clamp(0.75rem,0.85vw,0.95rem)]">{eyebrow}</Text>}
             <Heading tag="h1" variant="hero" class="max-w-[42rem] font-bold leading-[0.96] tracking-[-0.065em] text-[clamp(2.5rem,10vw,3.75rem)] md:max-w-[42rem] md:text-[clamp(3rem,4.4vw,4.75rem)] lg:text-[clamp(3rem,4.4vw,4.75rem)]">
-              {heading}{' '}<span class="text-brand-primary">{headingAccent}</span>
+              {heading}{' '}<span class={isBackground ? "text-brand-accent" : "text-brand-primary"}>{headingAccent}</span>
             </Heading>
-            <Text variant="lead" class="max-w-[38rem] md:max-w-[25rem] md:text-[clamp(1rem,1.45vw,1.2rem)] lg:max-w-[38rem] lg:text-[clamp(1.1rem,1.45vw,1.4rem)]">{description}</Text>
+            <Text variant="lead" class="nova-hero-lead max-w-[38rem] md:max-w-[25rem] md:text-[clamp(1rem,1.45vw,1.2rem)] lg:max-w-[38rem] lg:text-[clamp(1.1rem,1.45vw,1.4rem)]">{description}</Text>
             <div class="flex flex-wrap items-center gap-3">
-              {primaryCTA && <Button href={primaryCTA.href} variant="primary" size="lg" class="min-h-11 w-full font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]">{primaryCTA.label}</Button>}
-              {secondaryCTA && <Button href={secondaryCTA.href} variant="outline" size="lg" class="min-h-11 w-full font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]">{secondaryCTA.label}</Button>}
+              {primaryCTA && <Button href={primaryCTA.href} variant={isBackground ? "accent" : "primary"} size="lg" class="min-h-11 w-full font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]">{primaryCTA.label}</Button>}
+              {secondaryCTA && <Button href={secondaryCTA.href} variant="outline" size="lg" class:list={["min-h-11 w-full  font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]", isBackground && "!border-brand-light/65 !bg-brand-dark/35 !text-brand-light"]}>{secondaryCTA.label}</Button>}
             </div>
           </div>
           {(trustedBy || trustItems.length > 0) && (
@@ -82,6 +91,9 @@ const stats = props.stats ?? fallback?.stats ?? [];
           )}
         </div>
 
+        {isBackground ? (
+        <div class="hidden md:block md:h-[clamp(30rem,62vw,38rem)] lg:h-[clamp(36rem,45vw,48rem)]" aria-hidden="true"></div>
+        ) : (
         <div class="relative min-w-0 mb-4 h-[clamp(22rem,92vw,31rem)] md:mb-0 md:h-[clamp(30rem,62vw,38rem)] md:pb-6 md:pr-6 lg:mb-[clamp(0.75rem,1vw,1rem)] lg:h-[clamp(36rem,45vw,48rem)] lg:pb-[clamp(1rem,2vw,2rem)] lg:pr-[clamp(1.25rem,3vw,3rem)]" data-motion="fade" style="--motion-delay: 120ms">
           <svg class="pointer-events-none absolute inset-0 z-0 size-full overflow-hidden opacity-0 md:opacity-100" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
             <defs>
@@ -94,6 +106,7 @@ const stats = props.stats ?? fallback?.stats ?? [];
             <SmartImage src={image} alt={imageAlt} width={900} height={1125} loading="eager" class="block h-full min-h-0 w-full object-cover object-center md:object-[center_35%] lg:object-cover" />
           </figure>
         </div>
+        )}
       </div>
 
       {stats.length > 0 && (
@@ -111,6 +124,34 @@ const stats = props.stats ?? fallback?.stats ?? [];
 </Section>
 
 <style>
+  /* Background layout: the photo fills the hero and a navy overlay keeps the
+     text readable. Phones get an even overlay because the text spans the full
+     width; wider screens fade it out towards the right. */
+  :global(.nova-hero--background) .nova-hero-overlay {
+    background: color-mix(in oklab, var(--color-brand-dark) 78%, transparent);
+  }
+
+  :global(.nova-hero--background) :global(.ui-type-heading-hero),
+  :global(.nova-hero--background) :global(h1) {
+    color: var(--color-brand-light);
+  }
+
+  :global(.nova-hero--background) :global(.nova-hero-lead) {
+    color: color-mix(in oklab, var(--color-brand-light) 86%, transparent);
+  }
+
+  @media (min-width: 768px) {
+    :global(.nova-hero--background) .nova-hero-overlay {
+      background: linear-gradient(
+        90deg,
+        color-mix(in oklab, var(--color-brand-dark) 94%, transparent) 0%,
+        color-mix(in oklab, var(--color-brand-dark) 86%, transparent) 38%,
+        color-mix(in oklab, var(--color-brand-dark) 35%, transparent) 68%,
+        transparent 100%
+      );
+    }
+  }
+
   :global(.nova-responsive-hero) .nova-stat {
     position: relative;
   }

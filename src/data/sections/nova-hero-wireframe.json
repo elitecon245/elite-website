@@ -15,5 +15,6 @@
   "trustItems": [],
   "image": "/assets/images/t001-nova/t001-nova-hero.webp",
   "imageAlt": "Professional working at a laptop in a bright office",
+  "imageLayout": "background",
   "stats": []
 }
