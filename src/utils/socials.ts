@@ -20,6 +20,7 @@ export const SOCIAL_META: Record<string, { label: string; icon: string }> = {
   instagram: { label: 'Instagram', icon: 'ph-instagram-logo' },
   youtube: { label: 'YouTube', icon: 'ph-youtube-logo' },
   twitter: { label: 'X (Twitter)', icon: 'ph-x-logo' },
+  linkedin: { label: 'LinkedIn', icon: 'ph-linkedin-logo' },
 };
 
 /** Zwraca social media z podanym linkiem (pomija puste i "#"). */

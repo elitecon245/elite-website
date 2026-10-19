@@ -147,6 +147,8 @@
       ],
       "ariaLegal": "Legal documents",
       "ariaNavigation": "Footer navigation",
+      "ariaSocial": "Social media",
+      "socials": ["facebook", "instagram", "linkedin"],
       "copyright": "All rights reserved.",
       "attributionPrefix": "Developed by ",
       "attributionLinkLabel": "Promenia Technologies Ltd",
