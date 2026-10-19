@@ -11,7 +11,13 @@ interface Props {
 const { locale = "pl" } = Astro.props as Props;
 const id = locale === "pl" ? "kontakt" : "contact";
 const copy = getNovaCopy(locale).footer;
-const footerLinks = copy.footerLinks.map((link) => ({ ...link, href: getNovaNavigationPath(link.href, locale) }));
+type FooterLink = { label: string; href: string; children?: { label: string; href: string }[] };
+const toPath = (link: { label: string; href: string }) => ({ ...link, href: getNovaNavigationPath(link.href, locale) });
+// Why: links with children render as a titled list (e.g. "Our Businesses"),
+// the rest form a plain column of page links.
+const footerLinks = (copy.footerLinks as FooterLink[]).map((link) => ({ ...toPath(link), children: link.children?.map(toPath) }));
+const plainLinks = footerLinks.filter((link) => !link.children?.length);
+const linkGroups = footerLinks.filter((link) => link.children?.length);
 const legalLinks = copy.legalLinks.map((link) => ({ ...link, href: getNovaNavigationPath(link.href, locale) }));
 const year = new Date().getFullYear();
 // Why: the address line renders only once company.json provides one.
@@ -44,12 +50,22 @@ const fullAddress = company.address
       </div>
     </div>
     )}
-    <div class="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+    <div class="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left">
       <nav aria-label={copy.ariaLegal} class="flex w-full flex-wrap justify-center gap-x-6 gap-y-3 sm:w-auto sm:justify-start">
         {legalLinks.map((link) => <a href={link.href} class="inline-flex min-h-11 items-center text-sm text-brand-light/80 transition-colors hover:text-brand-accent sm:min-h-0">{link.label}</a>)}
       </nav>
-      <nav aria-label={copy.ariaNavigation} class="grid w-full grid-cols-2 gap-x-6 gap-y-3 sm:flex sm:w-auto sm:flex-wrap sm:justify-start lg:justify-end">
-        {footerLinks.map((link) => <a href={link.href} class="inline-flex min-h-11 items-center text-sm text-brand-light transition-colors hover:text-brand-accent sm:min-h-0">{link.label}</a>)}
+      <nav aria-label={copy.ariaNavigation} class="grid w-full grid-cols-2 gap-x-8 gap-y-6 text-left sm:flex sm:w-auto sm:gap-x-16">
+        <ul class="m-0 grid list-none content-start gap-3 p-0">
+          {plainLinks.map((link) => <li><a href={link.href} class="inline-flex min-h-11 items-center text-sm text-brand-light transition-colors hover:text-brand-accent sm:min-h-0">{link.label}</a></li>)}
+        </ul>
+        {linkGroups.map((group) => (
+          <div class="grid content-start gap-3">
+            <a href={group.href} class="inline-flex min-h-11 items-center text-sm font-bold text-brand-light transition-colors hover:text-brand-accent sm:min-h-0">{group.label}</a>
+            <ul class="m-0 grid list-none gap-3 p-0">
+              {group.children?.map((child) => <li><a href={child.href} class="inline-flex min-h-11 items-center text-sm text-brand-light/80 transition-colors hover:text-brand-accent sm:min-h-0">{child.label}</a></li>)}
+            </ul>
+          </div>
+        ))}
       </nav>
     </div>
     <div class="flex flex-col items-center gap-4 border-t border-brand-light/25 pt-8 text-center text-brand-light/75 sm:flex-row sm:items-center sm:justify-between sm:text-left">
