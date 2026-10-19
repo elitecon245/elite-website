@@ -20,3 +20,14 @@
 [data-theme="nova"] .ui-type-cta-label {
   font-family: var(--font-heading) !important;
 }
+
+/* Form field labels: the shared accent-label utility falls back to the starter
+ * serif, so Nova labels use the body face in plain case for readability. */
+[data-theme="nova"] .ui-form-label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--color-brand-dark);
+}
