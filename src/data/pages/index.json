@@ -11,6 +11,7 @@
     { "id": "portfolio", "variant": "nova" },
     { "id": "novaServices", "variant": "default" },
     { "id": "faq3", "variant": "default" },
+    { "id": "contact", "variant": "elite" },
     { "id": "footer", "variant": "nova" }
   ]
 }

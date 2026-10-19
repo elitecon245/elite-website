@@ -81,9 +81,9 @@ const formId = `contact-form-${sectionId}-${variant}`;
 const fieldIdPrefix = `${sectionId}-${variant}`;
 const phoneHref = phone ? `tel:${phone.replace(/\s+/g, "")}` : undefined;
 const contactItems = [
-  { key: "phone", label: "Telefon", icon: "phone", href: phoneHref, value: phone },
-  { key: "email", label: "E-mail", icon: "envelope", href: email ? `mailto:${email}` : undefined, value: email },
-  { key: "address", label: "Adres", icon: "map-pin", href: undefined, value: address },
+  { key: "phone", label: "Phone", icon: "phone", href: phoneHref, value: phone },
+  { key: "email", label: "Email", icon: "envelope", href: email ? `mailto:${email}` : undefined, value: email },
+  { key: "address", label: "Address", icon: "map-pin", href: undefined, value: address },
 ].filter(
   // Why: Empty data should not create blank tabs or placeholder links.
   (item): item is { key: "phone" | "email" | "address"; label: string; icon: string; href: string | undefined; value: string } =>

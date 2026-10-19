@@ -11,6 +11,7 @@ export const contactSections: Record<string, SectionEntry> = {
       split: { component: 'ContactSplitBlock', props: { variant: 'split' }, dataKey: 'contact' },
       map: { component: 'ContactSplitBlock', props: { variant: 'map' }, dataKey: 'contact' },
       simple: { component: 'ContactSplitBlock', props: { variant: 'simple' }, dataKey: 'contact' },
+      elite: { label: 'Elite Consolidated contact form', component: 'ContactSplitBlock', props: { variant: 'split' }, dataKey: 'elite-contact' },
     },
   },
 };

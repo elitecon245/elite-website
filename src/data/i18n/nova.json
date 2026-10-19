@@ -9,13 +9,12 @@
       "menu": [
         { "label": "Home", "href": "/" },
         { "label": "About Us", "href": "/#about" },
-        { "label": "Our Businesses", "href": "/#businesses" },
-        { "label": "Contact Us", "href": "/#contact" }
+        { "label": "Our Businesses", "href": "/#businesses" }
       ],
       "cta": {
-        "label": "Explore Our Businesses",
-        "hoverLabel": "Explore Our Businesses",
-        "href": "/#businesses"
+        "label": "Contact Us",
+        "hoverLabel": "Contact Us",
+        "href": "/#contact-form"
       },
       "aria": {
         "menuOpen": "Open navigation menu",
@@ -45,7 +44,7 @@
         "title": "Our Businesses",
         "description": "",
         "linkLabel": "Contact Us",
-        "linkHref": "/#contact",
+        "linkHref": "/#contact-form",
         "items": [
           {
             "id": "starling-water",
@@ -139,7 +138,7 @@
         { "label": "Starling Bottle and Pure Water Factory", "href": "/starling-water/" },
         { "label": "Royal Retreat Bakery", "href": "/royal-retreat-bakery/" },
         { "label": "Elite Royal Suite and Hotel", "href": "/elite-royal-suite-hotel/" },
-        { "label": "Contact Us", "href": "/#contact" }
+        { "label": "Contact Us", "href": "/#contact-form" }
       ],
       "ariaLegal": "Legal documents",
       "ariaNavigation": "Footer navigation",
