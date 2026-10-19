@@ -54,7 +54,7 @@ const fullAddress = company.address
     </div>
     <div class="flex flex-col items-center gap-4 border-t border-brand-light/25 pt-8 text-center text-brand-light/75 sm:flex-row sm:items-center sm:justify-between sm:text-left">
       <Text tag="span" variant="feature-body-sm">
-        {`© ${year} ${company.fullName}. ${copy.copyright}`} &bull; Distributed by <a target="_blank" href="https://themewagon.com" rel="noreferrer" class="text-brand-light transition-colors hover:text-brand-accent">ThemeWagon</a>
+        {`© ${year} ${company.fullName}. ${copy.copyright}`}
       </Text>
       <Text tag="span" variant="feature-body-sm" class="sm:text-right">{copy.attributionPrefix}{copy.attributionLinkHref ? <a href={copy.attributionLinkHref} target="_blank" rel="noreferrer" class="text-brand-light transition-colors hover:text-brand-accent">{copy.attributionLinkLabel}</a> : <span class="text-brand-light">{copy.attributionLinkLabel}</span>}</Text>
     </div>
