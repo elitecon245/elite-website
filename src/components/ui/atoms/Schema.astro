@@ -47,7 +47,7 @@ const schema = {
 			'@type': 'PostalAddress',
 			streetAddress: company.address,
 			addressLocality: company.city,
-			postalCode: company.zipCode,
+			...(company.zipCode && { postalCode: company.zipCode }),
 			addressCountry: 'NG',
 		},
 	}),

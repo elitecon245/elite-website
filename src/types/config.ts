@@ -71,6 +71,7 @@ export interface CompanyConfig {
   address: string;
   zipCode: string;
   city: string;
+  country?: string;
   phone: string;
   email: string;
   nip: string;
