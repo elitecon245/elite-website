@@ -50,8 +50,8 @@ const fullAddress = company.address
       </div>
     </div>
     )}
-    <div class="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left">
-      <nav aria-label={copy.ariaLegal} class="flex w-full flex-wrap justify-center gap-x-6 gap-y-3 sm:w-auto sm:justify-start">
+    <div class="flex flex-col items-center gap-8 text-center sm:flex-row-reverse sm:items-start sm:justify-between sm:text-left">
+      <nav aria-label={copy.ariaLegal} class="flex w-full flex-wrap justify-center gap-x-6 gap-y-3 sm:w-auto sm:justify-end">
         {legalLinks.map((link) => <a href={link.href} class="inline-flex min-h-11 items-center text-sm text-brand-light/80 transition-colors hover:text-brand-accent sm:min-h-0">{link.label}</a>)}
       </nav>
       <nav aria-label={copy.ariaNavigation} class="grid w-full grid-cols-2 gap-x-8 gap-y-6 text-left sm:flex sm:w-auto sm:gap-x-16">
