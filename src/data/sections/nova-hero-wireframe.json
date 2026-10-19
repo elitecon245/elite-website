@@ -7,10 +7,6 @@
     "label": "Explore Our Businesses",
     "href": "/#businesses"
   },
-  "secondaryCTA": {
-    "label": "Contact Us",
-    "href": "/#contact"
-  },
   "trustedBy": "",
   "trustItems": [],
   "image": "/assets/images/t001-nova/t001-nova-hero.webp",
