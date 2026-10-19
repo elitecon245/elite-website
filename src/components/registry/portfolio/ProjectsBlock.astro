@@ -26,10 +26,12 @@ const items = props.items ?? fallback?.items ?? [];
       </div>
       <div>
         {description && <Text variant="lead">{description}</Text>}
+        {linkLabel && (
         <a class="projects-link group" href={linkHref}>
           <Text tag="span" variant="body" class="transition-transform duration-300 ease-out group-hover:-translate-x-1 motion-reduce:transition-none">{linkLabel}</Text>
           <span class="inline-flex size-5 items-center justify-center leading-none transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transition-none" aria-hidden="true">→</span>
         </a>
+        )}
       </div>
     </div>
 
