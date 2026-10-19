@@ -1,12 +1,33 @@
 {
-  "title": "Nasze usługi",
-  "description": "Kompleksowe wsparcie na każdym etapie, od koncepcji po wdrożenie i dalszy rozwój.",
-  "linkLabel": "Zobacz wszystkie",
-  "linkHref": "/uslugi/",
+  "id": "values",
+  "title": "Our Commitment to Quality and Growth",
+  "description": "We believe that strong businesses are built through professionalism, customer relationships, and a commitment to continuous improvement. Our portfolio reflects our focus on developing businesses that serve different customer needs.",
+  "linkLabel": "Explore Our Businesses",
+  "linkHref": "/#businesses",
   "items": [
-    { "number": "01.", "icon": "palette", "title": "UX/UI Design", "description": "Nowoczesny i funkcjonalny design dopasowany do Twojej marki. Projektujemy doświadczenia, które są intuicyjne i wspierają cele biznesowe." },
-    { "number": "02.", "icon": "browser", "title": "Strony internetowe", "description": "Szybkie, responsywne i zoptymalizowane rozwiązania dla biznesu. Tworzymy strony, które dobrze wyglądają i skutecznie prowadzą do kontaktu." },
-    { "number": "03.", "icon": "paint-brush", "title": "Identyfikacja wizualna", "description": "Spójny wizerunek, który wyróżnia markę i buduje zaufanie. Łączymy strategię, typografię i detale w jeden rozpoznawalny kierunek." },
-    { "number": "04.", "icon": "lifebuoy", "title": "Wsparcie i rozwój", "description": "Stała opieka i rozwój strony po uruchomieniu projektu. Pomagamy utrzymać stronę aktualną, sprawną i gotową na kolejne etapy." }
+    {
+      "number": "01.",
+      "icon": "users-three",
+      "title": "Customer Focus",
+      "description": "We aim to understand customer needs and provide clear, helpful service across our businesses."
+    },
+    {
+      "number": "02.",
+      "icon": "check-circle",
+      "title": "Quality and Consistency",
+      "description": "We strive to maintain appropriate standards across our products and services."
+    },
+    {
+      "number": "03.",
+      "icon": "handshake",
+      "title": "Professionalism",
+      "description": "We value responsible business practices and constructive relationships with customers and partners."
+    },
+    {
+      "number": "04.",
+      "icon": "trend-up",
+      "title": "Continuous Growth",
+      "description": "We seek to develop our businesses and build lasting value over time."
+    }
   ]
 }

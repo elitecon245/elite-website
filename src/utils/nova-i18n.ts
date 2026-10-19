@@ -2,13 +2,16 @@ import copy from '@data/i18n/nova.json';
 
 export type NovaLocale = 'pl' | 'en';
 
-export function getNovaCopy(locale: NovaLocale = 'pl') {
-  return copy[locale] ?? copy.pl;
+type NovaCopy = typeof copy.en;
+
+// The site is published in English only; any other locale falls back to English.
+export function getNovaCopy(locale: NovaLocale = 'en'): NovaCopy {
+  return (copy as Partial<Record<NovaLocale, NovaCopy>>)[locale] ?? copy.en;
 }
 
 export function getNovaSectionCopy(locale: NovaLocale, dataKey?: string) {
   if (!dataKey) return undefined;
-  return getNovaCopy(locale).sections[dataKey as keyof typeof copy.pl.sections];
+  return getNovaCopy(locale).sections[dataKey as keyof NovaCopy['sections']];
 }
 
 function withNovaBase(path: string): string {

@@ -1,18 +1,19 @@
 {
-  "eyebrow": "STRATEGIA / DESIGN / TECHNOLOGIA",
-  "heading": "Nowe możliwości dla",
-  "headingAccent": "ambitnych marek",
-  "description": "Tworzymy nowoczesne strony internetowe, które wzmacniają wizerunek, przyciągają klientów i realnie wspierają rozwój biznesu.",
-  "primaryCTA": { "label": "Rozpocznij projekt", "href": "/kontakt/" },
-  "secondaryCTA": { "label": "Poznaj nas", "href": "/o-nas/" },
-  "trustedBy": "Zaufali nam",
-  "trustItems": ["MODO", "LUMI", "KOVO", "NOMA", "ASPEKT"],
+  "eyebrow": "ELITE CONSOLIDATED BUSINESS NIG LTD",
+  "heading": "Building Businesses.",
+  "headingAccent": "Creating Lasting Value.",
+  "description": "Welcome to Elite Consolidated Business Nig Ltd, a parent company bringing together businesses in bottled and pure water, bakery products, and hospitality. Our portfolio includes Starling Bottle and Pure Water Factory, Royal Retreat Bakery, and Elite Royal Suite and Hotel.",
+  "primaryCTA": {
+    "label": "Explore Our Businesses",
+    "href": "/#businesses"
+  },
+  "secondaryCTA": {
+    "label": "Contact Us",
+    "href": "/#contact"
+  },
+  "trustedBy": "",
+  "trustItems": [],
   "image": "/assets/images/t001-nova/t001-nova-hero.webp",
-  "imageAlt": "Strateg pracujący przy laptopie",
-  "stats": [
-    { "value": "2000+", "label": "Zrealizowanych projektów" },
-    { "value": "10+", "label": "Lat doświadczenia" },
-    { "value": "800+", "label": "Godzin pracy nad produktem" },
-    { "value": "150M+", "label": "Przychodu u naszych klientów" }
-  ]
+  "imageAlt": "Professional working at a laptop in a bright office",
+  "stats": []
 }

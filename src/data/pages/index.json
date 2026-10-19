@@ -1,9 +1,9 @@
 {
   "seo": {
-    "title": "Nova, strony internetowe dla ambitnych marek",
-    "description": "Tworzymy nowoczesne strony internetowe, które wzmacniają wizerunek, przyciągają klientów i wspierają rozwój biznesu."
+    "title": "Elite Consolidated Business Nig Ltd | Our Businesses",
+    "description": "Discover Elite Consolidated Business Nig Ltd and its business portfolio, including Starling Bottle and Pure Water Factory in Abijo and Bogije, Royal Retreat Bakery, and Elite Royal Suite and Hotel."
   },
-  "heading": "Nowe możliwości dla ambitnych marek",
+  "heading": "Building Businesses. Creating Lasting Value.",
   "sections": [
     { "id": "navbar", "variant": "floating" },
     { "id": "hero", "variant": "nova" },
@@ -11,7 +11,6 @@
     { "id": "novaServices", "variant": "default" },
     { "id": "novaTeam", "variant": "default" },
     { "id": "faq3", "variant": "default" },
-    { "id": "testimonials", "variant": "v2" },
     { "id": "footer", "variant": "nova" }
   ]
 }

@@ -79,6 +79,7 @@ export interface CompanyConfig {
   siteUrl: string;
   priceRange?: string;
   description?: string;
+  subsidiaries?: string[];
   geo?: {
     lat: number;
     lng: number;

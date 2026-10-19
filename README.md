@@ -1,3 +1,17 @@
+# Elite Consolidated Business Nig Ltd website
+
+One-page website for Elite Consolidated Business Nig Ltd and its businesses, built on the Nova Astro template. See `CONTENT-GUIDE.md` for where content lives and what still needs to be supplied before launch.
+
+```bash
+npm i
+npm run dev
+npm run build
+```
+
+The original template README follows, including its licence notice.
+
+---
+
 # Nova - Free Tailwind CSS & Astro Portfolio Website Template
 
 #### Preview

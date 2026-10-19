@@ -1,20 +1,39 @@
 {
-  "title": "Pomysły zamieniamy w realne efekty",
-  "description": "Łączymy strategiczne myślenie, dopracowany design i nowoczesne technologie, aby tworzyć strony, które nie tylko wyglądają dobrze, ale przede wszystkim działają.",
-  "linkLabel": "Zobacz realizacje",
-  "linkHref": "/realizacje/",
+  "sectionId": "businesses",
+  "title": "Our Businesses",
+  "description": "Three businesses. One shared vision. Elite Consolidated Business Nig Ltd brings together distinct businesses serving customers across bottled and pure water, bakery products, and hospitality.",
+  "linkLabel": "Contact Us",
+  "linkHref": "/#contact",
   "items": [
     {
-      "category": "Strony internetowe",
-      "title": "Marka premium z nową stroną",
-      "image": "/assets/images/t001-nova/t001-nova-project-laptop.webp",
-      "alt": "Laptop z projektem strony internetowej"
+      "id": "starling-water",
+      "category": "Bottled and pure water",
+      "title": "Starling Bottle and Pure Water Factory",
+      "description": "Discover Starling Bottle and Pure Water Factory, part of Elite Consolidated Business Nig Ltd, with locations at Abijo and Bogije. Contact us to learn more about our business and distribution enquiries.",
+      "buttonLabel": "Learn More",
+      "href": "/#contact",
+      "image": "/assets/images/elite/starling-water-building.webp",
+      "alt": "Entrance of a Starling Water building with the Starling Water sign above an arched doorway"
     },
     {
-      "category": "Wizerunek marki",
-      "title": "Nowy wizerunek dla ambitnej marki",
-      "image": "/assets/images/t001-nova/t001-nova-project-building.webp",
-      "alt": "Nowoczesny budynek jako przykład realizacji"
+      "id": "royal-retreat-bakery",
+      "category": "Bakery",
+      "title": "Royal Retreat Bakery",
+      "description": "Royal Retreat Bakery is part of the Elite Consolidated business portfolio. Explore our bakery offering and get in touch for information about available products and ordering options.",
+      "buttonLabel": "Learn More",
+      "href": "/#contact",
+      "image": "/assets/images/elite/royal-retreat-bakery.webp",
+      "alt": "Bread icon on an Elite Consolidated blue background"
+    },
+    {
+      "id": "elite-royal-suite-hotel",
+      "category": "Hospitality",
+      "title": "Elite Royal Suite and Hotel",
+      "description": "Elite Royal Suite and Hotel is the hospitality business within the Elite Consolidated portfolio. Discover the hotel and contact the team for information about accommodation and reservations.",
+      "buttonLabel": "Learn More",
+      "href": "/#contact",
+      "image": "/assets/images/elite/elite-royal-suite-hotel.webp",
+      "alt": "Bed icon on an Elite Consolidated blue background"
     }
   ]
 }

@@ -167,7 +167,7 @@ const items = props.items ?? jsonData.items;
     font-size: 0.9375rem;
   }
 
-  @media (min-width: 48rem) and (max-width: 63.99rem) {
+  @media (min-width: 48rem) {
     .nova-services-intro {
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: end;
@@ -184,7 +184,9 @@ const items = props.items ?? jsonData.items;
       align-self: end;
       justify-self: end;
     }
+  }
 
+  @media (min-width: 48rem) and (max-width: 63.99rem) {
     .nova-services-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -195,27 +197,6 @@ const items = props.items ?? jsonData.items;
   }
 
   @media (min-width: 64rem) {
-    .nova-services-intro {
-      grid-template-columns: auto minmax(0, 1fr) auto;
-      align-items: end;
-      gap: clamp(1.5rem, 2vw, 2.5rem);
-    }
-
-    .nova-services-intro > div:nth-child(2) {
-      display: block;
-      align-self: end;
-      justify-self: center;
-      max-width: none;
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    .nova-services-link-wrap {
-      align-self: end;
-      justify-self: end;
-      padding-top: 0;
-    }
-
     .nova-services-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: clamp(0.75rem, 1.5vw, 1.5rem);

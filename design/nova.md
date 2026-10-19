@@ -1,32 +1,32 @@
 ---
-name: Nova, Creative Agency
+name: Nova, Elite Consolidated Business
 colors:
-  surface: "#fffdf9"
-  surface-dim: "#f4f0e9"
+  surface: "#ffffff"
+  surface-dim: "#f3f4f8"
   surface-bright: "#ffffff"
-  surface-container-lowest: "#fffdf9"
-  surface-container-low: "#f7f3ed"
-  surface-container: "#eee8df"
-  surface-container-high: "#ddd4c9"
-  surface-container-highest: "#b9aea2"
-  on-surface: "#161616"
-  on-surface-variant: "#68635d"
-  outline: "#b9aea2"
-  outline-variant: "#ddd4c9"
-  surface-tint: "#b98b6e"
-  primary: "#161616"
-  accent: "#b98b6e"
-  on-primary: "#fffdf9"
-  primary-container: "#eee8df"
-  on-primary-container: "#161616"
-  secondary: "#68635d"
-  on-secondary: "#fffdf9"
-  secondary-container: "#f4f0e9"
-  on-secondary-container: "#161616"
-  tertiary: "#b98b6e"
-  on-tertiary: "#fffdf9"
-  tertiary-container: "#ead9cc"
-  on-tertiary-container: "#4f3223"
+  surface-container-lowest: "#ffffff"
+  surface-container-low: "#f6f7fa"
+  surface-container: "#eceef4"
+  surface-container-high: "#dcdfe8"
+  surface-container-highest: "#b4b8c7"
+  on-surface: "#20223a"
+  on-surface-variant: "#5c5f74"
+  outline: "#b4b8c7"
+  outline-variant: "#dcdfe8"
+  surface-tint: "#1800ad"
+  primary: "#1800ad"
+  accent: "#8a84ff"
+  on-primary: "#ffffff"
+  primary-container: "#e6e4ff"
+  on-primary-container: "#1800ad"
+  secondary: "#5c5f74"
+  on-secondary: "#ffffff"
+  secondary-container: "#f3f4f8"
+  on-secondary-container: "#20223a"
+  tertiary: "#8a84ff"
+  on-tertiary: "#20223a"
+  tertiary-container: "#e6e4ff"
+  on-tertiary-container: "#1800ad"
   error: "#b42318"
   on-error: "#ffffff"
   error-container: "#fddbd7"
@@ -43,13 +43,13 @@ colors:
   on-info: "#ffffff"
   info-container: "#dcecf4"
   on-info-container: "#17394b"
-  background: "#fffdf9"
-  on-background: "#161616"
-  brand-primary: "#161616"
-  brand-accent: "#b98b6e"
-  brand-dark: "#161616"
-  brand-light: "#fffdf9"
-  brand-cream: "#f4f0e9"
+  background: "#ffffff"
+  on-background: "#20223a"
+  brand-primary: "#1800ad"
+  brand-accent: "#8a84ff"
+  brand-dark: "#20223a"
+  brand-light: "#ffffff"
+  brand-cream: "#f3f4f8"
 typography:
   display:
     fontFamily: Satoshi, sans-serif
@@ -96,13 +96,13 @@ spacing:
   container-px: "clamp(1rem, 4vw, 4rem)"
   section-py: "clamp(4rem, 8vw, 7.5rem)"
 elevation:
-  soft: "0 14px 40px -24px rgb(22 22 22 / 0.28)"
-  strong: "0 28px 80px -32px rgb(22 22 22 / 0.38)"
+  soft: "0 14px 40px -24px rgb(32 34 58 / 0.28)"
+  strong: "0 28px 80px -32px rgb(32 34 58 / 0.38)"
 ui:
-  text-on-light: "#161616"
-  text-on-light-subtle: "rgba(22, 22, 22, 0.64)"
-  text-on-dark: "#fffdf9"
-  text-on-dark-subtle: "rgba(255, 253, 249, 0.68)"
+  text-on-light: "#20223a"
+  text-on-light-subtle: "rgba(32, 34, 58, 0.66)"
+  text-on-dark: "#ffffff"
+  text-on-dark-subtle: "rgba(255, 255, 255, 0.7)"
   type-lead-tracking: "-0.01em"
   type-lead-leading: "1.55"
   type-body-leading: "1.65"
@@ -122,13 +122,13 @@ animations:
 
 # Nova, Visual Direction
 
-Nova is an elegant template for a creative studio, digital agency or premium brand. The site should feel calm, refined and capable. Clear hierarchy, strong photography and controlled contrast are the priorities.
+This Nova profile is branded for Elite Consolidated Business Nig Ltd. The site should feel modern, corporate, approachable and trustworthy. Clear hierarchy, strong imagery and controlled contrast are the priorities.
 
 ## Composition Principles
 
-- Keep the main background light and warm, with subtle tonal changes between sections.
-- Use black for navigation, statistics, strong headings and the closing call to action.
-- Use the copper accent sparingly in highlighted words, icons, links and buttons.
+- Keep the main background white and light grey, with subtle tonal changes between sections.
+- Use dark navy (`brand-dark`) for text, navigation and the closing call to action, and the logo blue (`brand-primary`, #1800AD) for primary buttons and key highlights.
+- Use the light brand-blue accent sparingly for icons, hover states and highlights on dark backgrounds.
 - Cards should have soft corners, thin borders and generous internal space.
 - Break the regular grid with a large image, 2+1 proportions and wide content bands.
 - Keep motion calm: section reveals, subtle image zoom and scrolling logos without pulsing effects.

@@ -1,28 +1,34 @@
 {
-  "fullName": "Nova Creative Agency",
-  "name": "Nova",
+  "fullName": "Elite Consolidated Business Nig Ltd",
+  "name": "Elite Consolidated Business",
+  "description": "Elite Consolidated Business Nig Ltd is the parent company of Starling Bottle and Pure Water Factory, Royal Retreat Bakery, and Elite Royal Suite and Hotel.",
+  "subsidiaries": [
+    "Starling Bottle and Pure Water Factory",
+    "Royal Retreat Bakery",
+    "Elite Royal Suite and Hotel"
+  ],
   "branding": {
-    "icon": "ph-star",
+    "icon": "ph-buildings",
     "font": "Satoshi",
-    "tagline": "Websites for ambitious brands",
-    "logoImage": "",
-    "favicon": "/favicon.svg",
-    "logoSuffix": "Logo"
+    "tagline": "One Vision. Multiple Possibilities.",
+    "logoImage": "/assets/brand/elite-consolidated-logo.svg",
+    "favicon": "",
+    "logoSuffix": "logo"
   },
-  "address": "123 Example Street, 00-001 Warsaw",
-  "zipCode": "00-001",
-  "city": "Warsaw",
-  "phone": "+48 123 456 789",
-  "email": "contact@yourcompany.com",
-  "hours": "Mon-Fri: 8:00 AM - 9:00 PM",
-  "nip": "1234567890",
-  "krs": "0000123456",
+  "address": "",
+  "zipCode": "",
+  "city": "",
+  "phone": "",
+  "email": "",
+  "hours": "",
+  "nip": "",
+  "krs": "",
   "regon": "",
-  "siteUrl": "https://yourcompany.com",
+  "siteUrl": "https://www.example.com",
   "smtp": {
-    "smtpHost": "smtp.example.com",
+    "smtpHost": "",
     "smtpPort": 587,
-    "smtpUser": "noreply@yourcompany.com",
+    "smtpUser": "",
     "smtpPass": ""
   },
   "socials": {

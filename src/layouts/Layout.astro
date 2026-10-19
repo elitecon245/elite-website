@@ -21,7 +21,6 @@ import FooterColumnsBlock from '@components/registry/shell/FooterColumnsBlock.as
 import FooterMinimalBlock from '@components/registry/shell/FooterMinimalBlock.astro';
 import FooterPromoBlock from '@components/registry/shell/FooterPromoBlock.astro';
 import NovaFooterBlock from '@components/registry/shell/NovaFooterBlock.astro';
-import NovaDemoBanner from '@components/ui/molecules/NovaDemoBanner.astro';
 import type { NovaLocale } from '@utils/nova-i18n';
 
 
@@ -276,7 +275,7 @@ const mainPaddingStyle = fullBleedTop
 			script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://unpkg.com https://www.clarity.ms https://scripts.clarity.ms https://static.cloudflareinsights.com http://localhost:8400;
 			style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
 			font-src 'self' data: https://fonts.gstatic.com https://unpkg.com;
-			img-src 'self' data: blob: https://www.google-analytics.com https://www.google.pl https://www.facebook.com https://images.unsplash.com https://i.pravatar.cc;
+			img-src 'self' data: blob: https://www.google-analytics.com https://www.google.pl https://www.facebook.com;
 			connect-src 'self' https://www.google-analytics.com https://region1.analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms http://localhost:8400;
 			frame-src 'self' https://open.spotify.com https://www.youtube.com https://www.google.com https://maps.google.com https://www.openstreetmap.org;
 			form-action 'self';
@@ -319,7 +318,6 @@ const mainPaddingStyle = fullBleedTop
 		data-review-project={reviewProject || undefined}
 	>
 		{clientRuntime && <MobileDrawer locale={locale} />}
-		{showShell && theme === 'nova' && <NovaDemoBanner locale={locale} />}
 		{showShell && navbarResolved && (
 			<div class:list={theme === 'nova' ? ['relative'] : []}>
 				<navbarResolved.component layout={navbarResolved.layout} theme={navbarTheme} locale={locale} />

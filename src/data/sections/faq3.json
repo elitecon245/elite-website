@@ -1,22 +1,28 @@
 {
-  "title": "Najczęściej zadawane pytania",
-  "description": "Najważniejsze informacje o współpracy, procesie i efektach, które mogą Państwa interesować przed rozpoczęciem projektu.",
+  "sectionId": "faq",
+  "title": "Frequently asked questions",
+  "description": "Answers to common questions about Elite Consolidated Business Nig Ltd and its businesses.",
+  "tagline": "FAQ",
   "items": [
     {
-      "q": "Ile trwa przygotowanie nowej strony internetowej?",
-      "a": "Standardowy projekt realizujemy zwykle w ciągu 2 do 4 tygodni. Termin zależy od zakresu strony, liczby podstron oraz szybkości przekazania materiałów."
+      "q": "What is Elite Consolidated Business Nig Ltd?",
+      "a": "Elite Consolidated Business Nig Ltd is the parent company of Starling Bottle and Pure Water Factory, Royal Retreat Bakery, and Elite Royal Suite and Hotel."
     },
     {
-      "q": "Czy pomagacie w przygotowaniu treści i zdjęć?",
-      "a": "Tak. Możemy uporządkować istniejące materiały, przygotować strukturę treści oraz wskazać kierunek dla zdjęć i grafik, aby całość była spójna z marką."
+      "q": "Which businesses operate under Elite Consolidated?",
+      "a": "Our business portfolio includes Starling Bottle and Pure Water Factory, Royal Retreat Bakery, and Elite Royal Suite and Hotel."
     },
     {
-      "q": "Czy strona będzie dobrze działać na telefonie?",
-      "a": "Tak. Projektujemy od początku z myślą o telefonach, tabletach i komputerach. Każdy kluczowy widok sprawdzamy w kilku szerokościach ekranu."
+      "q": "Where is Starling Bottle and Pure Water Factory located?",
+      "a": "Starling Bottle and Pure Water Factory has two locations: Abijo and Bogije."
     },
     {
-      "q": "Czy po publikacji mogę samodzielnie edytować stronę?",
-      "a": "Tak. Przygotowujemy strukturę tak, aby najważniejsze treści można było później łatwo aktualizować. Po wdrożeniu przekazujemy również krótką instrukcję obsługi."
+      "q": "How can I enquire about your businesses?",
+      "a": "Please use the contact information provided on our website to enquire about a business, its products, or its services."
+    },
+    {
+      "q": "How can I make a hotel reservation or enquire about bakery and water products?",
+      "a": "Please contact the relevant business for information about availability, products, ordering options, or accommodation reservations."
     }
   ]
 }
