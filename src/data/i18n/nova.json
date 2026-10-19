@@ -34,8 +34,8 @@
         "primaryCTA": { "label": "Explore Our Businesses", "href": "/#businesses" },
         "trustedBy": "",
         "trustItems": [],
-        "image": "/assets/images/t001-nova/t001-nova-hero.webp",
-        "imageAlt": "Professional working at a laptop in a bright office",
+        "image": "/assets/images/elite/hero-corporate-towers.webp",
+        "imageAlt": "Glass office towers seen from below against a blue sky",
         "imageLayout": "background",
         "stats": []
       },
