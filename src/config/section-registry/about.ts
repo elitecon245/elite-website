@@ -24,7 +24,12 @@ export const aboutSections: Record<string, SectionEntry> = {
   novaTeam: {
     id: 'novaTeam', label: 'Zespół i wartości', groupId: 'about', hint: 'Sekcja zespołu dla templateu Nova', icon,
     defaultVariant: 'default',
-    variants: { default: { component: 'TeamBlock', dataKey: 'nova-team' } },
+    variants: {
+      default: { component: 'TeamBlock', dataKey: 'nova-team' },
+      starling: { label: 'Starling Water', component: 'TeamBlock', dataKey: 'starling-about' },
+      bakery: { label: 'Royal Retreat Bakery', component: 'TeamBlock', dataKey: 'bakery-about' },
+      hotel: { label: 'Elite Royal Suite and Hotel', component: 'TeamBlock', dataKey: 'hotel-about' },
+    },
   },
   aboutMarquee: {
     id: 'aboutMarquee', label: 'O nas z marquee', groupId: 'about', hint: 'Split tekstu, zdjęcia i przewijanych pasów', icon,

@@ -11,7 +11,7 @@
       "title": "Starling Bottle and Pure Water Factory",
       "description": "Discover Starling Bottle and Pure Water Factory, part of Elite Consolidated Business Nig Ltd, with locations at Abijo and Bogije. Contact us to learn more about our business and distribution enquiries.",
       "buttonLabel": "Learn More",
-      "href": "/#contact",
+      "href": "/starling-water/",
       "image": "/assets/images/elite/starling-water-building.webp",
       "alt": "Entrance of a Starling Water building with the Starling Water sign above an arched doorway"
     },
@@ -21,7 +21,7 @@
       "title": "Royal Retreat Bakery",
       "description": "Royal Retreat Bakery is part of the Elite Consolidated business portfolio. Explore our bakery offering and get in touch for information about available products and ordering options.",
       "buttonLabel": "Learn More",
-      "href": "/#contact",
+      "href": "/royal-retreat-bakery/",
       "image": "/assets/images/elite/royal-retreat-bakery.webp",
       "alt": "Bread icon on an Elite Consolidated blue background"
     },
@@ -31,7 +31,7 @@
       "title": "Elite Royal Suite and Hotel",
       "description": "Elite Royal Suite and Hotel is the hospitality business within the Elite Consolidated portfolio. Discover the hotel and contact the team for information about accommodation and reservations.",
       "buttonLabel": "Learn More",
-      "href": "/#contact",
+      "href": "/elite-royal-suite-hotel/",
       "image": "/assets/images/elite/elite-royal-suite-hotel.webp",
       "alt": "Bed icon on an Elite Consolidated blue background"
     }

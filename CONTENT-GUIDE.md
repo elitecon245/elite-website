@@ -20,6 +20,16 @@ This site is the one-page Nova template rebranded for Elite Consolidated Busines
 - Colours: `design/nova.md`, then run `npm run design:sync`.
 - Images: put source files in `src/assets/raw/elite/` and run `npm run assets:img`.
 
+## Business pages
+
+Each business has its own landing page, opened from its homepage card and footer link:
+
+- `/starling-water/` (includes the Starling phone numbers)
+- `/royal-retreat-bakery/`
+- `/elite-royal-suite-hotel/`
+
+Each page is configured in `src/data/pages/<slug>.json` and uses three sections whose copy lives in `src/data/sections/`: `<business>-hero.json`, `<business>-about.json` and `<business>-contact.json` (`starling`, `bakery`, `hotel`). The section variants are registered in `src/config/section-registry/` (hero, about and cta). New pages must also be added to `BUILD_SCOPE.pages` in `site.config.mjs`.
+
 ## Active sections
 
 The homepage uses navigation, hero, our businesses, values, about, FAQ and the contact footer. Testimonials are not shown because no verified reviews have been supplied; the component remains available.

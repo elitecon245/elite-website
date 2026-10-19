@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "Elite Royal Suite and Hotel | Elite Consolidated Business Nig Ltd",
+    "description": "Elite Royal Suite and Hotel is the hospitality business of Elite Consolidated Business Nig Ltd. Contact us about accommodation and reservations."
+  },
+  "heading": "Elite Royal Suite and Hotel",
+  "sections": [
+    {
+      "id": "navbar",
+      "variant": "floating"
+    },
+    {
+      "id": "hero",
+      "variant": "hotel"
+    },
+    {
+      "id": "novaTeam",
+      "variant": "hotel"
+    },
+    {
+      "id": "novaCta",
+      "variant": "hotel"
+    },
+    {
+      "id": "footer",
+      "variant": "nova"
+    }
+  ]
+}

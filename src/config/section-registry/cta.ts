@@ -6,6 +6,11 @@ export const ctaSections: Record<string, SectionEntry> = {
   novaCta: {
     id: 'novaCta', label: 'Końcowe wezwanie do działania', groupId: 'cta', hint: 'Końcowe CTA dla templateu Nova', icon,
     defaultVariant: 'default',
-    variants: { default: { component: 'CtaBlock', dataKey: 'nova-cta' } },
+    variants: {
+      default: { component: 'CtaBlock', dataKey: 'nova-cta' },
+      starling: { label: 'Starling Water', component: 'CtaBlock', dataKey: 'starling-contact' },
+      bakery: { label: 'Royal Retreat Bakery', component: 'CtaBlock', dataKey: 'bakery-contact' },
+      hotel: { label: 'Elite Royal Suite and Hotel', component: 'CtaBlock', dataKey: 'hotel-contact' },
+    },
   },
 };

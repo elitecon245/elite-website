@@ -1,0 +1,19 @@
+{
+  "eyebrow": "PART OF ELITE CONSOLIDATED BUSINESS NIG LTD",
+  "heading": "Royal Retreat",
+  "headingAccent": "Bakery",
+  "description": "Royal Retreat Bakery is part of the Elite Consolidated business portfolio. Get in touch for information about available products and ordering options.",
+  "primaryCTA": {
+    "label": "Contact Us",
+    "href": "#contact"
+  },
+  "secondaryCTA": {
+    "label": "All Businesses",
+    "href": "/#businesses"
+  },
+  "trustedBy": "",
+  "trustItems": [],
+  "image": "/assets/images/elite/royal-retreat-bakery.webp",
+  "imageAlt": "Bread icon on an Elite Consolidated blue background",
+  "stats": []
+}

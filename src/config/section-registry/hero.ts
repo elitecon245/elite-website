@@ -10,6 +10,9 @@ export const heroSections: Record<string, SectionEntry> = {
       default: { component: 'HeroSplitBlock', dataKey: 'hero-split' },
       nova: { label: 'Hero fotograficzny', component: 'NovaHeroResponsiveBlock', dataKey: 'nova-hero-wireframe' },
       legacyNova: { label: 'Hero Nova legacy', component: 'HeroBlock', dataKey: 'nova-hero-wireframe' },
+      starling: { label: 'Hero Starling Water', component: 'NovaHeroResponsiveBlock', dataKey: 'starling-hero' },
+      bakery: { label: 'Hero Royal Retreat Bakery', component: 'NovaHeroResponsiveBlock', dataKey: 'bakery-hero' },
+      hotel: { label: 'Hero Elite Royal Suite and Hotel', component: 'NovaHeroResponsiveBlock', dataKey: 'hotel-hero' },
     },
   },
   heroVideo: {

@@ -1,0 +1,19 @@
+{
+  "eyebrow": "PART OF ELITE CONSOLIDATED BUSINESS NIG LTD",
+  "heading": "Elite Royal",
+  "headingAccent": "Suite and Hotel",
+  "description": "Elite Royal Suite and Hotel is the hospitality business within the Elite Consolidated portfolio. Contact the team for information about accommodation and reservations.",
+  "primaryCTA": {
+    "label": "Contact Us",
+    "href": "#contact"
+  },
+  "secondaryCTA": {
+    "label": "All Businesses",
+    "href": "/#businesses"
+  },
+  "trustedBy": "",
+  "trustItems": [],
+  "image": "/assets/images/elite/elite-royal-suite-hotel.webp",
+  "imageAlt": "Bed icon on an Elite Consolidated blue background",
+  "stats": []
+}

@@ -41,5 +41,7 @@ const imageAlt = props.imageAlt ?? fallback?.imageAlt ?? "";
   .nova-cta-frame::before { position: absolute; inset: 0; background: color-mix(in oklab, var(--color-brand-dark) 72%, transparent); content: ""; }
   .nova-cta-copy { position: relative; z-index: 1; display: flex; max-width: 42rem; flex-direction: column; gap: 1rem; padding: clamp(1.5rem, 6vw, 4rem); color: var(--color-brand-light); }
   .nova-cta-copy :global(.ui-heading), .nova-cta-copy :global(.ui-text) { color: inherit; }
+  .nova-cta-copy :global(.ui-type-lead) { color: color-mix(in oklab, var(--color-brand-light) 85%, transparent); }
   .nova-cta-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .nova-cta-actions :global(.ui-button-outline) { border-color: color-mix(in oklab, var(--color-brand-light) 65%, transparent); background: color-mix(in oklab, var(--color-brand-dark) 35%, transparent); color: var(--color-brand-light); }
 </style>

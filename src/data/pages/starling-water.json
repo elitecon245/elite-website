@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "Starling Bottle and Pure Water Factory | Elite Consolidated Business Nig Ltd",
+    "description": "Starling Bottle and Pure Water Factory produces bottled water and pure water at Abijo and Bogije. Call +234 705 554 8653 or 0812 934 2879 for enquiries."
+  },
+  "heading": "Starling Bottle and Pure Water Factory",
+  "sections": [
+    {
+      "id": "navbar",
+      "variant": "floating"
+    },
+    {
+      "id": "hero",
+      "variant": "starling"
+    },
+    {
+      "id": "novaTeam",
+      "variant": "starling"
+    },
+    {
+      "id": "novaCta",
+      "variant": "starling"
+    },
+    {
+      "id": "footer",
+      "variant": "nova"
+    }
+  ]
+}

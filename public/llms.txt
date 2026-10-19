@@ -2,13 +2,14 @@
 
 Elite Consolidated Business Nig Ltd is the parent company of three businesses:
 
-- Starling Bottle and Pure Water Factory: bottled water and pure water production, with locations at Abijo and Bogije.
+- Starling Bottle and Pure Water Factory: bottled water and pure water production, with locations at Abijo and Bogije. Phone: +234 705 554 8653, 0812 934 2879.
 - Royal Retreat Bakery: a bakery.
 - Elite Royal Suite and Hotel: a hotel and hospitality business.
 
 ## Structure
 
 - Homepage: about the company, our businesses, our values, FAQ and contact
+- Business pages: /starling-water/, /royal-retreat-bakery/, /elite-royal-suite-hotel/
 - Legal pages: privacy policy and cookie policy
 
 ## Machine-readable notes

@@ -1,0 +1,14 @@
+{
+  "sectionId": "about",
+  "title": "Part of the Elite Consolidated Portfolio",
+  "description": "Royal Retreat Bakery is a bakery operating under Elite Consolidated Business Nig Ltd, alongside Starling Bottle and Pure Water Factory and Elite Royal Suite and Hotel.\n\nWe welcome enquiries from individual customers and business customers about our products and ordering options.",
+  "image": "/assets/images/elite/elite-consolidated-portfolio.webp",
+  "imageAlt": "Elite Consolidated Business Nig Ltd logo with water, bread and bed icons representing its three businesses",
+  "checks": [],
+  "teamCount": "",
+  "teamLabel": "",
+  "teamAriaLabel": "",
+  "teamAvatars": [],
+  "buttonLabel": "Explore Our Businesses",
+  "buttonHref": "/#businesses"
+}

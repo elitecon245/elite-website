@@ -47,7 +47,7 @@ const teamAvatars = props.teamAvatars ?? fallback?.teamAvatars ?? [];
           </div>
         </div>
         )}
-        <ul class="m-0 grid list-none gap-3 py-4">{checks.map((check) => <li class="flex items-center gap-3"><span class="grid size-8 shrink-0 place-items-center rounded-full border border-white/45 bg-brand-accent text-xl leading-none text-brand-dark" aria-hidden="true">→</span><Text tag="span" variant="body">{check}</Text></li>)}</ul>
+        {checks.length > 0 && <ul class="m-0 grid list-none gap-3 py-4">{checks.map((check) => <li class="flex items-center gap-3"><span class="grid size-8 shrink-0 place-items-center rounded-full border border-white/45 bg-brand-accent text-xl leading-none text-brand-dark" aria-hidden="true">→</span><Text tag="span" variant="body">{check}</Text></li>)}</ul>}
         <Button href={buttonHref} variant="primary" size="md" class="min-h-11 w-full sm:w-fit">{buttonLabel}</Button>
       </div>
     </div>

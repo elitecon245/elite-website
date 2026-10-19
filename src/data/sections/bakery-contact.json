@@ -1,0 +1,11 @@
+{
+  "id": "bakery-contact",
+  "title": "Enquire about Royal Retreat Bakery",
+  "description": "Contact Elite Consolidated Business Nig Ltd for information about available products and ordering options.",
+  "primaryLabel": "Contact Us",
+  "primaryHref": "#contact",
+  "secondaryLabel": "All Businesses",
+  "secondaryHref": "/#businesses",
+  "image": "/assets/images/elite/royal-retreat-bakery@1280.webp",
+  "imageAlt": ""
+}
