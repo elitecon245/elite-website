@@ -1,0 +1,29 @@
+{
+  "sectionId": "products",
+  "title": "Our Products",
+  "description": "",
+  "linkLabel": "Contact Starling Water",
+  "linkHref": "#starling-contact",
+  "items": [
+    {
+      "id": "bottled-water",
+      "category": "Bottled water",
+      "title": "Bottled Water",
+      "description": "Purified bottled water from our factories in Abijo and Bogije. Contact us for product, retail, wholesale and distribution enquiries.",
+      "buttonLabel": "Enquire Now",
+      "href": "#starling-contact",
+      "image": "/assets/images/elite/starling-bottled-water.webp",
+      "alt": "Water bottle icon on an Elite Consolidated blue background"
+    },
+    {
+      "id": "pure-water",
+      "category": "Pure water",
+      "title": "Pure Water",
+      "description": "Purified pure water from our factories in Abijo and Bogije. Contact us for product, retail, wholesale and distribution enquiries.",
+      "buttonLabel": "Enquire Now",
+      "href": "#starling-contact",
+      "image": "/assets/images/elite/starling-pure-water.webp",
+      "alt": "Water drop icon on an Elite Consolidated blue background"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ export const portfolioSections: Record<string, SectionEntry> = {
     variants: {
       bento: { component: 'PortfolioBentoBlock', dataKey: 'portfolio' },
       nova: { label: 'Realizacje z kartami projektów', component: 'ProjectsBlock', dataKey: 'nova-projects' },
+      starlingProducts: { label: 'Starling Water products', component: 'ProjectsBlock', dataKey: 'starling-products' },
       carousel: { component: 'PortfolioCarouselBlock', dataKey: 'portfolio' },
       categorized: { component: 'PortfolioCategorizedBlock', dataKey: 'portfolio' },
       marquee: { component: 'PortfolioMarqueeBlock', dataKey: 'portfolio' },
