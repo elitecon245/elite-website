@@ -56,7 +56,7 @@ const fullAddress = company.address
       <Text tag="span" variant="feature-body-sm">
         {`© ${year} ${company.fullName}. ${copy.copyright}`} &bull; Distributed by <a target="_blank" href="https://themewagon.com" rel="noreferrer" class="text-brand-light transition-colors hover:text-brand-accent">ThemeWagon</a>
       </Text>
-      <Text tag="span" variant="feature-body-sm" class="sm:text-right">{copy.attributionPrefix}<a href={copy.attributionLinkHref} target="_blank" rel="noreferrer" class="text-brand-light transition-colors hover:text-brand-accent">{copy.attributionLinkLabel}</a></Text>
+      <Text tag="span" variant="feature-body-sm" class="sm:text-right">{copy.attributionPrefix}{copy.attributionLinkHref ? <a href={copy.attributionLinkHref} target="_blank" rel="noreferrer" class="text-brand-light transition-colors hover:text-brand-accent">{copy.attributionLinkLabel}</a> : <span class="text-brand-light">{copy.attributionLinkLabel}</span>}</Text>
     </div>
   </div>
 </footer>
