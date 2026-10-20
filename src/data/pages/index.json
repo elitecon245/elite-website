@@ -12,6 +12,7 @@
     { "id": "eliteServices", "variant": "default" },
     { "id": "faq3", "variant": "default" },
     { "id": "contact", "variant": "elite" },
+    { "id": "customerReviews", "variant": "elite" },
     { "id": "footer", "variant": "elite" }
   ]
 }

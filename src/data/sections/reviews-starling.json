@@ -1,0 +1,27 @@
+{
+  "sectionId": "reviews",
+  "eyebrow": "Customer Reviews",
+  "title": "What Our Customers Say",
+  "description": "Feedback from retailers, distributors and households who rely on Starling Water.",
+  "placeholderNotice": "Sample layout: real customer reviews will replace these placeholders",
+  "testimonials": [
+    {
+      "quote": "Placeholder: a retailer talks about stocking Starling bottled water, for example steady supply and how quickly it sells.",
+      "name": "Retailer Name",
+      "role": "Shop Owner",
+      "company": "Shop Name"
+    },
+    {
+      "quote": "Placeholder: a distributor describes ordering pure water sachets in bulk and the reliability of delivery from Abijo or Bogije.",
+      "name": "Distributor Name",
+      "role": "Distributor",
+      "company": "Distribution Company"
+    },
+    {
+      "quote": "Placeholder: a household or office customer shares why they trust Starling Water for everyday drinking water.",
+      "name": "Customer Name",
+      "role": "Customer",
+      "company": "Home or Office"
+    }
+  ]
+}

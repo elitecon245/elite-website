@@ -22,6 +22,10 @@
       "variant": "hotel"
     },
     {
+      "id": "customerReviews",
+      "variant": "hotel"
+    },
+    {
       "id": "footer",
       "variant": "elite"
     }

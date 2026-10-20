@@ -26,6 +26,10 @@
       "variant": "starling"
     },
     {
+      "id": "customerReviews",
+      "variant": "starling"
+    },
+    {
       "id": "footer",
       "variant": "elite"
     }

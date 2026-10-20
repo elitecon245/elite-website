@@ -1,0 +1,27 @@
+{
+  "sectionId": "reviews",
+  "eyebrow": "Customer Reviews",
+  "title": "What Our Customers Say",
+  "description": "Feedback from the people who enjoy Royal Retreat Bakery bread.",
+  "placeholderNotice": "Sample layout: real customer reviews will replace these placeholders",
+  "testimonials": [
+    {
+      "quote": "Placeholder: a regular customer describes the taste and softness of the Royal Retreat Bread Loaf and how they enjoy it.",
+      "name": "Customer Name",
+      "role": "Regular Customer",
+      "company": "Neighbourhood"
+    },
+    {
+      "quote": "Placeholder: a shop or supermarket owner talks about stocking Royal Retreat bread and how customers respond to it.",
+      "name": "Stockist Name",
+      "role": "Store Owner",
+      "company": "Store Name"
+    },
+    {
+      "quote": "Placeholder: a café or caterer explains how they use Royal Retreat bread for sandwiches or events.",
+      "name": "Business Owner Name",
+      "role": "Owner",
+      "company": "Café or Catering Business"
+    }
+  ]
+}

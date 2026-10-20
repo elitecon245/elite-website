@@ -1,0 +1,27 @@
+{
+  "sectionId": "reviews",
+  "eyebrow": "Customer Reviews",
+  "title": "What Our Partners Say",
+  "description": "Feedback from the people and businesses we work with across our portfolio.",
+  "placeholderNotice": "Sample layout: real customer reviews will replace these placeholders",
+  "testimonials": [
+    {
+      "quote": "Placeholder: a business partner describes what it is like to work with Elite Consolidated Business Nig Ltd, for example professionalism and reliability.",
+      "name": "Partner Name",
+      "role": "Role",
+      "company": "Partner Company"
+    },
+    {
+      "quote": "Placeholder: a supplier or distributor shares their experience of a long-term relationship with the group and its businesses.",
+      "name": "Supplier Name",
+      "role": "Role",
+      "company": "Supplier Company"
+    },
+    {
+      "quote": "Placeholder: a corporate client explains why they choose Elite Consolidated businesses for their needs.",
+      "name": "Client Name",
+      "role": "Role",
+      "company": "Client Organisation"
+    }
+  ]
+}

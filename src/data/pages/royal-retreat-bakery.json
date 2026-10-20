@@ -29,6 +29,10 @@
       "variant": "bakery"
     },
     {
+      "id": "customerReviews",
+      "variant": "bakery"
+    },
+    {
       "id": "footer",
       "variant": "elite"
     }
