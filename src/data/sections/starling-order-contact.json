@@ -1,0 +1,114 @@
+{
+  "sectionId": "contact",
+  "title": "Enquire or Place an Order",
+  "description": "Send Starling Water an enquiry, or switch to Order to request bottled water or pure water for your home, shop or business.",
+  "source": "Starling Water",
+  "formFields": [
+    {
+      "name": "name",
+      "label": "Full name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Your full name",
+      "autoComplete": "name"
+    },
+    {
+      "name": "phone",
+      "label": "Phone",
+      "type": "tel",
+      "required": false,
+      "placeholder": "+234 800 000 0000",
+      "autoComplete": "tel"
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true,
+      "placeholder": "you@example.com",
+      "autoComplete": "email"
+    },
+    {
+      "name": "message",
+      "label": "Message",
+      "type": "textarea",
+      "required": true,
+      "rows": 5,
+      "placeholder": "How can we help?"
+    }
+  ],
+  "orderMode": {
+    "legend": "Choose what you want to send",
+    "enquiryLabel": "Enquiry",
+    "orderLabel": "Order",
+    "orderHeading": "Order details",
+    "orderMessageLabel": "Order notes (optional)",
+    "quantityError": "Enter a quantity for at least one product.",
+    "fields": [
+      {
+        "name": "qty_bottled_water",
+        "label": "Bottled water (packs)",
+        "type": "number",
+        "min": 0,
+        "placeholder": "0"
+      },
+      {
+        "name": "qty_pure_water",
+        "label": "Pure water (bags)",
+        "type": "number",
+        "min": 0,
+        "placeholder": "0"
+      },
+      {
+        "name": "delivery_address",
+        "label": "Delivery address",
+        "type": "text",
+        "required": true,
+        "placeholder": "Street, area and city",
+        "autoComplete": "street-address"
+      },
+      {
+        "name": "delivery_date",
+        "label": "Preferred delivery date",
+        "type": "date",
+        "required": false
+      }
+    ]
+  },
+  "detailsTitle": "Prefer to call or visit?",
+  "detailsDescription": "Call us directly or visit one of our factories.",
+  "detailItems": [
+    {
+      "key": "phone-1",
+      "label": "Phone",
+      "icon": "phone",
+      "value": "+234 705 554 8653",
+      "href": "tel:+2347055548653"
+    },
+    {
+      "key": "phone-2",
+      "label": "Phone",
+      "icon": "phone",
+      "value": "0812 934 2879",
+      "href": "tel:+2348129342879"
+    },
+    {
+      "key": "abijo",
+      "label": "Abijo factory",
+      "icon": "map-pin",
+      "value": "Road B, Treasure Palm, Abijo",
+      "href": "https://www.google.com/maps/search/?api=1&query=Road+B%2C+Treasure+Palm%2C+Abijo%2C+Lagos%2C+Nigeria",
+      "external": true,
+      "srLabel": "(opens Google Maps in a new tab)"
+    },
+    {
+      "key": "bogije",
+      "label": "Bogije factory",
+      "icon": "map-pin",
+      "value": "Road 3, Divine Estate, Bogije",
+      "href": "https://www.google.com/maps/search/?api=1&query=Road+3%2C+Divine+Estate%2C+Bogije%2C+Lagos%2C+Nigeria",
+      "external": true,
+      "srLabel": "(opens Google Maps in a new tab)"
+    }
+  ]
+}

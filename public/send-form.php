@@ -47,9 +47,23 @@ $name = trim((string)($_POST['name'] ?? ''));
 $email = trim((string)($_POST['email'] ?? ''));
 $phone = trim((string)($_POST['phone'] ?? ''));
 $message = trim((string)($_POST['message'] ?? ''));
+// Optional fields: which page sent the form, and whether it is an enquiry or an order.
+$source = trim((string)($_POST['source'] ?? ''));
+$isOrder = ($_POST['form_type'] ?? '') === 'order';
+$order = [
+    'Bottled water (packs)' => max(0, (int)($_POST['qty_bottled_water'] ?? 0)),
+    'Pure water (bags)' => max(0, (int)($_POST['qty_pure_water'] ?? 0)),
+];
+$deliveryAddress = trim((string)($_POST['delivery_address'] ?? ''));
+$deliveryDate = trim((string)($_POST['delivery_date'] ?? ''));
 
-if ($name === '' || $email === '' || $message === '') {
+// An order may leave the message empty; an enquiry may not.
+if ($name === '' || $email === '' || (!$isOrder && $message === '')) {
     respondError('Wypełnij wymagane pola.');
+}
+
+if ($isOrder && (array_sum($order) === 0 || $deliveryAddress === '')) {
+    respondError('Add a quantity for at least one product and a delivery address.');
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -61,7 +75,19 @@ if (!checkRateLimit($clientIp, 5, 3600)) {
     respondError('Limit zgłoszeń został wyczerpany. Spróbuj ponownie później.', 429);
 }
 
-$emailPayload = buildEmailPayload($SITE_NAME, $MAIL_SUBJECT, $name, $email, $phone, $message, $clientIp);
+$subjectPrefix = ($isOrder ? '[Order] ' : '[Enquiry] ') . ($source !== '' ? sanitizeHeaderValue($source) . ': ' : '');
+$orderLines = [];
+if ($isOrder) {
+    $orderLines[] = 'Order details:';
+    foreach ($order as $product => $quantity) {
+        $orderLines[] = $product . ': ' . $quantity;
+    }
+    $orderLines[] = 'Delivery address: ' . $deliveryAddress;
+    $orderLines[] = 'Preferred delivery date: ' . ($deliveryDate !== '' ? $deliveryDate : 'not specified');
+    $orderLines[] = '';
+}
+
+$emailPayload = buildEmailPayload($SITE_NAME, $subjectPrefix . $MAIL_SUBJECT, $name, $email, $phone, $message, $clientIp, $orderLines);
 
 $sent = sendViaSmtp($SMTP_CONFIG, $CONTACT_EMAIL, $emailPayload);
 
@@ -125,7 +151,8 @@ function buildEmailPayload(
     string $email,
     string $phone,
     string $message,
-    string $clientIp
+    string $clientIp,
+    array $orderLines = []
 ): array {
     $lines = [
         'Nowa wiadomość z formularza kontaktowego.',
@@ -136,8 +163,9 @@ function buildEmailPayload(
         'IP: ' . $clientIp,
         'Data: ' . gmdate('Y-m-d H:i:s') . ' UTC',
         '',
+        ...$orderLines,
         'Wiadomość:',
-        $message,
+        $message !== '' ? $message : '(none)',
     ];
 
     $bodyText = implode("\n", $lines);

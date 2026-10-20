@@ -3,11 +3,14 @@ import Icon from "@components/ui/atoms/Icon.astro";
 import Text from "@components/ui/atoms/Text.astro";
 
 type ContactItem = {
-  key: "phone" | "email" | "address";
+  key: string;
   label: string;
   icon: string;
   href?: string;
   value: string;
+  /** Opens in a new tab (e.g. Google Maps); srLabel tells screen reader users. */
+  external?: boolean;
+  srLabel?: string;
 };
 
 interface Props {
@@ -35,6 +38,8 @@ const isDetailed = variant === "detailed";
       item.href ? (
         <a
           href={item.href}
+          target={item.external ? "_blank" : undefined}
+          rel={item.external ? "noopener noreferrer" : undefined}
           class="flex items-center gap-4 rounded-2xl border border-brand-dark/10 p-4 ui-bg-base shadow-sm transition-all duration-200 hover:bg-brand-light/50"
         >
           <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary">
@@ -42,7 +47,7 @@ const isDetailed = variant === "detailed";
           </div>
           <div class="min-w-0">
             <div class="text-xs font-semibold uppercase tracking-wider text-brand-dark/50">{item.label}</div>
-            <div class="break-all text-sm font-semibold text-brand-dark">{item.value}</div>
+            <div class="text-sm font-semibold text-brand-dark [overflow-wrap:anywhere]">{item.value}{item.srLabel && <span class="sr-only"> {item.srLabel}</span>}</div>
           </div>
         </a>
       ) : (

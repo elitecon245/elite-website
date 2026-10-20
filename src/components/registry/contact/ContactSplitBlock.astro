@@ -20,7 +20,10 @@ type ContactField = {
   rows?: number;
   autoComplete?: string;
   options?: { value: string; label: string }[];
+  min?: number;
 };
+
+type DetailItem = { key: string; label: string; icon: string; value: string; href?: string; external?: boolean; srLabel?: string };
 
 export interface Props {
   variant?: ContactVariant;
@@ -35,6 +38,22 @@ export interface Props {
   mapLinkUrl?: string;
   mapLinkLabel?: string;
   formFields?: ContactField[];
+  /** Enquiry / Order switch for the form (see ContactForm). */
+  orderMode?: {
+    legend: string;
+    enquiryLabel: string;
+    orderLabel: string;
+    orderHeading?: string;
+    orderMessageLabel?: string;
+    quantityError?: string;
+    fields: ContactField[];
+  };
+  /** Page name sent with each submission. */
+  source?: string;
+  /** Replaces the default phone/email/address cards in the right column. */
+  detailsTitle?: string;
+  detailsDescription?: string;
+  detailItems?: DetailItem[];
   submitLabel?: string;
   submittingLabel?: string;
   resetLabel?: string;
@@ -70,6 +89,11 @@ const {
   errorMessage = "",
   headingTag = "h2",
   company,
+  orderMode,
+  source,
+  detailsTitle = "",
+  detailsDescription = "",
+  detailItems,
 } = Astro.props as Props;
 
 // Why: fallbacks allow you to use a block with both contact.json and company data.
@@ -192,6 +216,8 @@ const contactItems = [
               errorMessage={errorMessage}
               showHeader={false}
               includeRodoConsent={false}
+              orderMode={orderMode}
+              source={source}
             />
           </div>
 
@@ -205,7 +231,13 @@ const contactItems = [
               />
             ) : (
               <div class="space-y-6">
-                <ContactDetails items={contactItems} variant="compact" />
+                {(detailsTitle || detailsDescription) && (
+                  <div class="space-y-2">
+                    {detailsTitle && <Heading tag="h3" variant="feature-title" class="text-brand-dark">{detailsTitle}</Heading>}
+                    {detailsDescription && <Text variant="body" class="text-brand-dark/70">{detailsDescription}</Text>}
+                  </div>
+                )}
+                {detailItems ? <ContactDetails items={detailItems} variant="detailed" /> : <ContactDetails items={contactItems} variant="compact" />}
                 {hasMap && (
                   <GoogleMapFrame
                     embedUrl={mapUrl}

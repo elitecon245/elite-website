@@ -21,6 +21,21 @@ type ContactField = {
   rows?: number;
   autoComplete?: string;
   options?: { value: string; label: string }[];
+  min?: number;
+};
+
+// Optional Enquiry / Order switch. Order fields sit in a disabled fieldset until the visitor
+// picks "Order", so they are neither required nor submitted with an enquiry.
+type OrderMode = {
+  legend: string;
+  enquiryLabel: string;
+  orderLabel: string;
+  orderHeading?: string;
+  /** Label for the message field while ordering (it becomes optional then). */
+  orderMessageLabel?: string;
+  /** Shown when an order has no product quantity. */
+  quantityError?: string;
+  fields: ContactField[];
 };
 
 interface Props {
@@ -38,6 +53,9 @@ interface Props {
   privacyUrl?: string;
   showHeader?: boolean;
   includeRodoConsent?: boolean;
+  /** Sent with the form so the email says which page it came from. */
+  source?: string;
+  orderMode?: OrderMode;
   class?: string;
 }
 
@@ -56,8 +74,12 @@ const {
   privacyUrl,
   showHeader = true,
   includeRodoConsent = true,
+  source,
+  orderMode,
   class: className,
 } = Astro.props as Props;
+const orderFields = orderMode?.fields ?? [];
+const hasOrderMode = orderFields.length > 0;
 
 // Dlaczego: komunikaty dla JS-owego handlera formularza (form-handler.js) podajemy
 // as data-attributes on the form. The handler reads them from the dataset instead of hardcoding them.
@@ -124,6 +146,7 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
     method="POST"
     class="space-y-5"
     data-contact-form
+    data-order-quantity-error={orderMode?.quantityError}
     data-submit-label={submitLabel}
     data-submitting-label={submittingLabel}
     data-success-message={successMessage}
@@ -162,6 +185,22 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
       </button>
     </div>
 
+    {source && <input type="hidden" name="source" value={source} />}
+    {
+      hasOrderMode && (
+        <div class="ui-form-mode-toggle" role="radiogroup" aria-label={orderMode?.legend} data-form-mode-toggle>
+          <label>
+            <input type="radio" name="form_type" value="enquiry" checked class="sr-only" />
+            <span>{orderMode?.enquiryLabel}</span>
+          </label>
+          <label>
+            <input type="radio" name="form_type" value="order" class="sr-only" />
+            <span>{orderMode?.orderLabel}</span>
+          </label>
+        </div>
+      )
+    }
+
     <!-- Pierwsze dwa pola w gridzie 2-kolumnowym -->
     <div class="grid gap-5 sm:grid-cols-2" data-form-fields>
       {gridFields.map((field) => (
@@ -183,7 +222,7 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
 
     <!-- The rest of the fields in one column-->
     <div class="space-y-5 mt-5" data-form-fields>
-      {restFields.map((field) => (
+      {restFields.filter((field) => !(hasOrderMode && field.type === "textarea")).map((field) => (
         <div>
           <Text tag="label" variant="accent-label" class="ui-form-label" for={`${fieldIdPrefix}-${field.name}`}>
             {field.label}
@@ -247,6 +286,52 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
       ))}
     </div>
 
+    {
+      hasOrderMode && (
+        <fieldset class="m-0 mt-5 min-w-0 space-y-5 border-0 p-0" data-order-fields disabled hidden>
+          {orderMode?.orderHeading && <legend class="mb-1 p-0 font-heading text-lg font-semibold text-brand-dark">{orderMode.orderHeading}</legend>}
+          <div class="grid gap-5 sm:grid-cols-2">
+            {orderFields.map((field) => (
+              <div class:list={[field.type === "number" ? "" : "sm:col-span-2"]}>
+                <Text tag="label" variant="accent-label" class="ui-form-label" for={`${fieldIdPrefix}-${field.name}`}>
+                  {field.label}
+                </Text>
+                <Input
+                  id={`${fieldIdPrefix}-${field.name}`}
+                  name={field.name}
+                  type={toInputType(field)}
+                  placeholder={field.placeholder || field.label}
+                  required={field.required}
+                  autocomplete={field.autoComplete}
+                  min={field.min}
+                  inputmode={field.type === "number" ? "numeric" : undefined}
+                  data-order-quantity={field.type === "number" ? "" : undefined}
+                />
+              </div>
+            ))}
+          </div>
+        </fieldset>
+      )
+    }
+
+    {
+      hasOrderMode && restFields.filter((field) => field.type === "textarea").map((field) => (
+        <div class="mt-5">
+          <Text tag="label" variant="accent-label" class="ui-form-label" for={`${fieldIdPrefix}-${field.name}`} data-label-enquiry={field.label} data-label-order={orderMode?.orderMessageLabel || field.label}>
+            {field.label}
+          </Text>
+          <Textarea
+            id={`${fieldIdPrefix}-${field.name}`}
+            name={field.name}
+            placeholder={field.placeholder || field.label}
+            required={field.required}
+            rows={field.rows || 5}
+            data-order-optional
+          />
+        </div>
+      ))
+    }
+
     <!-- Honeypot: hidden from humans, only bots will fill it. form-handler.js supplements it if missing-->
     <div style="display:none" aria-hidden="true">
       <input type="text" name="website" tabindex="-1" autocomplete="off" />
@@ -289,4 +374,95 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
   form.is-submitted > .ui-form-feedback-stack {
     display: block;
   }
+
+  /* Enquiry / Order switch: a two-option segmented control in the page's brand colours. */
+  .ui-form-mode-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    border: 1px solid var(--color-outline-variant);
+    border-radius: 999px;
+    background: var(--color-surface-container-low);
+  }
+
+  .ui-form-mode-toggle label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .ui-form-mode-toggle span {
+    display: flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-weight: 600;
+    color: var(--color-brand-dark);
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  .ui-form-mode-toggle input:checked + span {
+    background: var(--color-brand-primary);
+    color: var(--color-surface);
+  }
+
+  .ui-form-mode-toggle input:focus-visible + span {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ui-form-mode-toggle span {
+      transition: none;
+    }
+  }
 </style>
+
+<script>
+  // Switches a contact form between Enquiry and Order: the order fieldset is enabled and shown
+  // only for orders, the message becomes optional, and an order needs at least one quantity.
+  function bindModeForms() {
+    document.querySelectorAll<HTMLFormElement>("form[data-contact-form]").forEach((form) => {
+      const toggle = form.querySelector("[data-form-mode-toggle]");
+      const fieldset = form.querySelector<HTMLFieldSetElement>("[data-order-fields]");
+      if (!toggle || !fieldset || form.dataset.orderModeBound) return;
+      form.dataset.orderModeBound = "true";
+      const quantities = Array.from(fieldset.querySelectorAll<HTMLInputElement>("[data-order-quantity]"));
+      const optionalFields = Array.from(form.querySelectorAll<HTMLTextAreaElement>("[data-order-optional]"));
+      const quantityError = form.dataset.orderQuantityError || "";
+
+      const validateQuantities = () => {
+        if (fieldset.disabled || quantities.length === 0) {
+          quantities.forEach((input) => input.setCustomValidity(""));
+          return;
+        }
+        const hasQuantity = quantities.some((input) => Number(input.value) > 0);
+        quantities[0].setCustomValidity(hasQuantity ? "" : quantityError);
+        quantities.slice(1).forEach((input) => input.setCustomValidity(""));
+      };
+
+      const sync = () => {
+        const isOrder = form.querySelector<HTMLInputElement>('input[name="form_type"]:checked')?.value === "order";
+        fieldset.disabled = !isOrder;
+        fieldset.hidden = !isOrder;
+        optionalFields.forEach((field) => {
+          field.required = !isOrder;
+          const label = form.querySelector<HTMLElement>(`label[for="${field.id}"]`);
+          const text = isOrder ? label?.dataset.labelOrder : label?.dataset.labelEnquiry;
+          if (label && text) label.textContent = text;
+        });
+        validateQuantities();
+      };
+
+      toggle.addEventListener("change", sync);
+      quantities.forEach((input) => input.addEventListener("input", validateQuantities));
+      // form-handler.js resets the form after a successful send; re-sync once the reset lands.
+      form.addEventListener("reset", () => window.setTimeout(sync, 0));
+      sync();
+    });
+  }
+
+  bindModeForms();
+  document.addEventListener("astro:page-load", bindModeForms);
+</script>
