@@ -7,17 +7,35 @@
     {
       "title": "Mixing and Kneading",
       "description": "Flour, water, yeast and the other ingredients are measured and mixed, then kneaded into a smooth, elastic dough.",
-      "image": { "url": "/assets/images/elite/process/bakery-process-mixing.svg", "width": 640, "height": 720, "alt": "Illustration of dough in a mixing bowl beside a flour sack and wheat stalks" }
+      "image": {
+        "url": "/assets/images/elite/bakery-process-mixing.webp",
+        "width": 800,
+        "height": 1061,
+        "alt": "Spiral dough mixer with a stainless steel bowl in the Royal Retreat Bakery production area",
+        "position": "center 70%"
+      }
     },
     {
       "title": "Proofing and Shaping",
       "description": "The dough rests so the yeast can help it rise. It is then divided, shaped into loaves and left to rise again in their tins.",
-      "image": { "url": "/assets/images/elite/process/bakery-process-proofing.svg", "width": 640, "height": 720, "alt": "Illustration of shaped dough rising in two loaf tins beside a clock" }
+      "image": {
+        "url": "/assets/images/elite/bakery-process-proofing@1280.webp",
+        "width": 1280,
+        "height": 956,
+        "alt": "Royal Retreat Bakery kitchen with a stainless steel work table, rolling pins, proofing baskets and trays of baked goods",
+        "position": "62% center"
+      }
     },
     {
       "title": "Baking and Packaging",
       "description": "The loaves are baked until golden, then cooled and packed so they reach you fresh.",
-      "image": { "url": "/assets/images/elite/process/bakery-process-baking.svg", "width": 640, "height": 720, "alt": "Illustration of a golden baked loaf on a board in front of an oven" }
+      "image": {
+        "url": "/assets/images/elite/bakery-process-baking@1280.webp",
+        "width": 1280,
+        "height": 965,
+        "alt": "Stainless steel deck oven beside cooling racks in the Royal Retreat Bakery",
+        "position": "18% center"
+      }
     }
   ]
 }

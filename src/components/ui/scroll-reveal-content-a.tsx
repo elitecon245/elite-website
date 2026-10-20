@@ -21,6 +21,8 @@ export interface ItemContent {
     width: number
     height: number
     alt: string
+    /** CSS object-position, so differently shaped photos keep their subject in the shared frame. */
+    position?: string
   }
 }
 
@@ -64,6 +66,7 @@ const ScrollRevealContentA = ({
         alt={item.image.alt}
         loading="lazy"
         decoding="async"
+        style={item.image.position ? { objectPosition: item.image.position } : undefined}
         className={cn(imageClass, index === 0 || scrollProgress > index / 3 ? "opacity-100" : "opacity-0")}
       />
     ))
