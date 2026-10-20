@@ -9,11 +9,12 @@ import jsonData from "@data/sections/elite-services.json";
 type Service = { number: string; icon?: string; title: string; description: string };
 interface Props { id?: string; locale?: "en" | "pl"; title?: string; description?: string; linkLabel?: string; linkHref?: string; items?: Service[]; class?: string; }
 const props = Astro.props as Props;
-const title = props.title ?? jsonData.title;
-const description = props.description ?? jsonData.description;
-const linkLabel = props.linkLabel ?? jsonData.linkLabel;
-const linkHref = props.linkHref ?? jsonData.linkHref;
-const items = props.items ?? jsonData.items;
+const data: Props = jsonData;
+const title = props.title ?? data.title;
+const description = props.description ?? data.description;
+const linkLabel = props.linkLabel ?? data.linkLabel;
+const linkHref = props.linkHref ?? data.linkHref;
+const items = props.items ?? data.items ?? [];
 ---
 
 <Section id={props.id ?? (props.locale === "pl" ? "uslugi" : "services")} tone="page" class:list={["services-section", props.class]}>
@@ -25,12 +26,14 @@ const items = props.items ?? jsonData.items;
       <div>
         <Text variant="lead">{description}</Text>
       </div>
+      {linkLabel && (
       <div class="elite-services-link-wrap">
         <a class="group inline-flex items-center gap-2 transition-colors duration-300 hover:!text-brand-accent motion-reduce:transition-none" href={linkHref}>
           <span class="transition-transform duration-300 ease-out group-hover:-translate-x-1 motion-reduce:transition-none">{linkLabel}</span>
           <span class="inline-flex size-5 items-center justify-center leading-none transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transition-none" aria-hidden="true">→</span>
         </a>
       </div>
+      )}
     </div>
     <div class="elite-services-grid">
       {items.map((item) => (

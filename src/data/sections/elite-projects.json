@@ -2,8 +2,6 @@
   "sectionId": "businesses",
   "title": "Our Businesses",
   "description": "",
-  "linkLabel": "Contact Us",
-  "linkHref": "/#contact-form",
   "items": [
     {
       "id": "starling-water",
