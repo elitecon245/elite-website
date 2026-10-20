@@ -1,0 +1,24 @@
+{
+  "sectionId": "about",
+  "eyebrow": "Our Product",
+  "title": "Royal Retreat Bread Loaf",
+  "description": "A soft, freshly baked loaf of bread from Royal Retreat Bakery, made for everyday enjoyment. Enjoy it at breakfast, in sandwiches, toasted, or alongside your favourite meals.",
+  "image": "/assets/images/elite/royal-retreat-bakery-logo.webp",
+  "imageAlt": "Royal Retreat Bakery logo with wheat stalks and a loaf of bread",
+  "ingredientsTitle": "Ingredients",
+  "ingredients": ["Wheat flour", "Water", "Sugar", "Yeast", "Salt", "Vegetable fat"],
+  "allergenNote": "Contains wheat (gluten).",
+  "benefitsTitle": "Why You'll Love It",
+  "benefits": [
+    "Provides carbohydrates for everyday energy",
+    "Soft texture that is easy to slice and enjoy",
+    "Versatile for breakfast, sandwiches and toast",
+    "Made with simple, familiar ingredients"
+  ],
+  "certification": {
+    "label": "NAFDAC Reg. No.",
+    "number": ""
+  },
+  "buttonLabel": "Order Enquiries",
+  "buttonHref": "/#contact-form"
+}

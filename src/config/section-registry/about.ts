@@ -31,6 +31,13 @@ export const aboutSections: Record<string, SectionEntry> = {
       hotel: { label: 'Elite Royal Suite and Hotel', component: 'TeamBlock', dataKey: 'hotel-about' },
     },
   },
+  product: {
+    id: 'product', label: 'Product showcase', groupId: 'about', hint: 'Product image with description, ingredients and benefits', icon,
+    defaultVariant: 'bakery',
+    variants: {
+      bakery: { label: 'Royal Retreat Bakery', component: 'ProductShowcaseBlock', dataKey: 'bakery-product' },
+    },
+  },
   aboutMarquee: {
     id: 'aboutMarquee', label: 'O nas z marquee', groupId: 'about', hint: 'Split tekstu, zdjęcia i przewijanych pasów', icon,
     defaultVariant: 'default',

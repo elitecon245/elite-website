@@ -1,0 +1,102 @@
+---
+import Section from "@components/ui/layout/Section.astro";
+import Container from "@components/ui/layout/Container.astro";
+import Heading from "@components/ui/atoms/Heading.astro";
+import Text from "@components/ui/atoms/Text.astro";
+import SmartImage from "@components/ui/atoms/SmartImage.astro";
+import Button from "@components/ui/atoms/Button.astro";
+import Icon from "@components/ui/atoms/Icon.astro";
+
+// A regulatory badge only renders once a real registration number is supplied,
+// so the page never claims an approval that has not been confirmed.
+interface Certification { label: string; number?: string; }
+interface Props {
+  sectionId?: string;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  image: string;
+  imageAlt: string;
+  ingredientsTitle?: string;
+  ingredients?: string[];
+  allergenNote?: string;
+  benefitsTitle?: string;
+  benefits?: string[];
+  certification?: Certification;
+  buttonLabel?: string;
+  buttonHref?: string;
+  class?: string;
+}
+const props = Astro.props as Props;
+const ingredients = props.ingredients ?? [];
+const benefits = props.benefits ?? [];
+const certificationNumber = props.certification?.number?.trim();
+---
+
+<Section id={props.sectionId ?? "product"} tone="page" class:list={["py-12", props.class]}>
+  <Container class="w-full max-w-none px-[clamp(1.5rem,5vw,5rem)]">
+    <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+      <figure class="product-showcase__media m-0" data-motion="viewport" data-motion-skip>
+        <SmartImage src={props.image} alt={props.imageAlt} width={1080} height={1080} loading="lazy" class="h-full w-full object-contain" />
+      </figure>
+      <div class="flex min-w-0 flex-col gap-5 md:py-4" data-motion-sequence="viewport" data-motion-profile="soft">
+        {props.eyebrow && <p class="m-0 text-xs font-bold uppercase tracking-[0.14em] text-brand-primary">{props.eyebrow}</p>}
+        <Heading tag="h2" variant="section-title">{props.title}</Heading>
+        {props.description?.split(/\n\s*\n/).map((paragraph) => <Text variant="lead">{paragraph}</Text>)}
+
+        {ingredients.length > 0 && (
+          <div class="flex flex-col gap-3">
+            {props.ingredientsTitle && <Heading tag="h3" variant="feature-title">{props.ingredientsTitle}</Heading>}
+            <ul class="m-0 flex list-none flex-wrap gap-2 p-0">
+              {ingredients.map((ingredient) => (
+                <li class="rounded-full border border-outline-variant bg-surface px-3.5 py-1.5 text-sm text-brand-dark">{ingredient}</li>
+              ))}
+            </ul>
+            {props.allergenNote && <Text variant="body" class="text-sm">{props.allergenNote}</Text>}
+          </div>
+        )}
+
+        {benefits.length > 0 && (
+          <div class="flex flex-col gap-3">
+            {props.benefitsTitle && <Heading tag="h3" variant="feature-title">{props.benefitsTitle}</Heading>}
+            <ul class="m-0 grid list-none gap-2.5 p-0">
+              {benefits.map((benefit) => (
+                <li class="flex items-start gap-3">
+                  <Icon name="check-circle" class="mt-0.5 shrink-0 text-xl text-brand-primary" />
+                  <Text tag="span" variant="body">{benefit}</Text>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {certificationNumber && (
+          <p class="m-0 inline-flex w-fit items-center gap-2.5 rounded-[var(--ui-radius-lg)] border border-brand-primary/40 bg-brand-primary/5 px-4 py-2.5 text-sm font-semibold text-brand-dark">
+            <Icon name="shield-check" class="text-2xl text-brand-primary" />
+            <span>{props.certification?.label} {certificationNumber}</span>
+          </p>
+        )}
+
+        {props.buttonLabel && props.buttonHref && <Button href={props.buttonHref} variant="primary" size="md" class="min-h-11 w-full sm:w-fit">{props.buttonLabel}</Button>}
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .product-showcase__media {
+    display: grid;
+    aspect-ratio: 1 / 1;
+    place-items: center;
+    overflow: hidden;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--ui-radius-xl);
+    background: #ffffff;
+  }
+
+  /* Multiply drops the photo's off-white backdrop into the white card. */
+  .product-showcase__media :global(img) {
+    mix-blend-mode: multiply;
+  }
+</style>

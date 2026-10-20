@@ -20,6 +20,7 @@ export const COMPONENT_MANIFEST: Record<string, ComponentManifestEntry> = {
   AboutSplitBlock: { category: 'core', status: 'provisional' },
   AboutSplitLeanBlock: { category: 'core', status: 'provisional' },
   TeamBlock: { category: 'core', status: 'provisional' },
+  ProductShowcaseBlock: { category: 'core', status: 'provisional' },
   AudienceSplitBlock: { category: 'core', status: 'provisional' },
   BlogListBlock: { category: 'core', status: 'provisional' },
   CardsFilterableBlock: { category: 'core', status: 'provisional' },
