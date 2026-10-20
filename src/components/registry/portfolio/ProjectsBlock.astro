@@ -35,7 +35,7 @@ const items = props.items ?? fallback?.items ?? [];
       </div>
     </div>
 
-    <div class="projects-grid">
+    <div class="projects-grid" style={`--projects-cols: ${Math.min(Math.max(items.length, 1), 3)}`}>
       {items.map((item) => (
         <a id={item.id} class="project-card__link group" href={item.href ?? linkHref}>
           <article class="project-card">
@@ -217,19 +217,51 @@ const items = props.items ?? fallback?.items ?? [];
     }
 
     .projects-grid {
-      grid-template-columns: 1.38fr 1fr;
-      gap: 1.5rem;
+      grid-template-columns: repeat(var(--projects-cols, 3), minmax(0, 1fr));
+      gap: 1.25rem;
       align-items: stretch;
     }
 
-    .project-card figure {
-      height: clamp(22rem, 34vw, 32rem);
-      aspect-ratio: auto;
+    .project-card__link,
+    .project-card {
+      height: 100%;
     }
 
-    /* A third item becomes the wide frame below the two main cards. */
-    .project-card__link:nth-child(3):last-child {
-      grid-column: 1 / -1;
+    .project-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card__body {
+      flex: 1;
+    }
+
+    /* Keep the card links on one line across the row. */
+    .project-card__body .projects-link {
+      margin-top: auto;
+    }
+
+    .project-card__title.project-card__title {
+      font-size: clamp(1.05rem, 1.7vw, 1.5rem);
+      line-height: 1.25;
+    }
+
+    .project-card figure {
+      aspect-ratio: 4 / 3;
+    }
+
+    .project-card__overlay {
+      padding: 1rem;
+    }
+
+    .project-card__description.project-card__description {
+      font-size: clamp(0.875rem, 1.1vw, 1rem);
+    }
+
+    .project-card__arrow {
+      width: 2.25rem;
+      height: 2.25rem;
+      font-size: 1rem;
     }
   }
 </style>
