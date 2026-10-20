@@ -23,6 +23,9 @@ const legalLinks = copy.legalLinks.map((link) => ({ ...link, href: getEliteNavig
 const year = new Date().getFullYear();
 // Why: each listed platform shows its icon; it becomes a link once its
 // profile URL is set in company.json (socials), so no dead links are published.
+const socialClass = "group relative grid size-11 place-items-center overflow-hidden rounded-full border border-brand-light/30 text-xl text-brand-light transition-colors duration-300 hover:border-brand-accent hover:bg-brand-accent hover:text-brand-dark focus-visible:border-brand-accent focus-visible:bg-brand-accent focus-visible:text-brand-dark motion-reduce:transition-none";
+const socialIconClass = "absolute inset-0 grid place-items-center leading-none transition-transform duration-300 ease-out group-hover:-translate-y-full group-focus-visible:-translate-y-full motion-reduce:transition-none";
+const socialIconHoverClass = "absolute inset-0 grid place-items-center leading-none translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 group-focus-visible:translate-y-0 motion-reduce:transition-none";
 const companySocials = company.socials as Record<string, string>;
 const socials = (copy.socials ?? []).map((key) => ({
   key,
@@ -68,13 +71,16 @@ const fullAddress = company.address
         <ul aria-label={copy.ariaSocial} class="m-0 flex list-none items-center justify-center gap-3 p-0 sm:-mt-3 sm:self-start">
           {socials.map((social) => (
             <li>
+              {/* Same roll hover as the site's buttons: the icon slides up and a copy rolls in on an accent fill. */}
               {social.href ? (
-                <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} class="grid size-11 place-items-center rounded-full border border-brand-light/30 text-xl text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent">
-                  <i class:list={["ph", social.icon]} aria-hidden="true"></i>
+                <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} class={socialClass}>
+                  <span class={socialIconClass} aria-hidden="true"><i class:list={["ph", social.icon]}></i></span>
+                  <span class={socialIconHoverClass} aria-hidden="true"><i class:list={["ph", social.icon]}></i></span>
                 </a>
               ) : (
-                <span title={social.label} class="grid size-11 place-items-center rounded-full border border-brand-light/30 text-xl text-brand-light/70">
-                  <i class:list={["ph", social.icon]} aria-hidden="true"></i>
+                <span title={social.label} class={socialClass}>
+                  <span class={socialIconClass} aria-hidden="true"><i class:list={["ph", social.icon]}></i></span>
+                  <span class={socialIconHoverClass} aria-hidden="true"><i class:list={["ph", social.icon]}></i></span>
                   <span class="sr-only">{social.label}</span>
                 </span>
               )}
