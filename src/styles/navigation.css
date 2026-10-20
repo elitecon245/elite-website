@@ -512,9 +512,9 @@
 
   @media (hover: hover) {
     .ui-nav-drawer__social-link:hover {
-      color: var(--ui-nav-drawer-link-hover);
-      border-color: color-mix(in oklab, var(--color-brand-accent) 55%, transparent);
-      background-color: color-mix(in oklab, var(--color-brand-accent) 12%, transparent);
+      color: var(--color-surface);
+      border-color: var(--color-brand-primary);
+      background-color: var(--color-brand-primary);
     }
   }
 

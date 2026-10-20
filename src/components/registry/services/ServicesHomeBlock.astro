@@ -34,8 +34,8 @@ const items = props.items ?? jsonData.items;
     </div>
     <div class="elite-services-grid">
       {items.map((item) => (
-        <article class="elite-service-card ui-card-interactive group cursor-pointer transition-[background-color,border-color,box-shadow,transform] duration-300 ease-out hover:border-brand-accent hover:bg-brand-accent/10 motion-reduce:transition-none">
-          <div class="elite-service-icon transition-[background-color,border-color,color] duration-300 group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark motion-reduce:transition-none" aria-hidden="true">
+        <article class="elite-service-card ui-card-interactive group cursor-pointer transition-[background-color,border-color,box-shadow,transform] duration-300 ease-out hover:border-brand-primary hover:bg-brand-primary/5 motion-reduce:transition-none">
+          <div class="elite-service-icon transition-[background-color,border-color,color] duration-300 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:text-white motion-reduce:transition-none" aria-hidden="true">
             <Icon name={item.icon ?? "sparkle"} />
           </div>
           <div class="elite-service-content">
@@ -45,7 +45,7 @@ const items = props.items ?? jsonData.items;
             </div>
             <Text variant="body" class="elite-service-description transition-colors duration-300 group-hover:text-brand-dark/80 motion-reduce:transition-none">{item.description}</Text>
           </div>
-          <span class="elite-service-arrow overflow-hidden transition-[background-color,border-color,color] duration-300 group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-brand-light motion-reduce:transition-none" aria-hidden="true">
+          <span class="elite-service-arrow overflow-hidden transition-[background-color,border-color,color] duration-300 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:text-white motion-reduce:transition-none" aria-hidden="true">
             <span class="relative flex size-4 items-center justify-center">
               <Icon name="arrow-up-right" class="absolute inset-0 size-4 transition-transform duration-300 ease-out group-hover:translate-x-[140%] group-hover:-translate-y-[140%] motion-reduce:transition-none" />
               <Icon name="arrow-up-right" class="absolute inset-0 size-4 -translate-x-[140%] translate-y-[140%] transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0 motion-reduce:transition-none" />
@@ -116,6 +116,19 @@ const items = props.items ?? jsonData.items;
     background: transparent;
     color: var(--color-brand-accent);
     font-size: 1.125rem;
+  }
+
+  /* Hover states live here because the scoped base styles above outrank Tailwind utilities. */
+  .elite-service-card:hover {
+    border-color: var(--color-brand-primary);
+    background: color-mix(in oklab, var(--color-brand-primary) 5%, var(--color-surface));
+  }
+
+  .elite-service-card:hover .elite-service-icon,
+  .elite-service-card:hover .elite-service-arrow {
+    border-color: var(--color-brand-primary);
+    background: var(--color-brand-primary);
+    color: var(--color-surface);
   }
 
   .elite-service-content {

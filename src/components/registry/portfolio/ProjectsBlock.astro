@@ -188,6 +188,13 @@ const items = props.items ?? fallback?.items ?? [];
     text-align: left;
   }
 
+  .project-card__link:hover .project-card__arrow,
+  .project-card__link:focus-visible .project-card__arrow {
+    border-color: var(--color-brand-primary);
+    background: var(--color-brand-primary);
+    color: var(--color-surface);
+  }
+
   .project-card__arrow {
     display: grid;
     flex: 0 0 auto;
@@ -199,8 +206,15 @@ const items = props.items ?? fallback?.items ?? [];
     background: var(--color-brand-accent);
     color: var(--color-brand-dark);
     font-family: var(--font-sans);
+    transition: background-color 300ms ease-out, border-color 300ms ease-out, color 300ms ease-out;
     font-size: 1.1rem;
     line-height: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card__arrow {
+      transition: none;
+    }
   }
 
   @media (min-width: 48rem) {
