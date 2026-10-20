@@ -14,6 +14,8 @@ interface Props {
   sectionId?: string;
   eyebrow?: string;
   title: string;
+  /** Keeps the title for screen readers and the page outline but hides it visually. */
+  hideTitle?: boolean;
   description?: string;
   image: string;
   imageAlt: string;
@@ -41,7 +43,7 @@ const certificationNumber = props.certification?.number?.trim();
       </figure>
       <div class="flex min-w-0 flex-col gap-5 md:py-4" data-motion-sequence="viewport" data-motion-profile="soft">
         {props.eyebrow && <p class="m-0 text-xs font-bold uppercase tracking-[0.14em] text-brand-primary">{props.eyebrow}</p>}
-        <Heading tag="h2" variant="section-title">{props.title}</Heading>
+        <Heading tag="h2" variant="section-title" class:list={[props.hideTitle && "sr-only"]}>{props.title}</Heading>
         {props.description?.split(/\n\s*\n/).map((paragraph) => <Text variant="lead">{paragraph}</Text>)}
 
         {ingredients.length > 0 && (
