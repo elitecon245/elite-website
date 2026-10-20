@@ -37,12 +37,14 @@ const certificationNumber = props.certification?.number?.trim();
 
 <Section id={props.sectionId ?? "product"} tone="page" class:list={["py-12", props.class]}>
   <Container class="w-full max-w-none px-[clamp(1.5rem,5vw,5rem)]">
-    <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+    {/* The eyebrow sits above the image on phones and tablets, and beside it in the text column on desktop. */}
+    {props.eyebrow && <p class="m-0 mb-4 text-xs font-bold uppercase tracking-[0.14em] text-brand-primary lg:hidden">{props.eyebrow}</p>}
+    <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-12 lg:items-center">
       <figure class="product-showcase__media m-0" data-motion="viewport" data-motion-skip>
         <SmartImage src={props.image} alt={props.imageAlt} width={1080} height={1080} loading="lazy" class="h-full w-full object-contain" />
       </figure>
       <div class="flex min-w-0 flex-col gap-5 md:py-4" data-motion-sequence="viewport" data-motion-profile="soft">
-        {props.eyebrow && <p class="m-0 text-xs font-bold uppercase tracking-[0.14em] text-brand-primary">{props.eyebrow}</p>}
+        {props.eyebrow && <p class="m-0 hidden text-xs font-bold uppercase tracking-[0.14em] text-brand-primary lg:block">{props.eyebrow}</p>}
         <Heading tag="h2" variant="section-title" class:list={[props.hideTitle && "sr-only"]}>{props.title}</Heading>
         {props.description?.split(/\n\s*\n/).map((paragraph) => <Text variant="lead">{paragraph}</Text>)}
 
