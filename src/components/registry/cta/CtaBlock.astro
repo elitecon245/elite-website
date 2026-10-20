@@ -40,7 +40,7 @@ const links = props.links ?? [];
         )}
         <div class="elite-cta-actions">
           <Button href={primaryHref} variant="primary" size="lg">{primaryLabel}</Button>
-          <Button href={secondaryHref} variant="outline" size="lg">{secondaryLabel}</Button>
+          {secondaryLabel && secondaryHref && <Button href={secondaryHref} variant="outline" size="lg">{secondaryLabel}</Button>}
         </div>
       </div>
     </div>

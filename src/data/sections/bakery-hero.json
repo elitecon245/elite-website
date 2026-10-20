@@ -7,10 +7,7 @@
     "label": "Contact Us",
     "href": "/#contact-form"
   },
-  "secondaryCTA": {
-    "label": "All Businesses",
-    "href": "/#businesses"
-  },
+  "secondaryCTA": null,
   "trustedBy": "",
   "trustItems": [],
   "image": "/assets/images/elite/royal-retreat-bakery-counter.webp",
