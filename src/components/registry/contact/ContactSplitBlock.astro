@@ -21,6 +21,7 @@ type ContactField = {
   autoComplete?: string;
   options?: { value: string; label: string }[];
   min?: number;
+  half?: boolean;
 };
 
 type DetailItem = { key: string; label: string; icon: string; value: string; href?: string; external?: boolean; srLabel?: string };
@@ -43,6 +44,7 @@ export interface Props {
     legend: string;
     enquiryLabel: string;
     orderLabel: string;
+    orderValue?: string;
     orderHeading?: string;
     orderMessageLabel?: string;
     quantityError?: string;

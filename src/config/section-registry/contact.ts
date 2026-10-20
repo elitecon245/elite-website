@@ -14,6 +14,7 @@ export const contactSections: Record<string, SectionEntry> = {
       elite: { label: 'Elite Consolidated contact form', component: 'ContactSplitBlock', props: { variant: 'split' }, dataKey: 'elite-contact' },
       starling: { label: 'Starling Water enquiry and order form', component: 'ContactSplitBlock', props: { variant: 'split' }, dataKey: 'starling-order-contact' },
       bakery: { label: 'Royal Retreat Bakery enquiry and order form', component: 'ContactSplitBlock', props: { variant: 'split' }, dataKey: 'bakery-order-contact' },
+      hotel: { label: 'Elite Royal Suite and Hotel enquiry and booking form', component: 'ContactSplitBlock', props: { variant: 'split' }, dataKey: 'hotel-booking-contact' },
     },
   },
 };

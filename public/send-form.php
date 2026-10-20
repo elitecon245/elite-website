@@ -49,7 +49,9 @@ $phone = trim((string)($_POST['phone'] ?? ''));
 $message = trim((string)($_POST['message'] ?? ''));
 // Optional fields: which page sent the form, and whether it is an enquiry or an order.
 $source = trim((string)($_POST['source'] ?? ''));
-$isOrder = ($_POST['form_type'] ?? '') === 'order';
+$formType = (string)($_POST['form_type'] ?? 'enquiry');
+$isOrder = $formType === 'order';
+$isBooking = $formType === 'booking';
 // Products that can be ordered, keyed by form field name; only those sent are listed in the email.
 $orderProducts = [
     'qty_bottled_water' => 'Bottled water (packs)',
@@ -65,13 +67,23 @@ foreach ($orderProducts as $field => $product) {
 $deliveryAddress = trim((string)($_POST['delivery_address'] ?? ''));
 $deliveryDate = trim((string)($_POST['delivery_date'] ?? ''));
 
-// An order may leave the message empty; an enquiry may not.
-if ($name === '' || $email === '' || (!$isOrder && $message === '')) {
+// Hotel booking fields.
+$checkIn = trim((string)($_POST['check_in'] ?? ''));
+$checkOut = trim((string)($_POST['check_out'] ?? ''));
+$guests = max(0, (int)($_POST['guests'] ?? 0));
+$rooms = max(0, (int)($_POST['rooms'] ?? 0));
+
+// An order or booking may leave the message empty; an enquiry may not.
+if ($name === '' || $email === '' || (!$isOrder && !$isBooking && $message === '')) {
     respondError('Wypełnij wymagane pola.');
 }
 
 if ($isOrder && (array_sum($order) === 0 || $deliveryAddress === '')) {
     respondError('Add a quantity for at least one product and a delivery address.');
+}
+
+if ($isBooking && ($checkIn === '' || $checkOut === '' || $guests === 0 || $checkOut <= $checkIn)) {
+    respondError('Add your check-in and check-out dates (check-out after check-in) and the number of guests.');
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -83,7 +95,7 @@ if (!checkRateLimit($clientIp, 5, 3600)) {
     respondError('Limit zgłoszeń został wyczerpany. Spróbuj ponownie później.', 429);
 }
 
-$subjectPrefix = ($isOrder ? '[Order] ' : '[Enquiry] ') . ($source !== '' ? sanitizeHeaderValue($source) . ': ' : '');
+$subjectPrefix = ($isOrder ? '[Order] ' : ($isBooking ? '[Booking] ' : '[Enquiry] ')) . ($source !== '' ? sanitizeHeaderValue($source) . ': ' : '');
 $orderLines = [];
 if ($isOrder) {
     $orderLines[] = 'Order details:';
@@ -92,6 +104,14 @@ if ($isOrder) {
     }
     $orderLines[] = 'Delivery address: ' . $deliveryAddress;
     $orderLines[] = 'Preferred delivery date: ' . ($deliveryDate !== '' ? $deliveryDate : 'not specified');
+    $orderLines[] = '';
+}
+if ($isBooking) {
+    $orderLines[] = 'Booking details:';
+    $orderLines[] = 'Check-in: ' . $checkIn;
+    $orderLines[] = 'Check-out: ' . $checkOut;
+    $orderLines[] = 'Guests: ' . $guests;
+    $orderLines[] = 'Rooms: ' . ($rooms > 0 ? $rooms : 'not specified');
     $orderLines[] = '';
 }
 

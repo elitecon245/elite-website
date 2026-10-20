@@ -22,6 +22,8 @@ type ContactField = {
   autoComplete?: string;
   options?: { value: string; label: string }[];
   min?: number;
+  /** Order fields only: sit side by side with the next half-width field on wider screens. */
+  half?: boolean;
 };
 
 // Optional Enquiry / Order switch. Order fields sit in a disabled fieldset until the visitor
@@ -30,6 +32,8 @@ type OrderMode = {
   legend: string;
   enquiryLabel: string;
   orderLabel: string;
+  /** Value sent as form_type for the second option, e.g. "booking" (default "order"). */
+  orderValue?: string;
   orderHeading?: string;
   /** Label for the message field while ordering (it becomes optional then). */
   orderMessageLabel?: string;
@@ -194,7 +198,7 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
             <span>{orderMode?.enquiryLabel}</span>
           </label>
           <label>
-            <input type="radio" name="form_type" value="order" class="sr-only" />
+            <input type="radio" name="form_type" value={orderMode?.orderValue || "order"} class="sr-only" />
             <span>{orderMode?.orderLabel}</span>
           </label>
         </div>
@@ -292,7 +296,7 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
           {orderMode?.orderHeading && <legend class="mb-1 p-0 font-heading text-lg font-semibold text-brand-dark">{orderMode.orderHeading}</legend>}
           <div class="grid gap-5 sm:grid-cols-2">
             {orderFields.map((field) => (
-              <div class:list={[field.type === "number" ? "" : "sm:col-span-2"]}>
+              <div class:list={[field.type === "number" || field.half ? "" : "sm:col-span-2"]}>
                 <Text tag="label" variant="accent-label" class="ui-form-label" for={`${fieldIdPrefix}-${field.name}`}>
                   {field.label}
                 </Text>
@@ -443,7 +447,8 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
       };
 
       const sync = () => {
-        const isOrder = form.querySelector<HTMLInputElement>('input[name="form_type"]:checked')?.value === "order";
+        const mode = form.querySelector<HTMLInputElement>('input[name="form_type"]:checked')?.value;
+        const isOrder = Boolean(mode) && mode !== "enquiry";
         fieldset.disabled = !isOrder;
         fieldset.hidden = !isOrder;
         optionalFields.forEach((field) => {
@@ -454,6 +459,16 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
         });
         validateQuantities();
       };
+
+      // Bookings: check-out cannot be earlier than check-in.
+      const checkIn = fieldset.querySelector<HTMLInputElement>('input[name="check_in"]');
+      const checkOut = fieldset.querySelector<HTMLInputElement>('input[name="check_out"]');
+      if (checkIn && checkOut) {
+        checkIn.addEventListener("change", () => {
+          checkOut.min = checkIn.value;
+          if (checkOut.value && checkOut.value <= checkIn.value) checkOut.value = "";
+        });
+      }
 
       toggle.addEventListener("change", sync);
       quantities.forEach((input) => input.addEventListener("input", validateQuantities));
