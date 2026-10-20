@@ -23,7 +23,7 @@ describe('Semantic design tokens', () => {
   const styles = fs.readFileSync(stylesPath, 'utf8');
   const tailwindTheme = fs.readFileSync(tailwindPath, 'utf8');
 
-  it('defines every semantic color in the Nova profile', () => {
+  it('defines every semantic color in the Elite profile', () => {
     const themeBlocks = styles
       .split(/(?=\[data-theme=|:root\s*\{)/)
       .filter((block) => {

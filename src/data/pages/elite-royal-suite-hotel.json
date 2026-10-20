@@ -14,16 +14,16 @@
       "variant": "hotel"
     },
     {
-      "id": "novaTeam",
+      "id": "eliteTeam",
       "variant": "hotel"
     },
     {
-      "id": "novaCta",
+      "id": "eliteCta",
       "variant": "hotel"
     },
     {
       "id": "footer",
-      "variant": "nova"
+      "variant": "elite"
     }
   ]
 }

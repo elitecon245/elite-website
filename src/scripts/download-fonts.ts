@@ -6,8 +6,8 @@ const CSS_FILE = path.join(process.cwd(), 'src/styles/fonts.css');
 
 // Fonty używane w template, self-hosted.
 // Satoshi i Gambarino: Fontshare, ITF Free Font License, darmowa komercyjnie.
-// Outfit: Google Fonts, OFL, darmowa komercyjnie, domyślny font sans Nova.
-// Playfair Display nie jest częścią profilu Nova, więc nie pobieramy zbędnych
+// Outfit: Google Fonts, OFL, darmowa komercyjnie, domyślny font sans Elite.
+// Playfair Display nie jest częścią profilu Elite, więc nie pobieramy zbędnych
 // plików fontu do template’u.
 const FONT_SOURCES: Record<string, 'fontshare' | 'google'> = {
   Satoshi: 'fontshare',

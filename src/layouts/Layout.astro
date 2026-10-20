@@ -20,8 +20,8 @@ import Navbar from '@components/ui/molecules/Navbar.astro';
 import FooterColumnsBlock from '@components/registry/shell/FooterColumnsBlock.astro';
 import FooterMinimalBlock from '@components/registry/shell/FooterMinimalBlock.astro';
 import FooterPromoBlock from '@components/registry/shell/FooterPromoBlock.astro';
-import NovaFooterBlock from '@components/registry/shell/NovaFooterBlock.astro';
-import type { NovaLocale } from '@utils/nova-i18n';
+import EliteFooterBlock from '@components/registry/shell/EliteFooterBlock.astro';
+import type { EliteLocale } from '@utils/elite-i18n';
 
 
 interface Props {
@@ -31,7 +31,7 @@ interface Props {
 	noIndex?: boolean;
 	/** Page language code used to keep document metadata aligned with the rendered locale. */
 	lang?: string;
-	locale?: NovaLocale;
+	locale?: EliteLocale;
 	theme?: string;
 	/** Optional `.ui-section` background pattern (Developer Studio). */
 	sectionPattern?: 'off' | 'repeat' | 'mesh' | 'noise';
@@ -168,7 +168,7 @@ const footerComponents: Record<string, any> = {
 	FooterColumnsBlock,
 	FooterMinimalBlock,
 	FooterPromoBlock,
-	NovaFooterBlock,
+	EliteFooterBlock,
 };
 const footerComponentName = footerEntry?.variants[footerVariant]?.component;
 const footerResolved = footerComponentName && footerComponents[footerComponentName]
@@ -194,9 +194,9 @@ const mainPaddingStyle = fullBleedTop
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		{theme === 'nova' && (
+		{theme === 'elite' && (
 			<>
-				<!-- Nova uses these local fonts above the fold; preload prevents fallback text from changing the layout. -->
+				<!-- Elite uses these local fonts above the fold; preload prevents fallback text from changing the layout. -->
 				<link rel="preload" as="font" type="font/woff2" href={publicAsset('/fonts/QGYvz_MVcBeNP4NJuktqQ4E.woff2')} crossorigin />
 				<link rel="preload" as="font" type="font/woff2" href={publicAsset('/fonts/QGYvz_MVcBeNP4NJtEtq.woff2')} crossorigin />
 				<link rel="preload" as="font" type="font/woff2" href={publicAsset('/fonts/satoshi-400.woff2')} crossorigin />
@@ -212,7 +212,7 @@ const mainPaddingStyle = fullBleedTop
 					var fontStorageKey = 'fst-active';
 					var allowedFontValues = ['default', 'classic', 'editorial', 'minimal'];
 					var themeStorageKey = 'starter-theme-preview';
-					var allowedThemeValues = ['nova'];
+					var allowedThemeValues = ['elite'];
 
 					try {
 						var savedFontValue = window.localStorage.getItem(fontStorageKey);
@@ -319,7 +319,7 @@ const mainPaddingStyle = fullBleedTop
 	>
 		{clientRuntime && <MobileDrawer locale={locale} />}
 		{showShell && navbarResolved && (
-			<div class:list={theme === 'nova' ? ['relative'] : []}>
+			<div class:list={theme === 'elite' ? ['relative'] : []}>
 				<navbarResolved.component layout={navbarResolved.layout} theme={navbarTheme} locale={locale} />
 			</div>
 		)}

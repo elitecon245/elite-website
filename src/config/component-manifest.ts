@@ -12,7 +12,7 @@ export function getComponentPath(name: string, entry: ComponentManifestEntry): s
   return entry.path ?? `/src/components/registry/${name}.astro`;
 }
 
-/** Public blocks included in the Nova template package. */
+/** Public blocks included in the Elite template package. */
 export const COMPONENT_MANIFEST: Record<string, ComponentManifestEntry> = {
   AboutBlock: { category: 'core', status: 'provisional' },
   AboutExpertBlock: { category: 'core', status: 'provisional' },
@@ -42,13 +42,13 @@ export const COMPONENT_MANIFEST: Record<string, ComponentManifestEntry> = {
   FooterColumnsBlock: { category: 'core', status: 'provisional' },
   FooterMinimalBlock: { category: 'core', status: 'provisional' },
   FooterPromoBlock: { category: 'core', status: 'provisional' },
-  NovaFooterBlock: { category: 'core', status: 'provisional' },
+  EliteFooterBlock: { category: 'core', status: 'provisional' },
   GalleryBlock: { category: 'core', status: 'provisional' },
   GalleryCrossfadeBlock: { category: 'core', status: 'provisional' },
   HeroEditorialBlock: { category: 'core', status: 'provisional' },
   HeroPhotoBlock: { category: 'core', status: 'provisional' },
   HeroBlock: { category: 'core', status: 'provisional' },
-  NovaHeroResponsiveBlock: { category: 'core', status: 'confirmed' },
+  EliteHeroResponsiveBlock: { category: 'core', status: 'confirmed' },
   HeroSplitBlock: { category: 'core', status: 'provisional' },
   HeroStatsBlock: { category: 'core', status: 'provisional' },
   HeroVideoBlock: { category: 'core', status: 'provisional' },

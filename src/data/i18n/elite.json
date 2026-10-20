@@ -26,7 +26,7 @@
       "languageLabel": "Choose language"
     },
     "sections": {
-      "nova-hero-wireframe": {
+      "elite-hero-wireframe": {
         "eyebrow": "",
         "heading": "Building Businesses.",
         "headingAccent": "Creating Lasting Value.",
@@ -39,7 +39,7 @@
         "imageLayout": "background",
         "stats": []
       },
-      "nova-projects": {
+      "elite-projects": {
         "sectionId": "businesses",
         "title": "Our Businesses",
         "description": "",
@@ -78,7 +78,7 @@
           }
         ]
       },
-      "nova-services": {
+      "elite-services": {
         "id": "values",
         "title": "Our Commitment to Quality and Growth",
         "description": "We believe that strong businesses are built through professionalism, customer relationships, and a commitment to continuous improvement. Our portfolio reflects our focus on developing businesses that serve different customer needs.",
@@ -91,7 +91,7 @@
           { "number": "04.", "icon": "trend-up", "title": "Continuous Growth", "description": "We seek to develop our businesses and build lasting value over time." }
         ]
       },
-      "nova-team": {
+      "elite-team": {
         "sectionId": "about",
         "title": "One Company. Three Distinct Businesses.",
         "description": "Elite Consolidated Business Nig Ltd brings together Starling Bottle and Pure Water Factory, Royal Retreat Bakery, and Elite Royal Suite and Hotel under one corporate identity.\n\nEach business has its own focus and customer audience, contributing to the wider portfolio of Elite Consolidated.\n\nOur aim is to build a strong foundation for sustainable business growth while maintaining a professional and customer-focused approach.",

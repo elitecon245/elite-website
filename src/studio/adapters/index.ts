@@ -1,9 +1,9 @@
 import type { StudioTemplateId } from "@/studio/engine/schema";
-import { novaStudioAdapter } from "./nova.adapter";
+import { eliteStudioAdapter } from "./elite.adapter";
 import type { StudioAdapter } from "./types";
 
 const ADAPTERS: Record<StudioTemplateId, StudioAdapter> = {
-  nova: novaStudioAdapter,
+  elite: eliteStudioAdapter,
 };
 
 export function getStudioAdapter(template: StudioTemplateId): StudioAdapter {

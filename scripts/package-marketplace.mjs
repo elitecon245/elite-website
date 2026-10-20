@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const releaseDir = path.join(projectRoot, 'release');
-const archivePath = path.join(releaseDir, 't001-nova.zip');
+const archivePath = path.join(releaseDir, 'elite-website.zip');
 
 mkdirSync(releaseDir, { recursive: true });
 rmSync(archivePath, { force: true });

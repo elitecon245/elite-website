@@ -3,15 +3,15 @@ import Logo from "@components/ui/atoms/Logo.astro";
 import MenuToggle from "@components/ui/molecules/Navbar/shared/MenuToggle.astro";
 import type { NavTheme } from "@components/ui/molecules/Navbar/shared/nav-theme-classes";
 import { formatInternalLink } from "@utils/url";
-import { getNovaCopy, getNovaNavigationPath, type NovaLocale } from "@utils/nova-i18n";
+import { getEliteCopy, getEliteNavigationPath, type EliteLocale } from "@utils/elite-i18n";
 
 export interface Props {
 	theme?: NavTheme;
-	locale?: NovaLocale;
+	locale?: EliteLocale;
 }
 
 const { theme = "light", locale = "pl" } = Astro.props;
-const headerData = getNovaCopy(locale).navigation;
+const headerData = getEliteCopy(locale).navigation;
 
 // Why: floating navbar has two visual states. It's at the top of the page
 // with a transparent overlay embedded in the hero (absolute), and it goes on the scroll
@@ -52,13 +52,13 @@ const fixedShellClass = isDark
 >
 	<div class="ui-container">
 		<div class="flex items-center justify-between gap-2 py-3 sm:gap-4 sm:py-4 lg:gap-6 lg:py-5" data-nav-inner>
-			<a href={getNovaNavigationPath("/", locale)} class="nova-site-logo relative z-[1010] flex min-w-0 shrink-0 items-center">
+			<a href={getEliteNavigationPath("/", locale)} class="elite-site-logo relative z-[1010] flex min-w-0 shrink-0 items-center">
 				<Logo variant={isDark ? "light" : "dark"} density="compact" />
 			</a>
 
 			<nav class="hidden min-w-0 flex-1 items-center justify-center gap-5 lg:flex xl:gap-8">
 				{headerData.menu.map((item) => (
-					<a href={getNovaNavigationPath(item.href, locale)} class="ui-nav-bar-link shrink-0 opacity-75 transition-opacity hover:opacity-100">
+					<a href={getEliteNavigationPath(item.href, locale)} class="ui-nav-bar-link shrink-0 opacity-75 transition-opacity hover:opacity-100">
 						{item.label}
 					</a>
 				))}
@@ -92,13 +92,13 @@ const fixedShellClass = isDark
 >
 	<div class="ui-container">
 		<div class="flex items-center justify-between gap-2 py-2.5 sm:gap-4 sm:py-3 lg:gap-6 lg:py-3.5" data-nav-inner>
-			<a href={getNovaNavigationPath("/", locale)} class="nova-site-logo relative z-[1010] flex min-w-0 shrink-0 items-center">
+			<a href={getEliteNavigationPath("/", locale)} class="elite-site-logo relative z-[1010] flex min-w-0 shrink-0 items-center">
 				<Logo variant={isDark ? "light" : "dark"} density="compact" />
 			</a>
 
 			<nav class="hidden min-w-0 flex-1 items-center justify-center gap-5 lg:flex xl:gap-8">
 				{headerData.menu.map((item) => (
-					<a href={getNovaNavigationPath(item.href, locale)} class="ui-nav-bar-link shrink-0 opacity-75 transition-opacity hover:opacity-100">
+					<a href={getEliteNavigationPath(item.href, locale)} class="ui-nav-bar-link shrink-0 opacity-75 transition-opacity hover:opacity-100">
 						{item.label}
 					</a>
 				))}
@@ -135,8 +135,8 @@ const fixedShellClass = isDark
 		translate: 0 0;
 	}
 
-	:global(html[data-theme="nova"] header[data-site-header-static]),
-	:global(html[data-theme="nova"] header[data-site-header-fixed]) {
+	:global(html[data-theme="elite"] header[data-site-header-static]),
+	:global(html[data-theme="elite"] header[data-site-header-fixed]) {
 		left: 50%;
 		width: min(calc(100% - 2rem), 90rem);
 		transform: translateX(-50%);
@@ -146,36 +146,36 @@ const fixedShellClass = isDark
 		box-shadow: none;
 	}
 
-	:global(html[data-theme="nova"] header[data-site-header-static]) {
+	:global(html[data-theme="elite"] header[data-site-header-static]) {
 		border-radius: var(--ui-radius-xl) var(--ui-radius-xl) 0 0;
 	}
 
-	:global(html[data-theme="nova"] header[data-site-header-static] [data-nav-inner]),
-	:global(html[data-theme="nova"] header[data-site-header-fixed] [data-nav-inner]) {
+	:global(html[data-theme="elite"] header[data-site-header-static] [data-nav-inner]),
+	:global(html[data-theme="elite"] header[data-site-header-fixed] [data-nav-inner]) {
 		padding-top: 0.8rem;
 		padding-bottom: 0.8rem;
 	}
 
-	:global(html[data-theme="nova"] header[data-site-header-static] .ui-container),
-	:global(html[data-theme="nova"] header[data-site-header-fixed] .ui-container) {
+	:global(html[data-theme="elite"] header[data-site-header-static] .ui-container),
+	:global(html[data-theme="elite"] header[data-site-header-fixed] .ui-container) {
 		max-width: none;
 		padding-inline: clamp(1.5rem, 5vw, 5rem);
 	}
 
-	:global(html[data-theme="nova"] header[data-site-header-static]),
-	:global(html[data-theme="nova"] header[data-site-header-fixed]) {
+	:global(html[data-theme="elite"] header[data-site-header-static]),
+	:global(html[data-theme="elite"] header[data-site-header-fixed]) {
 		left: 0;
 		width: 100%;
 		transform: none;
 	}
 
-	:global(html[data-theme="nova"] header[data-site-header-static] nav),
-	:global(html[data-theme="nova"] header[data-site-header-fixed] nav) {
+	:global(html[data-theme="elite"] header[data-site-header-static] nav),
+	:global(html[data-theme="elite"] header[data-site-header-fixed] nav) {
 		gap: clamp(1rem, 2vw, 2.25rem);
 	}
 
-	:global(html[data-theme="nova"] header[data-site-header-static] .ui-nav-bar-link),
-	:global(html[data-theme="nova"] header[data-site-header-fixed] .ui-nav-bar-link) {
+	:global(html[data-theme="elite"] header[data-site-header-static] .ui-nav-bar-link),
+	:global(html[data-theme="elite"] header[data-site-header-fixed] .ui-nav-bar-link) {
 		font-family: var(--font-sans);
 		font-size: 1rem;
 		font-weight: 600;
@@ -184,14 +184,14 @@ const fixedShellClass = isDark
 	}
 
 	@media (min-width: 1280px) {
-		:global(html[data-theme="nova"] header[data-site-header-static] .ui-nav-bar-link),
-		:global(html[data-theme="nova"] header[data-site-header-fixed] .ui-nav-bar-link) {
+		:global(html[data-theme="elite"] header[data-site-header-static] .ui-nav-bar-link),
+		:global(html[data-theme="elite"] header[data-site-header-fixed] .ui-nav-bar-link) {
 			font-size: 1.0625rem;
 		}
 	}
 
-	:global(html[data-theme="nova"] header[data-site-header-static] .ui-nav-cta),
-	:global(html[data-theme="nova"] header[data-site-header-fixed] .ui-nav-cta) {
+	:global(html[data-theme="elite"] header[data-site-header-static] .ui-nav-cta),
+	:global(html[data-theme="elite"] header[data-site-header-fixed] .ui-nav-cta) {
 		border-radius: 9999px;
 		padding: 0.7rem 1.2rem;
 		background: var(--color-brand-dark);

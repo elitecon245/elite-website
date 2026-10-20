@@ -41,14 +41,14 @@
     {
       "title": "Marka premium z nową stroną",
       "category": "Strony internetowe",
-      "img": "/assets/images/t001-nova/t001-nova-project-laptop.webp",
+      "img": "/assets/images/demo/demo-project-laptop.webp",
       "span": "md:col-span-2 md:row-span-1",
       "height": "h-[400px]"
     },
     {
       "title": "Nowy wizerunek dla ambitnej marki",
       "category": "Marki",
-      "img": "/assets/images/t001-nova/t001-nova-project-building.webp",
+      "img": "/assets/images/demo/demo-project-building.webp",
       "span": "md:col-span-1 md:row-span-1",
       "height": "h-[400px]"
     }

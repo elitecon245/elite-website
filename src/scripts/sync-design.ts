@@ -87,11 +87,11 @@ function generateCSS(themes: Record<string, DesignTokens>) {
     return vars;
   };
 
-  const defaultTheme = themes['nova'] || Object.values(themes)[0];
+  const defaultTheme = themes['elite'] || Object.values(themes)[0];
   css += `:root {\n${getVars(defaultTheme)}}\n\n`;
 
   for (const [slug, tokens] of Object.entries(themes)) {
-    if (slug === 'nova') continue;
+    if (slug === 'elite') continue;
     css += `[data-theme="${slug}"] {\n${getVars(tokens)}}\n\n`;
   }
 
@@ -192,7 +192,7 @@ async function sync() {
     throw new Error('No design profile found in design/.');
   }
 
-  const defaultTheme = themes['nova'] || Object.values(themes)[0];
+  const defaultTheme = themes['elite'] || Object.values(themes)[0];
 
   validateSemanticColors(themes);
 

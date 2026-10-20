@@ -7,27 +7,27 @@ import {
 } from "./state-resolver";
 
 describe("resolveTemplateFromUrl", () => {
-  it("uses Nova as fallback template", () => {
+  it("uses Elite as fallback template", () => {
     const url = new URL("https://example.com/dev/components/");
-    expect(resolveTemplateFromUrl(url)).toBe("nova");
+    expect(resolveTemplateFromUrl(url)).toBe("elite");
   });
 
   it("accepts known template id", () => {
-    const url = new URL("https://example.com/dev/components/?template=nova");
-    expect(resolveTemplateFromUrl(url)).toBe("nova");
+    const url = new URL("https://example.com/dev/components/?template=elite");
+    expect(resolveTemplateFromUrl(url)).toBe("elite");
   });
 });
 
 describe("resolveStudioState", () => {
   it("merges profile defaults with valid URL overrides", () => {
-    const adapter = getStudioAdapter("nova");
+    const adapter = getStudioAdapter("elite");
     const url = new URL(
-      "https://example.com/dev/components/?template=nova&hero=registry-centered&pricing=minimal&studio=pricing",
+      "https://example.com/dev/components/?template=elite&hero=registry-centered&pricing=minimal&studio=pricing",
     );
 
     const resolved = resolveStudioState(url, adapter);
 
-    expect(resolved.template).toBe("nova");
+    expect(resolved.template).toBe("elite");
     expect(resolved.state.hero).toBe("registry-centered");
     expect(resolved.state.pricing).toBe("minimal");
     expect(resolved.state.features).toBe("grid");
@@ -35,9 +35,9 @@ describe("resolveStudioState", () => {
   });
 
   it("ignores invalid section variants", () => {
-    const adapter = getStudioAdapter("nova");
+    const adapter = getStudioAdapter("elite");
     const url = new URL(
-      "https://example.com/dev/components/?template=nova&features=unknown-layout",
+      "https://example.com/dev/components/?template=elite&features=unknown-layout",
     );
 
     const resolved = resolveStudioState(url, adapter);
@@ -56,12 +56,12 @@ describe("serializeStudioStateToSearchParams", () => {
       cta: "centered",
       "section-pattern": "off",
       footer: "columns",
-      theme: "nova",
+      theme: "elite",
     } as const;
 
-    const params = serializeStudioStateToSearchParams("nova", state, "hero");
+    const params = serializeStudioStateToSearchParams("elite", state, "hero");
 
-    expect(params.get("template")).toBe("nova");
+    expect(params.get("template")).toBe("elite");
     expect(params.get("hero")).toBe("service");
     expect(params.get("studio")).toBe("hero");
   });

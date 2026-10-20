@@ -4,15 +4,15 @@ const icon = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 
 
 export const heroSections: Record<string, SectionEntry> = {
   hero: {
-    id: 'hero', label: 'Hero', groupId: 'hero', hint: 'Warianty hero dla stron Nova', icon,
-    defaultVariant: 'nova',
+    id: 'hero', label: 'Hero', groupId: 'hero', hint: 'Warianty hero dla stron Elite', icon,
+    defaultVariant: 'elite',
     variants: {
       default: { component: 'HeroSplitBlock', dataKey: 'hero-split' },
-      nova: { label: 'Hero fotograficzny', component: 'NovaHeroResponsiveBlock', dataKey: 'nova-hero-wireframe' },
-      legacyNova: { label: 'Hero Nova legacy', component: 'HeroBlock', dataKey: 'nova-hero-wireframe' },
-      starling: { label: 'Hero Starling Water', component: 'NovaHeroResponsiveBlock', dataKey: 'starling-hero' },
-      bakery: { label: 'Hero Royal Retreat Bakery', component: 'NovaHeroResponsiveBlock', dataKey: 'bakery-hero' },
-      hotel: { label: 'Hero Elite Royal Suite and Hotel', component: 'NovaHeroResponsiveBlock', dataKey: 'hotel-hero' },
+      elite: { label: 'Hero fotograficzny', component: 'EliteHeroResponsiveBlock', dataKey: 'elite-hero-wireframe' },
+      legacyElite: { label: 'Hero Elite legacy', component: 'HeroBlock', dataKey: 'elite-hero-wireframe' },
+      starling: { label: 'Hero Starling Water', component: 'EliteHeroResponsiveBlock', dataKey: 'starling-hero' },
+      bakery: { label: 'Hero Royal Retreat Bakery', component: 'EliteHeroResponsiveBlock', dataKey: 'bakery-hero' },
+      hotel: { label: 'Hero Elite Royal Suite and Hotel', component: 'EliteHeroResponsiveBlock', dataKey: 'hotel-hero' },
     },
   },
   heroVideo: {

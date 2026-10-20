@@ -18,12 +18,12 @@
       "variant": "starlingProducts"
     },
     {
-      "id": "novaCta",
+      "id": "eliteCta",
       "variant": "starling"
     },
     {
       "id": "footer",
-      "variant": "nova"
+      "variant": "elite"
     }
   ]
 }

@@ -6,12 +6,12 @@
   "heading": "Building Businesses. Creating Lasting Value.",
   "sections": [
     { "id": "navbar", "variant": "floating" },
-    { "id": "hero", "variant": "nova" },
-    { "id": "novaTeam", "variant": "default" },
-    { "id": "portfolio", "variant": "nova" },
-    { "id": "novaServices", "variant": "default" },
+    { "id": "hero", "variant": "elite" },
+    { "id": "eliteTeam", "variant": "default" },
+    { "id": "portfolio", "variant": "elite" },
+    { "id": "eliteServices", "variant": "default" },
     { "id": "faq3", "variant": "default" },
     { "id": "contact", "variant": "elite" },
-    { "id": "footer", "variant": "nova" }
+    { "id": "footer", "variant": "elite" }
   ]
 }

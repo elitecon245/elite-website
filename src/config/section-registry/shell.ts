@@ -20,12 +20,12 @@ export const shellSections: Record<string, SectionEntry> = {
   },
   footer: {
     id: 'footer', label: 'Footer', groupId: 'footer', hint: 'Wariant stopki', icon,
-    defaultVariant: 'nova',
+    defaultVariant: 'elite',
     variants: {
       columns: { component: 'FooterColumnsBlock' },
       minimal: { component: 'FooterMinimalBlock' },
       promo: { component: 'FooterPromoBlock' },
-      nova: { component: 'NovaFooterBlock' },
+      elite: { component: 'EliteFooterBlock' },
     },
   },
 };

@@ -33,7 +33,7 @@ for (const filePath of walk(distRoot)) {
   updated = updated.replaceAll('src="/logo.svg"', `src="${prefix}/logo.svg"`);
   if (process.env.PUBLIC_SITE_URL) {
     const socialImage = `${process.env.PUBLIC_SITE_URL.replace(/\/$/, '')}/og-image.png`;
-    updated = updated.replaceAll('https://t001-nova.netlify.app/og-image.png', socialImage);
+    updated = updated.replaceAll('https://www.example.com/og-image.png', socialImage);
   }
 
   if (updated !== original) fs.writeFileSync(filePath, updated, 'utf8');

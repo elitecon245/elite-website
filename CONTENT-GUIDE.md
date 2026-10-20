@@ -1,6 +1,6 @@
 # Elite Consolidated, content guide
 
-This site is the one-page Nova template rebranded for Elite Consolidated Business Nig Ltd and its three businesses: Starling Bottle and Pure Water Factory (Abijo and Bogije), Royal Retreat Bakery, and Elite Royal Suite and Hotel.
+This is the website for Elite Consolidated Business Nig Ltd and its three businesses: Starling Bottle and Pure Water Factory (Abijo and Bogije), Royal Retreat Bakery, and Elite Royal Suite and Hotel.
 
 ## Content rules
 
@@ -12,12 +12,12 @@ This site is the one-page Nova template rebranded for Elite Consolidated Busines
 
 ## Where content lives
 
-- Homepage copy: the `en` object in `src/data/i18n/nova.json` (navigation, sections and footer).
-- Section defaults: `src/data/sections/nova-*.json` and `faq3.json` mirror the English copy.
+- Homepage copy: the `en` object in `src/data/i18n/elite.json` (navigation, sections and footer).
+- Section defaults: `src/data/sections/elite-*.json` and `faq3.json` mirror the English copy.
 - Company details, logo and subsidiaries: `src/data/global/company.json`. Empty contact fields are hidden on the site and in the structured data.
 - SEO defaults and indexing: `src/data/global/seo.json`. Indexing is disabled (`"index": false`) until launch.
 - Domain and build scope: `site.config.mjs`.
-- Colours: `design/nova.md`, then run `npm run design:sync`.
+- Colours: `design/elite.md`, then run `npm run design:sync`.
 - Images: put source files in `src/assets/raw/elite/` and run `npm run assets:img`.
 
 ## Business pages

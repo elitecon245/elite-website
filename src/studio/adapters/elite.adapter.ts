@@ -3,9 +3,9 @@ import type { StudioAdapter } from "./types";
 const DEFAULT_ICON =
   '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round"/></svg>';
 
-export const novaStudioAdapter: StudioAdapter = {
-  id: "nova",
-  label: "Nova",
+export const eliteStudioAdapter: StudioAdapter = {
+  id: "elite",
+  label: "Elite",
   groups: [
     { id: "theme", label: "Motyw" },
     { id: "navbar", label: "Menu" },
@@ -37,8 +37,8 @@ export const novaStudioAdapter: StudioAdapter = {
       label: "Theme",
       groupId: "theme",
       icon: DEFAULT_ICON,
-      options: ["nova"],
-      defaultVariant: "nova",
+      options: ["elite"],
+      defaultVariant: "elite",
       hint: "Globalny motyw kolorystyczny",
     },
     {

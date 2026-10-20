@@ -8,7 +8,7 @@ interface Item { quote: string; author: string; initials: string; role: string; 
 export interface Props { sectionId?: string; title?: string; description?: string; tagline?: string; avatarAltPrefix?: string; items?: Item[]; class?: string }
 
 const { sectionId = "testimonial-v2", title, description, tagline, avatarAltPrefix, items, class: className = "" } = Astro.props as Props;
-const fallback = ACTIVE_TEMPLATE === "nova" ? undefined : data;
+const fallback = ACTIVE_TEMPLATE === "elite" ? undefined : data;
 const list = items && items.length > 0 ? items : fallback?.items ?? [];
 const resolvedAvatarAltPrefix = avatarAltPrefix ?? fallback?.avatarAltPrefix ?? "";
 const resolvedTitle = title || fallback?.title || "";

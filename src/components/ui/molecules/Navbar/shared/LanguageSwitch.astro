@@ -1,30 +1,30 @@
 ---
-import { getNovaCopy, getNovaLocalePath, type NovaLocale } from '@utils/nova-i18n';
+import { getEliteCopy, getEliteLocalePath, type EliteLocale } from '@utils/elite-i18n';
 
 interface Props {
-  locale?: NovaLocale;
+  locale?: EliteLocale;
 }
 
 const { locale = 'pl' } = Astro.props as Props;
-const copy = getNovaCopy(locale).navigation;
+const copy = getEliteCopy(locale).navigation;
 ---
 
-<div class="nova-language-switch" aria-label={copy.languageLabel}>
+<div class="elite-language-switch" aria-label={copy.languageLabel}>
   <a
-    href={getNovaLocalePath('pl')}
-    class:list={['nova-language-switch__link', locale === 'pl' && 'is-active']}
+    href={getEliteLocalePath('pl')}
+    class:list={['elite-language-switch__link', locale === 'pl' && 'is-active']}
     aria-current={locale === 'pl' ? 'page' : undefined}
   >PL</a>
-  <span class="nova-language-switch__separator" aria-hidden="true">/</span>
+  <span class="elite-language-switch__separator" aria-hidden="true">/</span>
   <a
-    href={getNovaLocalePath('en')}
-    class:list={['nova-language-switch__link', locale === 'en' && 'is-active']}
+    href={getEliteLocalePath('en')}
+    class:list={['elite-language-switch__link', locale === 'en' && 'is-active']}
     aria-current={locale === 'en' ? 'page' : undefined}
   >EN</a>
 </div>
 
 <style>
-  .nova-language-switch {
+  .elite-language-switch {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
@@ -36,7 +36,7 @@ const copy = getNovaCopy(locale).navigation;
     line-height: 1;
   }
 
-  .nova-language-switch__link {
+  .elite-language-switch__link {
     border-radius: 0.25rem;
     padding: 0.35rem 0.2rem;
     color: inherit;
@@ -45,24 +45,24 @@ const copy = getNovaCopy(locale).navigation;
     transition: opacity 180ms ease, color 180ms ease;
   }
 
-  .nova-language-switch__link:hover,
-  .nova-language-switch__link:focus-visible,
-  .nova-language-switch__link.is-active {
+  .elite-language-switch__link:hover,
+  .elite-language-switch__link:focus-visible,
+  .elite-language-switch__link.is-active {
     color: var(--color-brand-accent);
     opacity: 1;
   }
 
-  .nova-language-switch__link:focus-visible {
+  .elite-language-switch__link:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 3px;
   }
 
-  .nova-language-switch__separator {
+  .elite-language-switch__separator {
     opacity: 0.28;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .nova-language-switch__link {
+    .elite-language-switch__link {
       transition: none;
     }
   }

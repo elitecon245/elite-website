@@ -3,19 +3,19 @@ import Layout from "./Layout.astro";
 import Heading from "@/components/ui/atoms/Heading.astro";
 import Text from "@/components/ui/atoms/Text.astro";
 import legalData from "@data/global/legal.json";
-import { getNovaNavigationPath, type NovaLocale } from "@utils/nova-i18n";
+import { getEliteNavigationPath, type EliteLocale } from "@utils/elite-i18n";
 
 interface Props {
   title: string;
   description?: string;
   lastUpdated: string;
-  locale?: NovaLocale;
+  locale?: EliteLocale;
 }
 
 const { title, description, lastUpdated, locale = "en" } = Astro.props;
 const legalCopy = legalData[locale] ?? legalData.en;
-const homeHref = getNovaNavigationPath("/", locale);
-const contactHref = getNovaNavigationPath(legalCopy.legalContactHref, locale);
+const homeHref = getEliteNavigationPath("/", locale);
+const contactHref = getEliteNavigationPath(legalCopy.legalContactHref, locale);
 ---
 
 <!-- Why: legal pages reuse the homepage shell; main content still receives
@@ -24,7 +24,7 @@ const contactHref = getNovaNavigationPath(legalCopy.legalContactHref, locale);
   title={title}
   description={description}
   navbarVariant="floating"
-  footerVariant="nova"
+  footerVariant="elite"
   locale={locale}
   lang={locale}
 >

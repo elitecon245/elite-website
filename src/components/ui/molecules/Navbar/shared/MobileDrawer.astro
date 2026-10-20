@@ -1,14 +1,14 @@
 ---
 import { getNavDrawerSocialLinks } from "./nav-drawer-social";
-import { getNovaCopy, getNovaNavigationPath, type NovaLocale } from "@utils/nova-i18n";
+import { getEliteCopy, getEliteNavigationPath, type EliteLocale } from "@utils/elite-i18n";
 
 interface Props {
 	drawerMode?: "mobile" | "all";
-	locale?: NovaLocale;
+	locale?: EliteLocale;
 }
 
 const { drawerMode = "mobile", locale = "pl" } = Astro.props;
-const headerData = getNovaCopy(locale).navigation;
+const headerData = getEliteCopy(locale).navigation;
 const rootVisibility = drawerMode === "mobile" ? "lg:hidden" : "";
 const socialLinks = getNavDrawerSocialLinks();
 
@@ -84,7 +84,7 @@ function subId(index: number): string {
 							<div class="ui-nav-drawer__item" style={`--stagger: ${i}`}>
 								<div class="ui-nav-drawer__link-row">
 									<a
-										href={getNovaNavigationPath(item.href, locale)}
+										href={getEliteNavigationPath(item.href, locale)}
 										class="ui-nav-drawer__link"
 										data-navbar-close
 									>
@@ -125,7 +125,7 @@ function subId(index: number): string {
 										>
 											{item.children!.map((child) => (
 												<a
-													href={getNovaNavigationPath(child.href, locale)}
+													href={getEliteNavigationPath(child.href, locale)}
 													class="ui-nav-drawer__sub-link"
 													data-navbar-close
 												>
@@ -139,7 +139,7 @@ function subId(index: number): string {
 						) : (
 							<div class="ui-nav-drawer__item" style={`--stagger: ${i}`}>
 								<a
-									href={getNovaNavigationPath(item.href, locale)}
+									href={getEliteNavigationPath(item.href, locale)}
 									class="ui-nav-drawer__link"
 									data-navbar-close
 								>
@@ -153,7 +153,7 @@ function subId(index: number): string {
           and appearance, no separate block at the bottom-->
 					<div class="ui-nav-drawer__item" style={`--stagger: ${menu.length}`}>
 						<a
-							href={getNovaNavigationPath(headerData.cta.href, locale)}
+							href={getEliteNavigationPath(headerData.cta.href, locale)}
 							class="ui-nav-drawer__cta"
 							data-navbar-close
 						>

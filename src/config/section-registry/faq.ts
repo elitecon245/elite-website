@@ -34,7 +34,7 @@ export const faqSections: Record<string, SectionEntry> = {
     variants: { default: { component: 'FaqUpBlock', dataKey: 'faq-up' } },
   },
   faq3: {
-    id: 'faq3', label: 'FAQ Nova', groupId: 'faq', hint: 'Nowoczesny accordion dla templateu Nova', icon,
+    id: 'faq3', label: 'FAQ Elite', groupId: 'faq', hint: 'Nowoczesny accordion dla templateu Elite', icon,
     defaultVariant: 'default',
     variants: { default: { component: 'Faq3Block', dataKey: 'faq3' } },
   },

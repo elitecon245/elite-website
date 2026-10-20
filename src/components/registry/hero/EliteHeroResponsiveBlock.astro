@@ -5,7 +5,7 @@ import Heading from "@components/ui/atoms/Heading.astro";
 import Text from "@components/ui/atoms/Text.astro";
 import Button from "@components/ui/atoms/Button.astro";
 import SmartImage from "@components/ui/atoms/SmartImage.astro";
-import jsonData from "@data/sections/nova-hero-wireframe.json";
+import jsonData from "@data/sections/elite-hero-wireframe.json";
 import { ACTIVE_TEMPLATE } from "@config/template";
 
 type Stat = { value: string; label: string };
@@ -29,7 +29,7 @@ interface Props {
 }
 
 const props = Astro.props as Props;
-const fallback = ACTIVE_TEMPLATE === "nova" ? undefined : jsonData;
+const fallback = ACTIVE_TEMPLATE === "elite" ? undefined : jsonData;
 const eyebrow = props.eyebrow ?? fallback?.eyebrow;
 const heading = props.heading ?? fallback?.heading;
 const headingAccent = props.headingAccent ?? fallback?.headingAccent;
@@ -48,16 +48,16 @@ const isBackground = props.imageLayout === "background";
   id={props.sectionId ?? "hero"}
   tone="page"
   class:list={[
-    "hero-section nova-responsive-hero overflow-hidden pt-[calc(var(--site-header-height,5.75rem)+var(--hero-below-header-gap,0.75rem))] pb-0",
+    "hero-section elite-responsive-hero overflow-hidden pt-[calc(var(--site-header-height,5.75rem)+var(--hero-below-header-gap,0.75rem))] pb-0",
     props.class,
   ]}
 >
   <Container class="w-full max-w-none px-0">
-    <div class:list={["relative overflow-hidden rounded-t-xl bg-surface", isBackground && "nova-hero--background isolate"]}>
+    <div class:list={["relative overflow-hidden rounded-t-xl bg-surface", isBackground && "elite-hero--background isolate"]}>
       {isBackground && (
-        <div class="nova-hero-bg absolute inset-0 -z-10" data-motion="fade" style="--motion-delay: 120ms">
+        <div class="elite-hero-bg absolute inset-0 -z-10" data-motion="fade" style="--motion-delay: 120ms">
           <SmartImage src={image} alt={imageAlt} width={1080} height={1350} loading="eager" fetchpriority="high" sizes="100vw" class="block h-full w-full object-cover object-[70%_30%] md:object-[center_30%]" />
-          <div class="nova-hero-overlay absolute inset-0" aria-hidden="true"></div>
+          <div class="elite-hero-overlay absolute inset-0" aria-hidden="true"></div>
         </div>
       )}
       <div class="grid min-w-0 grid-cols-1 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:grid-cols-2">
@@ -67,7 +67,7 @@ const isBackground = props.imageLayout === "background";
             <Heading tag="h1" variant="hero" class="max-w-[42rem] font-bold leading-[0.96] tracking-[-0.065em] text-[clamp(2.5rem,10vw,3.75rem)] md:max-w-[42rem] md:text-[clamp(3rem,4.4vw,4.75rem)] lg:text-[clamp(3rem,4.4vw,4.75rem)]">
               {heading}{' '}<span class="text-brand-primary">{headingAccent}</span>
             </Heading>
-            <Text variant="lead" class="nova-hero-lead max-w-[38rem] md:max-w-[25rem] md:text-[clamp(1rem,1.45vw,1.2rem)] lg:max-w-[38rem] lg:text-[clamp(1.1rem,1.45vw,1.4rem)]">{description}</Text>
+            <Text variant="lead" class="elite-hero-lead max-w-[38rem] md:max-w-[25rem] md:text-[clamp(1rem,1.45vw,1.2rem)] lg:max-w-[38rem] lg:text-[clamp(1.1rem,1.45vw,1.4rem)]">{description}</Text>
             <div class="flex flex-wrap items-center gap-3">
               {primaryCTA && <Button href={primaryCTA.href} variant="primary" size="lg" class="min-h-11 w-full font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]">{primaryCTA.label}</Button>}
               {secondaryCTA && <Button href={secondaryCTA.href} variant="outline" size="lg" class:list={["min-h-11 w-full  font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]"]}>{secondaryCTA.label}</Button>}
@@ -97,12 +97,12 @@ const isBackground = props.imageLayout === "background";
         <div class="relative min-w-0 mb-4 h-[clamp(22rem,92vw,31rem)] md:mb-0 md:h-[clamp(30rem,62vw,38rem)] md:pb-6 md:pr-6 lg:mb-[clamp(0.75rem,1vw,1rem)] lg:h-[clamp(36rem,45vw,48rem)] lg:pb-[clamp(1rem,2vw,2rem)] lg:pr-[clamp(1.25rem,3vw,3rem)]" data-motion="fade" style="--motion-delay: 120ms">
           <svg class="pointer-events-none absolute inset-0 z-0 size-full overflow-hidden opacity-0 md:opacity-100" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
             <defs>
-              <clipPath id="nova-responsive-photo-blob" clipPathUnits="objectBoundingBox">
+              <clipPath id="elite-responsive-photo-blob" clipPathUnits="objectBoundingBox">
                 <path d="M .22 .08 C .38 .02 .64 0 .84 .05 C .98 .09 1.02 .2 .98 .38 C .96 .52 .86 .58 .74 .66 C .62 .74 .57 .9 .43 .97 C .29 1.04 .15 .93 .1 .78 C .05 .62 .02 .48 .1 .34 C .14 .26 .16 .16 .22 .08 Z" />
               </clipPath>
             </defs>
           </svg>
-          <figure class="relative z-10 grid h-full min-w-0 place-items-center overflow-hidden [clip-path:url(#nova-responsive-photo-blob)] md:grid-rows-[minmax(0,1fr)] md:[&_picture]:block md:[&_picture]:h-full md:[&_picture]:min-h-0 md:[&_picture]:w-full md:[&_img]:w-full">
+          <figure class="relative z-10 grid h-full min-w-0 place-items-center overflow-hidden [clip-path:url(#elite-responsive-photo-blob)] md:grid-rows-[minmax(0,1fr)] md:[&_picture]:block md:[&_picture]:h-full md:[&_picture]:min-h-0 md:[&_picture]:w-full md:[&_img]:w-full">
             <SmartImage src={image} alt={imageAlt} width={900} height={1125} loading="eager" class="block h-full min-h-0 w-full object-cover object-center md:object-[center_35%] lg:object-cover" />
           </figure>
         </div>
@@ -112,7 +112,7 @@ const isBackground = props.imageLayout === "background";
       {stats.length > 0 && (
       <div class="hero-stats grid grid-cols-2 rounded-t-[var(--rounded-lg)] bg-brand-dark px-[clamp(1rem,3vw,2.5rem)] py-[clamp(2rem,3vw,2.5rem)] text-brand-light md:grid-cols-4" data-motion-sequence="viewport" data-motion-profile="soft">
         {stats.map((stat) => (
-          <div class="nova-stat relative flex flex-col items-center gap-[0.35rem] px-[clamp(0.75rem,2.5vw,2rem)] py-2 text-center md:py-0">
+          <div class="elite-stat relative flex flex-col items-center gap-[0.35rem] px-[clamp(0.75rem,2.5vw,2rem)] py-2 text-center md:py-0">
             <Heading tag="strong" variant="section-heading-lg" class="text-brand-accent">{stat.value}</Heading>
             <Text tag="span" variant="feature-body-sm" class="text-inherit">{stat.label}</Text>
           </div>
@@ -127,12 +127,12 @@ const isBackground = props.imageLayout === "background";
   /* Background layout: the photo fills the hero and a light overlay keeps the
      text in its usual brand colours readable. Phones get an even overlay because
      the text spans the full width; wider screens fade it out towards the right. */
-  :global(.nova-hero--background) .nova-hero-overlay {
+  :global(.elite-hero--background) .elite-hero-overlay {
     background: color-mix(in oklab, var(--color-surface) 84%, transparent);
   }
 
   @media (min-width: 768px) {
-    :global(.nova-hero--background) .nova-hero-overlay {
+    :global(.elite-hero--background) .elite-hero-overlay {
       background: linear-gradient(
         90deg,
         color-mix(in oklab, var(--color-surface) 96%, transparent) 0%,
@@ -143,12 +143,12 @@ const isBackground = props.imageLayout === "background";
     }
   }
 
-  :global(.nova-responsive-hero) .nova-stat {
+  :global(.elite-responsive-hero) .elite-stat {
     position: relative;
   }
 
   @media (max-width: 767px) {
-    :global(.nova-responsive-hero) .nova-stat:nth-child(even)::before {
+    :global(.elite-responsive-hero) .elite-stat:nth-child(even)::before {
       position: absolute;
       inset-block: 0.75rem;
       left: 0;
@@ -158,7 +158,7 @@ const isBackground = props.imageLayout === "background";
       opacity: 0.35;
     }
 
-    :global(.nova-responsive-hero) .nova-stat:nth-child(-n + 2)::after {
+    :global(.elite-responsive-hero) .elite-stat:nth-child(-n + 2)::after {
       position: absolute;
       right: 0.75rem;
       bottom: 0;
@@ -171,7 +171,7 @@ const isBackground = props.imageLayout === "background";
   }
 
   @media (min-width: 768px) {
-    :global(.nova-responsive-hero) .nova-stat + .nova-stat::before {
+    :global(.elite-responsive-hero) .elite-stat + .elite-stat::before {
       position: absolute;
       inset-block: 25%;
       left: 0;

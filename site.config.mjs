@@ -5,7 +5,7 @@
 // (and update company.json siteUrl) before launch. Indexing stays disabled in
 // src/data/global/seo.json until then.
 export const SITE_URL = 'https://www.example.com/';
-export const ACTIVE_TEMPLATE = 'nova';
+export const ACTIVE_TEMPLATE = 'elite';
 
 // The site is published in English only. The Polish demo route and the
 // language switcher were removed during the Elite Consolidated rebrand.

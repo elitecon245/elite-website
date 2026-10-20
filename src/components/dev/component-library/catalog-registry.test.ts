@@ -50,7 +50,7 @@ describe('developer catalog metadata', () => {
       'trustBar',
       'logoGrid',
     ]);
-    expect(catalog.find((item) => item.sectionId === 'hero' && item.variantId === 'nova')?.variantLabel).toBe('Hero fotograficzny');
-    expect(catalog.find((item) => item.sectionId === 'portfolio' && item.variantId === 'nova')?.variantLabel).toBe('Realizacje z kartami projektów');
+    expect(catalog.find((item) => item.sectionId === 'hero' && item.variantId === 'elite')?.variantLabel).toBe('Hero fotograficzny');
+    expect(catalog.find((item) => item.sectionId === 'portfolio' && item.variantId === 'elite')?.variantLabel).toBe('Realizacje z kartami projektów');
   });
 });

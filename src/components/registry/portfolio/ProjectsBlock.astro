@@ -4,13 +4,13 @@ import Container from "@components/ui/layout/Container.astro";
 import Heading from "@components/ui/atoms/Heading.astro";
 import Text from "@components/ui/atoms/Text.astro";
 import SmartImage from "@components/ui/atoms/SmartImage.astro";
-import jsonData from "@data/sections/nova-projects.json";
+import jsonData from "@data/sections/elite-projects.json";
 import { ACTIVE_TEMPLATE } from "@config/template";
 
 type Project = { id?: string; category: string; title: string; description?: string; buttonLabel?: string; href?: string; image: string; alt: string };
 interface Props { sectionId?: string; title?: string; description?: string; linkLabel?: string; linkHref?: string; items?: Project[]; class?: string; }
 const props = Astro.props as Props;
-const fallback = ACTIVE_TEMPLATE === "nova" ? undefined : jsonData;
+const fallback = ACTIVE_TEMPLATE === "elite" ? undefined : jsonData;
 const title = props.title ?? fallback?.title;
 const description = props.description ?? fallback?.description;
 const linkLabel = props.linkLabel ?? fallback?.linkLabel;

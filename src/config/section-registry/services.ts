@@ -8,10 +8,10 @@ export const servicesSections: Record<string, SectionEntry> = {
     defaultVariant: 'default',
     variants: { default: { component: 'FeaturesBlock', dataKey: 'features' } },
   },
-  novaServices: {
-    id: 'novaServices', label: 'Oferta usług', groupId: 'services', hint: 'Autorska sekcja usług dla templateu Nova', icon,
+  eliteServices: {
+    id: 'eliteServices', label: 'Oferta usług', groupId: 'services', hint: 'Autorska sekcja usług dla templateu Elite', icon,
     defaultVariant: 'default',
-    variants: { default: { component: 'ServicesHomeBlock', dataKey: 'nova-services' } },
+    variants: { default: { component: 'ServicesHomeBlock', dataKey: 'elite-services' } },
   },
   featuresOffer: {
     id: 'featuresOffer', label: 'Karty ofert', groupId: 'services', hint: 'Karty ofert z numeracją i wyróżnieniem', icon,

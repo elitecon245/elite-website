@@ -21,11 +21,11 @@ export const aboutSections: Record<string, SectionEntry> = {
     defaultVariant: 'default',
     variants: { default: { component: 'TrustBarBlock', dataKey: 'trust-bar' } },
   },
-  novaTeam: {
-    id: 'novaTeam', label: 'Zespół i wartości', groupId: 'about', hint: 'Sekcja zespołu dla templateu Nova', icon,
+  eliteTeam: {
+    id: 'eliteTeam', label: 'Zespół i wartości', groupId: 'about', hint: 'Sekcja zespołu dla templateu Elite', icon,
     defaultVariant: 'default',
     variants: {
-      default: { component: 'TeamBlock', dataKey: 'nova-team' },
+      default: { component: 'TeamBlock', dataKey: 'elite-team' },
       starling: { label: 'Starling Water', component: 'TeamBlock', dataKey: 'starling-about' },
       bakery: { label: 'Royal Retreat Bakery', component: 'TeamBlock', dataKey: 'bakery-about' },
       hotel: { label: 'Elite Royal Suite and Hotel', component: 'TeamBlock', dataKey: 'hotel-about' },

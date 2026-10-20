@@ -5,7 +5,7 @@ import { HERO_SECTION_IDS } from "@config/hero-ids";
 import companyData from "@data/global/company.json";
 import type { PageSection } from "@/types/config";
 import { createSectionDataCache, type SectionJsonModule } from "@utils/section-data";
-import { getNovaSectionCopy, type NovaLocale } from "@utils/nova-i18n";
+import { getEliteSectionCopy, type EliteLocale } from "@utils/elite-i18n";
 import { ACTIVE_TEMPLATE } from "@/config/template";
 
 // Why: PageBuilder renders pages from JSON configs (data-driven).
@@ -13,7 +13,7 @@ import { ACTIVE_TEMPLATE } from "@/config/template";
 interface Props {
   sections: PageSection[];
   heading?: string;
-  locale?: NovaLocale;
+  locale?: EliteLocale;
 }
 
 // Why: import.meta.glob with eagerly: true loads all JSON at build start,
@@ -62,12 +62,12 @@ function resolveSection(section: PageSection): Resolved | null {
     if (data) props = { ...props, ...data };
   }
 
-  // Dlaczego: Nova ma jedną strukturę homepage'u, a copy dla PL i EN jest
+  // Dlaczego: Elite ma jedną strukturę homepage'u, a copy dla PL i EN jest
   // wybierane tutaj, zanim props trafią do konkretnego bloku.
-  if (ACTIVE_TEMPLATE === "nova") {
-    const localized = getNovaSectionCopy(locale, variant.dataKey);
+  if (ACTIVE_TEMPLATE === "elite") {
+    const localized = getEliteSectionCopy(locale, variant.dataKey);
     if (localized) props = { ...props, ...localized };
-    if (section.id === "novaServices" && !props.id) props.id = locale === "pl" ? "uslugi" : "services";
+    if (section.id === "eliteServices" && !props.id) props.id = locale === "pl" ? "uslugi" : "services";
   }
 
   return { component: Component, props };

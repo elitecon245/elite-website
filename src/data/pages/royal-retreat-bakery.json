@@ -14,16 +14,16 @@
       "variant": "bakery"
     },
     {
-      "id": "novaTeam",
+      "id": "eliteTeam",
       "variant": "bakery"
     },
     {
-      "id": "novaCta",
+      "id": "eliteCta",
       "variant": "bakery"
     },
     {
       "id": "footer",
-      "variant": "nova"
+      "variant": "elite"
     }
   ]
 }

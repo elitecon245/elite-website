@@ -5,7 +5,7 @@ import Heading from "@components/ui/atoms/Heading.astro";
 import Text from "@components/ui/atoms/Text.astro";
 import SmartImage from "@components/ui/atoms/SmartImage.astro";
 import Button from "@components/ui/atoms/Button.astro";
-import jsonData from "@data/sections/nova-team.json";
+import jsonData from "@data/sections/elite-team.json";
 import { ACTIVE_TEMPLATE } from "@config/template";
 
 interface TeamAvatar { src: string; alt: string; }
@@ -13,7 +13,7 @@ interface TeamAvatar { src: string; alt: string; }
 type CheckItem = string | { label: string; href?: string; srLabel?: string };
 interface Props { sectionId?: string; title?: string; description?: string; image?: string; imageAlt?: string; checks?: CheckItem[]; teamLabel?: string; teamCount?: string; teamAriaLabel?: string; teamAvatars?: TeamAvatar[]; buttonLabel?: string; buttonHref?: string; class?: string; }
 const props = Astro.props as Props;
-const fallback = ACTIVE_TEMPLATE === "nova" ? undefined : jsonData;
+const fallback = ACTIVE_TEMPLATE === "elite" ? undefined : jsonData;
 const title = props.title ?? fallback?.title;
 const description = props.description ?? fallback?.description;
 const image = props.image ?? fallback?.image;

@@ -1,4 +1,4 @@
-# Design Rules: Nova
+# Design Rules: Elite Consolidated
 
 **Read this first before any visual work.**
 
@@ -70,7 +70,7 @@ GOOD: Use the `ui-card-interactive` class on the card container. One animation a
 ## 2. Design preferences
 
 - **Mobile-first:** default classes are mobile, `md:` is desktop
-- **Typography:** do not use Inter, Roboto or Space Grotesk. Nova self-hosts Outfit, Satoshi and Gambarino in `src/styles/fonts.css`. Load new fonts through `npm run assets:fonts`, never through Google Fonts CDN. Use `--font-sans` and `--font-heading` from `themes.css`.
+- **Typography:** do not use Inter, Roboto or Space Grotesk. The site self-hosts Outfit, Satoshi and Gambarino in `src/styles/fonts.css`. Load new fonts through `npm run assets:fonts`, never through Google Fonts CDN. Use `--font-sans` and `--font-heading` from `themes.css`.
 - **Colors:** muted palette plus one accent. No purple-blue gradients
 - **Layout:** use generous space and do not make sections dense
 - **Photography:** WebP, maximum 200KB, without stock photos of smiling people

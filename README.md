@@ -1,6 +1,6 @@
 # Elite Consolidated Business Nig Ltd website
 
-One-page website for Elite Consolidated Business Nig Ltd and its businesses, built on the Nova Astro template. See `CONTENT-GUIDE.md` for where content lives and what still needs to be supplied before launch.
+One-page website for Elite Consolidated Business Nig Ltd and its businesses, built with Astro. See `CONTENT-GUIDE.md` for where content lives and what still needs to be supplied before launch.
 
 ```bash
 npm i
@@ -8,48 +8,9 @@ npm run dev
 npm run build
 ```
 
-The original template README follows, including its licence notice.
+## Credits and licence
 
----
+This website is based on an open-source Astro template.
 
-# Nova - Free Tailwind CSS & Astro Portfolio Website Template
-
-#### Preview
-
- - [Demo](https://themewagon.github.io/nova-astro/)
-
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/nova-astro/)
-
-## Getting Started
-
-1. Clone Repository
-```
-git clone https://github.com/themewagon/nova-astro.git
-```
-2. Install Dependencies
-```
-npm i
-```
-3. Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-## Author 
-```
-Design and code is completely written by WebScale and development team. 
-```
-
-## License
-
- - Design and Code is Copyright &copy; <a href="https://webscale.pl/" target="_blank">WebScale</a>
- - Licensed cover under [MIT]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+ - Design and code are Copyright &copy; <a href="https://webscale.pl/" target="_blank">WebScale</a>
+ - Licensed under [MIT]

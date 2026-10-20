@@ -1,5 +1,5 @@
 {
-  "name": "templar-t001-nova",
+  "name": "elite-consolidated-website",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -24,7 +24,7 @@
     "check:registrations": "tsx src/scripts/check-registrations.ts",
     "design:sync": "tsx src/scripts/sync-design.ts",
     "design:lint": "design.md lint design/*.md",
-    "design:spec": "design.md spec design/nova.md --output public/design-spec",
+    "design:spec": "design.md spec design/elite.md --output public/design-spec",
     "assets:gen": "node src/scripts/generate-favicons.cjs",
     "assets:img": "tsx src/scripts/optimize-images.ts",
     "assets:thumbs": "tsx src/scripts/generate-gallery-thumbs.ts",

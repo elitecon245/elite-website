@@ -1,5 +1,5 @@
 ---
-name: Nova, Elite Consolidated Business
+name: Elite Consolidated Business
 colors:
   surface: "#ffffff"
   surface-dim: "#f3f4f8"
@@ -120,9 +120,9 @@ animations:
   scroll: "scroll 36s linear infinite"
 ---
 
-# Nova, Visual Direction
+# Elite Consolidated, Visual Direction
 
-This Nova profile is branded for Elite Consolidated Business Nig Ltd. The site should feel modern, corporate, approachable and trustworthy. Clear hierarchy, strong imagery and controlled contrast are the priorities.
+This profile is branded for Elite Consolidated Business Nig Ltd. The site should feel modern, corporate, approachable and trustworthy. Clear hierarchy, strong imagery and controlled contrast are the priorities.
 
 ## Composition Principles
 
@@ -146,11 +146,11 @@ This Nova profile is branded for Elite Consolidated Business Nig Ltd. The site s
 
 ## Photography
 
-Nova production assets live in `public/assets/images/t001-nova/`. The source reference is kept in Templar documentation and is not used as a production image. Every asset should have alt text, and images must keep the proportions expected by the component.
+Production assets live in `public/assets/images/elite/`. The source reference is kept in Templar documentation and is not used as a production image. Every asset should have alt text, and images must keep the proportions expected by the component.
 
 ## Main Constraints
 
 - Do not use purple gradients, arbitrary badges or decorative dots.
 - Do not make sections dense with too many cards or evenly repeated columns.
 - Do not add new fonts from a CDN. Use `Outfit` for headings and `Satoshi` for body text.
-- Do not apply colors directly in components. Colors must come from the `nova` profile tokens.
+- Do not apply colors directly in components. Colors must come from the `elite` profile tokens.

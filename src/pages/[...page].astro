@@ -6,7 +6,7 @@ import { pageModules } from "@data/pages/_registry";
 import { BUILD_SCOPE, SITE_LOCALE } from "../../site.config.mjs";
 import { isPageAllowed, getFullBleedTop } from "@utils/page-scope";
 import { ACTIVE_TEMPLATE } from "@/config/template";
-import { getNovaCopy, type NovaLocale } from "@utils/nova-i18n";
+import { getEliteCopy, type EliteLocale } from "@utils/elite-i18n";
 
 export async function getStaticPaths() {
   // Scope: w buildzie generuj tylko aktywne strony zgodne z BUILD_SCOPE.pages.
@@ -44,11 +44,11 @@ if (!config) {
 }
 
 const { seo, layout: layoutConfig } = config;
-const locale: NovaLocale = SITE_LOCALE === "en" ? "en" : "pl";
-const novaPageCopy = ACTIVE_TEMPLATE === "nova" && slug === "index" ? getNovaCopy(locale).page : undefined;
-const resolvedTitle = novaPageCopy?.title ?? seo?.title;
-const resolvedDescription = novaPageCopy?.description ?? seo?.description;
-const resolvedHeading = novaPageCopy?.heading ?? config.heading;
+const locale: EliteLocale = SITE_LOCALE === "en" ? "en" : "pl";
+const elitePageCopy = ACTIVE_TEMPLATE === "elite" && slug === "index" ? getEliteCopy(locale).page : undefined;
+const resolvedTitle = elitePageCopy?.title ?? seo?.title;
+const resolvedDescription = elitePageCopy?.description ?? seo?.description;
+const resolvedHeading = elitePageCopy?.heading ?? config.heading;
 
 // Why: Local casting bypasses the cascade after a corrupt PageConfig type
 // (@types/config error) and the sections are validated by check-page-registry.

@@ -31,7 +31,7 @@ const {
   class: className = "",
 } = Astro.props as Props;
 
-const fallback = ACTIVE_TEMPLATE === "nova" ? undefined : data;
+const fallback = ACTIVE_TEMPLATE === "elite" ? undefined : data;
 const resolvedTitle = title || fallback?.title || "";
 const resolvedDescription = description || fallback?.description || "";
 const list = items && items.length > 0 ? items : fallback?.items ?? [];

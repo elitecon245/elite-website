@@ -5,25 +5,25 @@
  * Plik importowany w global.css zaraz po themes.css.
  */
 
-/* Nova uses the generated heading token. Tailwind's default font utility is
+/* Elite uses the generated heading token. Tailwind's default font utility is
  * compiled from the starter fallback, so the template scope must point it
  * back to the active design token. */
-[data-theme="nova"] .font-heading,
-[data-theme="nova"] .ui-type-heading-section-xl,
-[data-theme="nova"] .ui-type-heading-section-lg,
-[data-theme="nova"] .ui-type-heading-feature-md,
-[data-theme="nova"] .ui-type-heading-hero,
-[data-theme="nova"] .ui-type-section-title,
-[data-theme="nova"] .ui-type-section-subtitle,
-[data-theme="nova"] .ui-type-feature-title,
-[data-theme="nova"] .ui-type-nav-link,
-[data-theme="nova"] .ui-type-cta-label {
+[data-theme="elite"] .font-heading,
+[data-theme="elite"] .ui-type-heading-section-xl,
+[data-theme="elite"] .ui-type-heading-section-lg,
+[data-theme="elite"] .ui-type-heading-feature-md,
+[data-theme="elite"] .ui-type-heading-hero,
+[data-theme="elite"] .ui-type-section-title,
+[data-theme="elite"] .ui-type-section-subtitle,
+[data-theme="elite"] .ui-type-feature-title,
+[data-theme="elite"] .ui-type-nav-link,
+[data-theme="elite"] .ui-type-cta-label {
   font-family: var(--font-heading) !important;
 }
 
 /* Form field labels: the shared accent-label utility falls back to the starter
- * serif, so Nova labels use the body face in plain case for readability. */
-[data-theme="nova"] .ui-form-label {
+ * serif, so Elite labels use the body face in plain case for readability. */
+[data-theme="elite"] .ui-form-label {
   font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 600;

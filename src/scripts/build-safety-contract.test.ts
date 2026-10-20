@@ -22,7 +22,7 @@ afterEach(() => {
 
 describe("build safety scripts", () => {
   it("runs Astro from a project path containing spaces and restores staged pages", () => {
-    const root = makeTemporaryProject("nova build test");
+    const root = makeTemporaryProject("elite build test");
     const scriptDir = path.join(root, "src", "scripts");
     const astroDir = path.join(root, "node_modules", "astro", "bin");
     const pagesDir = path.join(root, "src", "pages");
@@ -50,7 +50,7 @@ describe("build safety scripts", () => {
   });
 
   it("removes server-only PHP files from the generated static output", () => {
-    const root = makeTemporaryProject("nova clean dist test");
+    const root = makeTemporaryProject("elite clean dist test");
     const dist = path.join(root, "dist");
     fs.mkdirSync(dist, { recursive: true });
     fs.writeFileSync(path.join(dist, "send-form.php"), "<?php echo 'private';");

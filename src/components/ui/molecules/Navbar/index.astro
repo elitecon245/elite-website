@@ -5,14 +5,14 @@ import Floating from "./layouts/Floating.astro";
 import Local from "./layouts/Local.astro";
 import Plain from "./layouts/Plain.astro";
 import type { NavTheme } from "./shared/nav-theme-classes";
-import type { NovaLocale } from "@utils/nova-i18n";
+import type { EliteLocale } from "@utils/elite-i18n";
 
 export type NavbarLayout = "centered" | "floating" | "local" | "plain";
 
 interface Props {
 	layout?: NavbarLayout;
 	theme?: NavTheme;
-	locale?: NovaLocale;
+	locale?: EliteLocale;
 }
 
 const { layout = "centered", theme = "transparent", locale = "pl" } = Astro.props;
