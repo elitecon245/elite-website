@@ -15,5 +15,6 @@
   "trustItems": [],
   "image": "/assets/images/elite/starling-water-building.webp",
   "imageAlt": "Entrance of a Starling Water building with the Starling Water sign above an arched doorway",
+  "imageLayout": "background",
   "stats": []
 }
