@@ -8,22 +8,22 @@
       "title": "Water Treatment",
       "description": "Water is filtered and purified at our factories in Abijo and Bogije before it moves on to production.",
       "image": {
-        "url": "/assets/images/elite/starling-water-building@1080.webp",
+        "url": "/assets/images/elite/starling-process-treatment@1080.webp",
         "width": 1080,
-        "height": 1080,
-        "alt": "Entrance of a Starling Water factory building with the Starling Water sign above an arched doorway",
-        "position": "center 40%"
+        "height": 1440,
+        "alt": "Stainless steel and blue filtration tanks with pipework and a control unit in a clean water treatment room",
+        "position": "center 60%"
       }
     },
     {
       "title": "Bottling and Sealing",
       "description": "The purified water is filled into bottles and pure water sachets, then sealed and packed for distribution.",
       "image": {
-        "url": "/assets/images/elite/starling-bottled-water@1080.webp",
+        "url": "/assets/images/elite/starling-process-bottling@1080.webp",
         "width": 1080,
-        "height": 720,
-        "alt": "Water bottle icon on a Starling Water blue background",
-        "position": "center"
+        "height": 1440,
+        "alt": "Filled and capped water bottles moving along a conveyor from a stainless steel bottling machine",
+        "position": "center 55%"
       }
     },
     {
