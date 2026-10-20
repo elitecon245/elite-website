@@ -13,6 +13,7 @@ export const contactSections: Record<string, SectionEntry> = {
       simple: { component: 'ContactSplitBlock', props: { variant: 'simple' }, dataKey: 'contact' },
       elite: { label: 'Elite Consolidated contact form', component: 'ContactSplitBlock', props: { variant: 'split' }, dataKey: 'elite-contact' },
       starling: { label: 'Starling Water enquiry and order form', component: 'ContactSplitBlock', props: { variant: 'split' }, dataKey: 'starling-order-contact' },
+      bakery: { label: 'Royal Retreat Bakery enquiry and order form', component: 'ContactSplitBlock', props: { variant: 'split' }, dataKey: 'bakery-order-contact' },
     },
   },
 };

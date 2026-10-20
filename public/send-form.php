@@ -50,10 +50,18 @@ $message = trim((string)($_POST['message'] ?? ''));
 // Optional fields: which page sent the form, and whether it is an enquiry or an order.
 $source = trim((string)($_POST['source'] ?? ''));
 $isOrder = ($_POST['form_type'] ?? '') === 'order';
-$order = [
-    'Bottled water (packs)' => max(0, (int)($_POST['qty_bottled_water'] ?? 0)),
-    'Pure water (bags)' => max(0, (int)($_POST['qty_pure_water'] ?? 0)),
+// Products that can be ordered, keyed by form field name; only those sent are listed in the email.
+$orderProducts = [
+    'qty_bottled_water' => 'Bottled water (packs)',
+    'qty_pure_water' => 'Pure water (bags)',
+    'qty_bread_loaf' => 'Royal Retreat Bread Loaf (loaves)',
 ];
+$order = [];
+foreach ($orderProducts as $field => $product) {
+    if (isset($_POST[$field])) {
+        $order[$product] = max(0, (int)$_POST[$field]);
+    }
+}
 $deliveryAddress = trim((string)($_POST['delivery_address'] ?? ''));
 $deliveryDate = trim((string)($_POST['delivery_date'] ?? ''));
 
