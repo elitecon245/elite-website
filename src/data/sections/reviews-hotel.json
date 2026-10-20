@@ -3,25 +3,5 @@
   "eyebrow": "Customer Reviews",
   "title": "What Our Guests Say",
   "description": "Feedback from guests who have stayed at Elite Royal Suite and Hotel.",
-  "placeholderNotice": "Sample layout: real customer reviews will replace these placeholders",
-  "testimonials": [
-    {
-      "quote": "Placeholder: a leisure guest describes their stay, for example the room, comfort and the welcome from staff.",
-      "name": "Guest Name",
-      "role": "Leisure Guest",
-      "company": "Home City"
-    },
-    {
-      "quote": "Placeholder: a business traveller talks about staying at the hotel for work and how it met their needs.",
-      "name": "Guest Name",
-      "role": "Business Traveller",
-      "company": "Company"
-    },
-    {
-      "quote": "Placeholder: an event or group booking organiser shares their experience of hosting guests at the hotel.",
-      "name": "Organiser Name",
-      "role": "Event Organiser",
-      "company": "Organisation"
-    }
-  ]
+  "testimonials": []
 }

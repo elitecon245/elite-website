@@ -16,6 +16,7 @@ interface Props {
   class?: string;
 }
 const props = Astro.props as Props;
+// The section stays hidden while a page has no reviews; adding real ones to its data file shows it again.
 const testimonials = props.testimonials ?? [];
 // The cards are static, so they render as plain HTML; the island only hydrates when a photo
 // is supplied, because the avatar swaps its initials for the image in the browser.
