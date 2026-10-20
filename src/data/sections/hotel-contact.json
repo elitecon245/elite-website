@@ -4,8 +4,6 @@
   "description": "Contact Elite Consolidated Business Nig Ltd for information about accommodation and reservations.",
   "primaryLabel": "Contact Us",
   "primaryHref": "/#contact-form",
-  "secondaryLabel": "All Businesses",
-  "secondaryHref": "/#businesses",
   "image": "/assets/images/elite/elite-royal-suite-hotel@1280.webp",
   "imageAlt": ""
 }
