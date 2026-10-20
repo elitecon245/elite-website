@@ -1,0 +1,77 @@
+---
+import { getEliteNavigationPath, type EliteLocale } from "@utils/elite-i18n";
+
+// Desktop menu for the floating navbar. An item with children gets a dropdown that opens on
+// hover and on keyboard focus (focus-within), so it works without JavaScript; the parent label
+// still links to its own section.
+type MenuItem = { label: string; href: string; children?: { label: string; href: string }[] };
+
+interface Props {
+	menu: MenuItem[];
+	locale: EliteLocale;
+}
+
+const { menu, locale } = Astro.props;
+---
+
+<nav class="hidden min-w-0 flex-1 items-center justify-center gap-5 lg:flex xl:gap-8">
+	{menu.map((item) =>
+		item.children && item.children.length > 0 ? (
+			<div class="elite-nav-dropdown relative shrink-0">
+				<a href={getEliteNavigationPath(item.href, locale)} class="ui-nav-bar-link inline-flex items-center gap-1 opacity-75 transition-opacity hover:opacity-100" aria-haspopup="true">
+					{item.label}
+					<i class="ph ph-caret-down text-sm transition-transform duration-200 motion-reduce:transition-none" aria-hidden="true"></i>
+				</a>
+				<div class="elite-nav-dropdown__panel">
+					<ul class="m-0 list-none rounded-[var(--ui-radius-lg)] border border-brand-dark/10 bg-[var(--ui-bg-page)] p-2 text-brand-dark shadow-lg shadow-black/10">
+						{item.children.map((child) => (
+							<li>
+								<a href={getEliteNavigationPath(child.href, locale)} class="block rounded-[var(--ui-radius-md)] px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors hover:bg-brand-primary/10 hover:text-brand-primary focus-visible:bg-brand-primary/10 focus-visible:text-brand-primary">
+									{child.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+		) : (
+			<a href={getEliteNavigationPath(item.href, locale)} class="ui-nav-bar-link shrink-0 opacity-75 transition-opacity hover:opacity-100">
+				{item.label}
+			</a>
+		)
+	)}
+</nav>
+
+<style>
+	.elite-nav-dropdown__panel {
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		z-index: 1020;
+		padding-top: 0.75rem;
+		/* Closed: invisible and not clickable, but its links stay focusable so keyboard users
+		   can tab into it, which opens it through :focus-within. */
+		opacity: 0;
+		pointer-events: none;
+		translate: -50% 0.25rem;
+		transition: opacity 0.2s ease, translate 0.2s ease;
+	}
+
+	.elite-nav-dropdown:hover .elite-nav-dropdown__panel,
+	.elite-nav-dropdown:focus-within .elite-nav-dropdown__panel {
+		opacity: 1;
+		pointer-events: auto;
+		translate: -50% 0;
+	}
+
+	.elite-nav-dropdown:hover .ph-caret-down,
+	.elite-nav-dropdown:focus-within .ph-caret-down {
+		rotate: 180deg;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.elite-nav-dropdown__panel {
+			transition: none;
+		}
+	}
+</style>

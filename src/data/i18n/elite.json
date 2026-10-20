@@ -9,7 +9,15 @@
       "menu": [
         { "label": "Home", "href": "/" },
         { "label": "About Us", "href": "/#about" },
-        { "label": "Our Businesses", "href": "/#businesses" }
+        {
+          "label": "Our Businesses",
+          "href": "/#businesses",
+          "children": [
+            { "label": "Starling Bottle and Pure Water Factory", "href": "/starling-water/" },
+            { "label": "Royal Retreat Bakery", "href": "/royal-retreat-bakery/" },
+            { "label": "Elite Royal Suite and Hotel", "href": "/elite-royal-suite-hotel/" }
+          ]
+        }
       ],
       "cta": {
         "label": "Contact Us",
