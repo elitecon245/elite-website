@@ -13,6 +13,8 @@ export interface PageSeo {
 export interface PageLayout {
   theme?: string;
   sectionPattern?: 'off' | 'repeat' | 'mesh' | 'noise';
+  /** Extra class on <body>, e.g. a page-specific colour scope. */
+  bodyClass?: string;
 }
 
 export interface PageConfig {

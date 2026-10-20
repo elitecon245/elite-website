@@ -4,6 +4,9 @@
     "description": "Royal Retreat Bakery is part of Elite Consolidated Business Nig Ltd. Get in touch for information about available products and ordering options."
   },
   "heading": "Royal Retreat Bakery",
+  "layout": {
+    "bodyClass": "page-royal-retreat"
+  },
   "sections": [
     {
       "id": "navbar",

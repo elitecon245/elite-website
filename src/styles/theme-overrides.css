@@ -31,3 +31,12 @@
   text-transform: none;
   color: var(--color-brand-dark);
 }
+
+/* Royal Retreat Bakery page: the primary colour follows the bakery logo's orange lettering. */
+.page-royal-retreat {
+  --color-primary: #c86e31;
+  --color-brand-primary: #c86e31;
+  --color-surface-tint: #c86e31;
+  --color-primary-container: #f8e8dd;
+  --color-on-primary-container: #9a4f1f;
+}

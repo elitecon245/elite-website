@@ -24,6 +24,8 @@ interface Props {
   stats?: Stat[];
   /** "blob" (default) shows the photo in a shape on the right; "background" spreads it behind the whole hero. */
   imageLayout?: "blob" | "background";
+  /** Background layout only: "right" pins the photo to the right side on tablet and desktop so a centred subject stays clear of the text. */
+  imageAlign?: "cover" | "right";
   sectionId?: string;
   class?: string;
 }
@@ -42,6 +44,7 @@ const image = props.image ?? fallback?.image;
 const imageAlt = props.imageAlt ?? fallback?.imageAlt ?? "";
 const stats = props.stats ?? fallback?.stats ?? [];
 const isBackground = props.imageLayout === "background";
+const isRightAligned = isBackground && props.imageAlign === "right";
 ---
 
 <Section
@@ -55,7 +58,7 @@ const isBackground = props.imageLayout === "background";
   <Container class="w-full max-w-none px-0">
     <div class:list={["relative overflow-hidden rounded-t-xl bg-surface", isBackground && "elite-hero--background isolate"]}>
       {isBackground && (
-        <div class="elite-hero-bg absolute inset-0 -z-10" data-motion="fade" style="--motion-delay: 120ms">
+        <div class:list={["elite-hero-bg absolute inset-0 -z-10", isRightAligned && "elite-hero-bg--right"]} data-motion="fade" style="--motion-delay: 120ms">
           <SmartImage src={image} alt={imageAlt} width={1080} height={1350} loading="eager" fetchpriority="high" sizes="100vw" class="block h-full w-full object-cover object-[70%_30%] md:object-[center_30%]" />
           <div class="elite-hero-overlay absolute inset-0" aria-hidden="true"></div>
         </div>
@@ -140,6 +143,27 @@ const isBackground = props.imageLayout === "background";
         color-mix(in oklab, var(--color-surface) 35%, transparent) 68%,
         transparent 100%
       );
+    }
+
+    /* Right-aligned photo: the left of the hero stays plain surface and the
+       overlay only softens the photo's left edge where it meets the text. */
+    :global(.elite-hero--background) .elite-hero-bg--right {
+      left: 46%;
+    }
+
+    :global(.elite-hero--background) .elite-hero-bg--right .elite-hero-overlay {
+      background: linear-gradient(
+        90deg,
+        var(--color-surface) 0%,
+        color-mix(in oklab, var(--color-surface) 75%, transparent) 16%,
+        transparent 42%
+      );
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :global(.elite-hero--background) .elite-hero-bg--right {
+      left: 34%;
     }
   }
 

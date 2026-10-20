@@ -13,7 +13,9 @@
   },
   "trustedBy": "",
   "trustItems": [],
-  "image": "/assets/images/elite/royal-retreat-bakery.webp",
-  "imageAlt": "Bread icon on an Elite Consolidated blue background",
+  "image": "/assets/images/elite/royal-retreat-bakery-counter.webp",
+  "imageAlt": "Royal Retreat Bakery counter with fresh bread and pastries beneath the Royal Retreat sign",
+  "imageLayout": "background",
+  "imageAlign": "right",
   "stats": []
 }
