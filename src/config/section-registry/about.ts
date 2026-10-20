@@ -43,6 +43,7 @@ export const aboutSections: Record<string, SectionEntry> = {
     defaultVariant: 'bakery',
     variants: {
       bakery: { label: 'Royal Retreat Bakery', component: 'ProductionProcessBlock', dataKey: 'bakery-process' },
+      starling: { label: 'Starling Water', component: 'ProductionProcessBlock', dataKey: 'starling-process' },
     },
   },
   aboutMarquee: {

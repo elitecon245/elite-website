@@ -1,0 +1,41 @@
+{
+  "sectionId": "process",
+  "eyebrow": "Our Process",
+  "title": "How Our Water Is Produced",
+  "description": "From treatment at our factories to delivery at your door, our water goes through three main stages.",
+  "steps": [
+    {
+      "title": "Water Treatment",
+      "description": "Water is filtered and purified at our factories in Abijo and Bogije before it moves on to production.",
+      "image": {
+        "url": "/assets/images/elite/starling-water-building@1080.webp",
+        "width": 1080,
+        "height": 1080,
+        "alt": "Entrance of a Starling Water factory building with the Starling Water sign above an arched doorway",
+        "position": "center 40%"
+      }
+    },
+    {
+      "title": "Bottling and Sealing",
+      "description": "The purified water is filled into bottles and pure water sachets, then sealed and packed for distribution.",
+      "image": {
+        "url": "/assets/images/elite/starling-bottled-water@1080.webp",
+        "width": 1080,
+        "height": 720,
+        "alt": "Water bottle icon on a Starling Water blue background",
+        "position": "center"
+      }
+    },
+    {
+      "title": "Packing and Delivery",
+      "description": "Packed products are loaded onto our branded vans and tricycles for retail, wholesale and distribution customers.",
+      "image": {
+        "url": "/assets/images/elite/starling-water-van@1080.webp",
+        "width": 1080,
+        "height": 720,
+        "alt": "Starling Water branded delivery van with the company phone numbers and factory addresses",
+        "position": "62% center"
+      }
+    }
+  ]
+}

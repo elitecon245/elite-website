@@ -18,6 +18,10 @@
       "variant": "starlingProducts"
     },
     {
+      "id": "productionProcess",
+      "variant": "starling"
+    },
+    {
       "id": "eliteCta",
       "variant": "starling"
     },
