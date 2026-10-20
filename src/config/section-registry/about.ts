@@ -38,6 +38,13 @@ export const aboutSections: Record<string, SectionEntry> = {
       bakery: { label: 'Royal Retreat Bakery', component: 'ProductShowcaseBlock', dataKey: 'bakery-product' },
     },
   },
+  productionProcess: {
+    id: 'productionProcess', label: 'Production process', groupId: 'about', hint: 'Three-step process with images that change on scroll', icon,
+    defaultVariant: 'bakery',
+    variants: {
+      bakery: { label: 'Royal Retreat Bakery', component: 'ProductionProcessBlock', dataKey: 'bakery-process' },
+    },
+  },
   aboutMarquee: {
     id: 'aboutMarquee', label: 'O nas z marquee', groupId: 'about', hint: 'Split tekstu, zdjęcia i przewijanych pasów', icon,
     defaultVariant: 'default',

@@ -1,0 +1,23 @@
+{
+  "sectionId": "process",
+  "eyebrow": "Our Process",
+  "title": "How Our Bread Is Made",
+  "description": "From mixing the dough to the finished loaf, every batch goes through three main stages.",
+  "steps": [
+    {
+      "title": "Mixing and Kneading",
+      "description": "Flour, water, yeast and the other ingredients are measured and mixed, then kneaded into a smooth, elastic dough.",
+      "image": { "url": "/assets/images/elite/process/bakery-process-mixing.svg", "width": 640, "height": 720, "alt": "Illustration of dough in a mixing bowl beside a flour sack and wheat stalks" }
+    },
+    {
+      "title": "Proofing and Shaping",
+      "description": "The dough rests so the yeast can help it rise. It is then divided, shaped into loaves and left to rise again in their tins.",
+      "image": { "url": "/assets/images/elite/process/bakery-process-proofing.svg", "width": 640, "height": 720, "alt": "Illustration of shaped dough rising in two loaf tins beside a clock" }
+    },
+    {
+      "title": "Baking and Packaging",
+      "description": "The loaves are baked until golden, then cooled and packed so they reach you fresh.",
+      "image": { "url": "/assets/images/elite/process/bakery-process-baking.svg", "width": 640, "height": 720, "alt": "Illustration of a golden baked loaf on a board in front of an oven" }
+    }
+  ]
+}

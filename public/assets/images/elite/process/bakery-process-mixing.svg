@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-labelledby="t"><title id="t">Mixing and kneading dough</title>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf3e7"/><stop offset="1" stop-color="#f8e3d2"/></linearGradient></defs>
+<rect width="640" height="720" fill="url(#bg)"/>
+<circle cx="500" cy="140" r="90" fill="#f3d2b5" opacity=".6"/>
+<!-- wheat stalks -->
+<g fill="#d9944f" stroke="#a5561f" stroke-width="3">
+<path d="M110 560 C120 420 130 320 150 220" fill="none" stroke="#a5561f" stroke-width="5"/>
+<g transform="translate(150 220)"><ellipse rx="12" ry="24" transform="rotate(-20)"/><ellipse cx="-10" cy="40" rx="12" ry="24" transform="rotate(-30 -10 40)"/><ellipse cx="14" cy="34" rx="12" ry="24" transform="rotate(20 14 34)"/><ellipse cx="-14" cy="80" rx="12" ry="24" transform="rotate(-30 -14 80)"/><ellipse cx="10" cy="74" rx="12" ry="24" transform="rotate(20 10 74)"/></g>
+<path d="M150 560 C165 440 180 360 210 280" fill="none" stroke="#a5561f" stroke-width="5"/>
+<g transform="translate(210 280)"><ellipse rx="11" ry="22" transform="rotate(-10)"/><ellipse cx="-12" cy="36" rx="11" ry="22" transform="rotate(-30 -12 36)"/><ellipse cx="12" cy="32" rx="11" ry="22" transform="rotate(25 12 32)"/></g>
+</g>
+<g transform="translate(-40 0)"><!-- flour sack -->
+<path d="M430 360 h120 l20 220 h-160 z" fill="#fffaf3" stroke="#6e3b12" stroke-width="5" stroke-linejoin="round"/>
+<path d="M430 360 q60 -40 120 0" fill="#fffaf3" stroke="#6e3b12" stroke-width="5"/>
+<text x="490" y="490" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#c86e31">FLOUR</text>
+</g>
+<!-- bowl -->
+<ellipse cx="320" cy="470" rx="190" ry="40" fill="#e7b48a"/>
+<path d="M130 470 q190 230 380 0 z" fill="#c86e31" stroke="#6e3b12" stroke-width="6" stroke-linejoin="round"/>
+<path d="M175 520 q145 90 290 0" fill="none" stroke="#e8955a" stroke-width="10" stroke-linecap="round" opacity=".7"/>
+<!-- dough -->
+<path d="M190 470 q30 -80 130 -70 q100 -10 130 70 z" fill="#fbe7c8" stroke="#6e3b12" stroke-width="5" stroke-linejoin="round"/>
+<path d="M250 440 q30 -20 60 0 M330 430 q30 -15 55 5" fill="none" stroke="#d9a873" stroke-width="5" stroke-linecap="round"/>
+<!-- whisk / spoon -->
+<g transform="rotate(25 380 330)"><rect x="372" y="200" width="16" height="170" rx="8" fill="#a5561f" stroke="#6e3b12" stroke-width="4"/><ellipse cx="380" cy="380" rx="26" ry="36" fill="#d9944f" stroke="#6e3b12" stroke-width="4"/></g>
+<!-- flour dust -->
+<g fill="#ffffff" opacity=".9"><circle cx="250" cy="380" r="6"/><circle cx="290" cy="350" r="4"/><circle cx="350" cy="365" r="5"/><circle cx="410" cy="395" r="4"/><circle cx="220" cy="410" r="4"/></g>
+<rect y="640" width="640" height="80" fill="#6e3b12" opacity=".12"/>
+</svg>

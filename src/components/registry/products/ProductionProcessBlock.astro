@@ -1,0 +1,32 @@
+---
+import Section from "@components/ui/layout/Section.astro";
+import Container from "@components/ui/layout/Container.astro";
+import Heading from "@components/ui/atoms/Heading.astro";
+import Text from "@components/ui/atoms/Text.astro";
+import ScrollRevealContentA, { type ItemContent } from "@components/ui/scroll-reveal-content-a";
+
+interface Props {
+  sectionId?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  steps: [ItemContent, ItemContent, ItemContent];
+  class?: string;
+}
+const props = Astro.props as Props;
+const [contentA, contentB, contentC] = props.steps;
+---
+
+<Section id={props.sectionId ?? "process"} tone="page" class:list={["pt-12", props.class]}>
+  <Container class="w-full max-w-none px-[clamp(1.5rem,5vw,5rem)]">
+    {(props.eyebrow || props.title || props.description) && (
+      <div class="flex max-w-[40rem] flex-col gap-3">
+        {props.eyebrow && <p class="m-0 text-xs font-bold uppercase tracking-[0.14em] text-brand-primary">{props.eyebrow}</p>}
+        {props.title && <Heading tag="h2" variant="section-title">{props.title}</Heading>}
+        {props.description && <Text variant="lead">{props.description}</Text>}
+      </div>
+    )}
+    {/* React island: the steps and images react to scroll position, so it hydrates when it nears the viewport. */}
+    <ScrollRevealContentA client:visible contentA={contentA} contentB={contentB} contentC={contentC} />
+  </Container>
+</Section>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-labelledby="t"><title id="t">Dough proofing and shaping in loaf tins</title>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf3e7"/><stop offset="1" stop-color="#f8e3d2"/></linearGradient></defs>
+<rect width="640" height="720" fill="url(#bg)"/>
+<circle cx="140" cy="150" r="80" fill="#f3d2b5" opacity=".6"/>
+<!-- clock -->
+<g transform="translate(480 170)"><circle r="70" fill="#fffaf3" stroke="#6e3b12" stroke-width="6"/><circle r="6" fill="#6e3b12"/><path d="M0 0 V-42 M0 0 L30 18" stroke="#c86e31" stroke-width="7" stroke-linecap="round"/><g fill="#6e3b12"><circle cy="-56" r="4"/><circle cx="56" r="4"/><circle cy="56" r="4"/><circle cx="-56" r="4"/></g></g>
+<!-- rising lines -->
+<g stroke="#d9944f" stroke-width="6" stroke-linecap="round" fill="none" opacity=".8"><path d="M200 330 v-40 m-12 12 l12 -12 l12 12"/><path d="M440 330 v-40 m-12 12 l12 -12 l12 12"/></g>
+<!-- table -->
+<rect x="40" y="560" width="560" height="26" rx="8" fill="#a5561f"/>
+<rect x="40" y="586" width="560" height="134" fill="#6e3b12" opacity=".14"/>
+<!-- tin left with risen dough -->
+<path d="M90 420 h220 l-18 140 h-184 z" fill="#8a8f99" stroke="#4b4f57" stroke-width="5" stroke-linejoin="round"/>
+<path d="M95 425 q105 -110 210 0 z" fill="#fbe7c8" stroke="#6e3b12" stroke-width="5" stroke-linejoin="round"/>
+<path d="M150 390 q50 -30 100 0" fill="none" stroke="#e2bf8f" stroke-width="6" stroke-linecap="round"/>
+<!-- tin right with shaped dough -->
+<path d="M330 420 h220 l-18 140 h-184 z" fill="#8a8f99" stroke="#4b4f57" stroke-width="5" stroke-linejoin="round"/>
+<path d="M335 425 q105 -110 210 0 z" fill="#fbe7c8" stroke="#6e3b12" stroke-width="5" stroke-linejoin="round"/>
+<path d="M390 390 q50 -30 100 0" fill="none" stroke="#e2bf8f" stroke-width="6" stroke-linecap="round"/>
+<!-- cloth -->
+<path d="M60 250 q130 -40 260 0 q-10 40 -20 60 q-110 -30 -220 0 z" fill="#c86e31" opacity=".85"/>
+<path d="M90 262 h200 M95 282 h190" stroke="#fdf3e7" stroke-width="4" opacity=".7"/>
+</svg>

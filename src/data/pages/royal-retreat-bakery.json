@@ -21,6 +21,10 @@
       "variant": "bakery"
     },
     {
+      "id": "productionProcess",
+      "variant": "bakery"
+    },
+    {
       "id": "eliteCta",
       "variant": "bakery"
     },
