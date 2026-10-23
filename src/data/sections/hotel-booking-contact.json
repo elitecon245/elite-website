@@ -78,15 +78,29 @@
       }
     ]
   },
-  "detailsTitle": "Prefer to visit?",
-  "detailsDescription": "Elite Royal Suite and Hotel is part of Elite Consolidated Business Nig Ltd. You can also reach us through our head office.",
+  "detailsTitle": "Prefer to call or visit?",
+  "detailsDescription": "Call us directly or visit Elite Royal Suite and Hotel.",
   "detailItems": [
     {
-      "key": "head-office",
-      "label": "Elite Consolidated head office",
+      "key": "phone-1",
+      "label": "Phone",
+      "icon": "phone",
+      "value": "+234 705 554 8653",
+      "href": "tel:+2347055548653"
+    },
+    {
+      "key": "phone-2",
+      "label": "Phone",
+      "icon": "phone",
+      "value": "+234 803 717 0721",
+      "href": "tel:+2348037170721"
+    },
+    {
+      "key": "address",
+      "label": "Address",
       "icon": "map-pin",
-      "value": "Elemoro, Lekki Epe Expressway, Lagos, Nigeria",
-      "href": "https://www.google.com/maps/search/?api=1&query=Elemoro%2C+Lekki+Epe+Expressway%2C+Lagos%2C+Nigeria",
+      "value": "Elite Royal Suites and Hotel, Rufia, Elemoro, by Elemoro police station, Ibeju-Lekki, Lagos.",
+      "href": "https://www.google.com/maps/search/?api=1&query=Elite+Royal+Suites+and+Hotel%2C+Rufia%2C+Elemoro%2C+by+Elemoro+police+station%2C+Ibeju-Lekki%2C+Lagos%2C+Nigeria",
       "external": true,
       "srLabel": "(opens Google Maps in a new tab)"
     }
