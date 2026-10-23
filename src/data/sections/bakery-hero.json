@@ -5,7 +5,7 @@
   "description": "Royal Retreat Bakery is part of the Elite Consolidated business portfolio. Get in touch for information about available products and ordering options.",
   "primaryCTA": {
     "label": "Contact Us",
-    "href": "/#contact-form"
+    "href": "#enquiry"
   },
   "secondaryCTA": null,
   "trustedBy": "",

@@ -192,7 +192,8 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
     {source && <input type="hidden" name="source" value={source} />}
     {
       hasOrderMode && (
-        <div class="ui-form-mode-toggle" role="radiogroup" aria-label={orderMode?.legend} data-form-mode-toggle>
+        <span id="enquiry" class="block scroll-mt-[calc(var(--site-header-height,5.75rem)+2rem)]" aria-hidden="true"></span>
+        <div id="order" class="ui-form-mode-toggle scroll-mt-[calc(var(--site-header-height,5.75rem)+2rem)]" role="radiogroup" aria-label={orderMode?.legend} data-form-mode-toggle>
           <label>
             <input type="radio" name="form_type" value="enquiry" checked class="sr-only" />
             <span>{orderMode?.enquiryLabel}</span>
@@ -478,6 +479,29 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
     });
   }
 
+  // Links to "#order" or "#enquiry" (e.g. a product's order button or the hero's contact button)
+  // scroll to the form and switch it to that mode.
+  function openModeFromHash() {
+    const hash = window.location.hash;
+    if (hash !== "#order" && hash !== "#enquiry") return;
+    const selector = hash === "#order" ? 'input[name="form_type"]:not([value="enquiry"])' : 'input[name="form_type"][value="enquiry"]';
+    const radio = document.querySelector<HTMLInputElement>(`#order ${selector}`);
+    if (radio && !radio.checked) {
+      radio.checked = true;
+      radio.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+  }
+
   bindModeForms();
-  document.addEventListener("astro:page-load", bindModeForms);
+  openModeFromHash();
+  window.addEventListener("hashchange", openModeFromHash);
+  // Clicking such a link while the hash already matches fires no hashchange.
+  document.addEventListener("click", (event) => {
+    const link = (event.target as Element | null)?.closest?.('a[href$="#order"], a[href$="#enquiry"]');
+    if (link) window.setTimeout(openModeFromHash, 0);
+  });
+  document.addEventListener("astro:page-load", () => {
+    bindModeForms();
+    openModeFromHash();
+  });
 </script>
