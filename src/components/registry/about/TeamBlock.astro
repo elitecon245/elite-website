@@ -54,7 +54,7 @@ const teamAvatars = props.teamAvatars ?? fallback?.teamAvatars ?? [];
         ) : (
           <Text tag="span" variant="body">{typeof check === "object" ? check.label : check}</Text>
         )}</li>)}</ul>}
-        {buttonLabel && buttonHref && <Button href={buttonHref} variant="primary" size="md" class="min-h-11 w-full sm:w-fit">{buttonLabel}</Button>}
+        {buttonLabel && buttonHref && <Button href={buttonHref} variant="primary" size="md" class="min-h-11 w-fit self-center sm:self-start">{buttonLabel}</Button>}
       </div>
     </div>
   </Container>

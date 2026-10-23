@@ -359,8 +359,8 @@ const toInputType = (field: ContactField): "text" | "email" | "tel" | "number" |
     }
 
     <!-- Send button with text replaced by hover (consistent with the rest of the buttons)-->
-    <div class="mt-5">
-      <button type="submit" class="ui-button ui-button-primary ui-type-cta-label font-semibold text-sm sm:text-base h-12 w-full px-0">
+    <div class="mt-5 flex justify-center sm:block">
+      <button type="submit" class="ui-button ui-button-primary ui-type-cta-label font-semibold text-sm sm:text-base h-12 w-auto px-12 sm:w-full sm:px-0">
         <span class="ui-button-text-wrap">
           <span class="ui-button-text-default">{submitLabel}</span>
           <span class="ui-button-text-hover">{submitHover}</span>

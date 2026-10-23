@@ -71,9 +71,9 @@ const isRightAligned = isBackground && props.imageAlign === "right";
               {heading}{' '}<span class="text-brand-primary">{headingAccent}</span>
             </Heading>
             <Text variant="lead" class="elite-hero-lead max-w-[38rem] md:max-w-[25rem] md:text-[clamp(1rem,1.45vw,1.2rem)] lg:max-w-[38rem] lg:text-[clamp(1.1rem,1.45vw,1.4rem)]">{description}</Text>
-            <div class="flex flex-wrap items-center gap-3">
-              {primaryCTA && <Button href={primaryCTA.href} variant="primary" size="lg" class="min-h-11 w-full font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]">{primaryCTA.label}</Button>}
-              {secondaryCTA && <Button href={secondaryCTA.href} variant="outline" size="lg" class:list={["min-h-11 w-full  font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]"]}>{secondaryCTA.label}</Button>}
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+              {primaryCTA && <Button href={primaryCTA.href} variant="primary" size="lg" class="min-h-11 w-auto font-semibold tracking-normal md:text-[clamp(1rem,1.15vw,1.2rem)]">{primaryCTA.label}</Button>}
+              {secondaryCTA && <Button href={secondaryCTA.href} variant="outline" size="lg" class:list={["min-h-11 w-auto font-semibold tracking-normal md:text-[clamp(1rem,1.15vw,1.2rem)]"]}>{secondaryCTA.label}</Button>}
             </div>
           </div>
           {(trustedBy || trustItems.length > 0) && (
