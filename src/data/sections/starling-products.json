@@ -10,8 +10,8 @@
       "category": "Bottled water",
       "title": "Bottled Water",
       "description": "Purified bottled water from our factories in Abijo and Bogije. Contact us for product, retail, wholesale and distribution enquiries.",
-      "buttonLabel": "Enquire Now",
-      "href": "#starling-contact",
+      "buttonLabel": "Make Order",
+      "href": "#order",
       "image": "/assets/images/elite/starling-bottled-water.webp",
       "alt": "Water bottle icon on an Elite Consolidated blue background"
     },
@@ -20,8 +20,8 @@
       "category": "Pure water",
       "title": "Pure Water",
       "description": "Purified pure water from our factories in Abijo and Bogije. Contact us for product, retail, wholesale and distribution enquiries.",
-      "buttonLabel": "Enquire Now",
-      "href": "#starling-contact",
+      "buttonLabel": "Make Order",
+      "href": "#order",
       "image": "/assets/images/elite/starling-pure-water.webp",
       "alt": "Water drop icon on an Elite Consolidated blue background"
     }
