@@ -1,0 +1,130 @@
+---
+import GoogleMapFrame from "@components/ui/molecules/GoogleMapFrame.astro";
+
+// One embedded map for one or more locations. With several, a row of tabs swaps the same
+// map (and its "open in Google Maps" link) between them, instead of stacking two maps.
+type MapLocation = { label: string; embedUrl: string; linkUrl?: string };
+
+interface Props {
+  locations: MapLocation[];
+  title: string;
+  linkLabel?: string;
+  class?: string;
+}
+
+const { locations = [], title, linkLabel = "Open in Google Maps", class: className = "" } = Astro.props as Props;
+const first = locations[0];
+const id = `map-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+{first && (
+  <div class:list={["space-y-3", className]} data-map-switcher>
+    {locations.length > 1 && (
+      <div class="ui-form-mode-toggle" role="tablist" aria-label="Choose a location">
+        {locations.map((location, index) => (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={index === 0 ? "true" : "false"}
+            aria-controls={id}
+            data-map-tab
+            data-embed={location.embedUrl}
+            data-link={location.linkUrl ?? ""}
+            data-title={`${title}: ${location.label}`}
+            class="map-switcher__tab"
+          >
+            <span>{location.label}</span>
+          </button>
+        ))}
+      </div>
+    )}
+    <div id={id} role={locations.length > 1 ? "tabpanel" : undefined}>
+      <GoogleMapFrame
+        embedUrl={first.embedUrl}
+        iframeTitle={locations.length > 1 ? `${title}: ${first.label}` : title}
+        externalUrl={first.linkUrl}
+        externalLabel={linkLabel}
+        class="min-h-[18rem]"
+        wrapperClass="shadow-sm"
+      />
+    </div>
+  </div>
+)}
+
+<style>
+  /* Same pill toggle as the Enquiry / Order switch, built from buttons instead of radios. */
+  .ui-form-mode-toggle {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    border: 1px solid var(--color-outline-variant);
+    border-radius: 999px;
+    background: var(--color-surface-container-low);
+  }
+
+  .map-switcher__tab span {
+    display: flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0 0.75rem;
+    font-weight: 600;
+    color: var(--color-brand-dark);
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  .map-switcher__tab[aria-selected="true"] span {
+    background: var(--color-brand-primary);
+    color: var(--color-surface);
+  }
+
+  .map-switcher__tab:focus-visible {
+    outline: none;
+  }
+
+  .map-switcher__tab:focus-visible span {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  function setupMapSwitchers() {
+    document.querySelectorAll<HTMLElement>("[data-map-switcher]:not([data-switcher-inited])").forEach((switcher) => {
+      switcher.setAttribute("data-switcher-inited", "");
+      const tabs = Array.from(switcher.querySelectorAll<HTMLButtonElement>("[data-map-tab]"));
+      const root = switcher.querySelector<HTMLElement>("[data-map-root]");
+      const iframe = switcher.querySelector<HTMLIFrameElement>("[data-map-iframe]");
+      const link = switcher.querySelector<HTMLAnchorElement>("a[target='_blank']");
+      if (!root || !iframe || tabs.length < 2) return;
+
+      const select = (tab: HTMLButtonElement) => {
+        tabs.forEach((other) => other.setAttribute("aria-selected", other === tab ? "true" : "false"));
+        const embed = tab.dataset.embed || "";
+        root.setAttribute("data-map-src", embed);
+        iframe.title = tab.dataset.title || iframe.title;
+        // Swap the live map only once it has been loaded (cookie consent respected).
+        if (iframe.getAttribute("src")) iframe.src = embed;
+        if (link && tab.dataset.link) link.href = tab.dataset.link;
+      };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => select(tab));
+        tab.addEventListener("keydown", (event) => {
+          if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+          event.preventDefault();
+          const next = tabs[(index + (event.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+          next.focus();
+          select(next);
+        });
+      });
+    });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", setupMapSwitchers, { once: true });
+  else setupMapSwitchers();
+  window.addEventListener("astro:page-load", setupMapSwitchers);
+</script>

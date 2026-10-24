@@ -6,6 +6,7 @@ import Text from "@components/ui/atoms/Text.astro";
 import ContactDetails from "@components/ui/molecules/ContactDetails.astro";
 import ContactForm from "@components/ui/molecules/ContactForm.astro";
 import GoogleMapFrame from "@components/ui/molecules/GoogleMapFrame.astro";
+import MapSwitcher from "@components/ui/molecules/MapSwitcher.astro";
 
 // Why: All contact variants use the same molecules, and the block is solely responsible for layout
 // composition and data normalization.
@@ -56,6 +57,8 @@ export interface Props {
   detailsTitle?: string;
   detailsDescription?: string;
   detailItems?: DetailItem[];
+  /** One map that can switch between these locations (used under the detail cards). */
+  mapLocations?: { label: string; embedUrl: string; linkUrl?: string }[];
   submitLabel?: string;
   submittingLabel?: string;
   resetLabel?: string;
@@ -96,6 +99,7 @@ const {
   detailsTitle = "",
   detailsDescription = "",
   detailItems,
+  mapLocations = [],
 } = Astro.props as Props;
 
 // Why: fallbacks allow you to use a block with both contact.json and company data.
@@ -240,6 +244,7 @@ const contactItems = [
                   </div>
                 )}
                 {detailItems ? <ContactDetails items={detailItems} variant="detailed" /> : <ContactDetails items={contactItems} variant="compact" />}
+                {mapLocations.length > 0 && <MapSwitcher locations={mapLocations} title={detailsTitle || title || sectionId} linkLabel={mapLinkLabel || undefined} />}
                 {hasMap && (
                   <GoogleMapFrame
                     embedUrl={mapUrl}

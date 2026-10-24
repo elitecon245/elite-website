@@ -110,5 +110,18 @@
       "external": true,
       "srLabel": "(opens Google Maps in a new tab)"
     }
-  ]
+  ],
+  "mapLocations": [
+    {
+      "label": "Abijo factory",
+      "embedUrl": "https://www.google.com/maps?output=embed&q=Road+B%2C+Treasure+Palm%2C+Abijo%2C+Lagos%2C+Nigeria",
+      "linkUrl": "https://www.google.com/maps/search/?api=1&query=Road+B%2C+Treasure+Palm%2C+Abijo%2C+Lagos%2C+Nigeria"
+    },
+    {
+      "label": "Bogije factory",
+      "embedUrl": "https://www.google.com/maps?output=embed&q=Road+3%2C+Divine+Estate%2C+Bogije%2C+Lagos%2C+Nigeria",
+      "linkUrl": "https://www.google.com/maps/search/?api=1&query=Road+3%2C+Divine+Estate%2C+Bogije%2C+Lagos%2C+Nigeria"
+    }
+  ],
+  "mapLinkLabel": "Open in Google Maps"
 }

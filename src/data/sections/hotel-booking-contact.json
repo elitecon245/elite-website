@@ -104,5 +104,13 @@
       "external": true,
       "srLabel": "(opens Google Maps in a new tab)"
     }
-  ]
+  ],
+  "mapLocations": [
+    {
+      "label": "Elite Royal Suites and Hotel",
+      "embedUrl": "https://www.google.com/maps?output=embed&q=Elite+Royal+Suites+and+Hotel%2C+Rufia%2C+Elemoro%2C+by+Elemoro+police+station%2C+Ibeju-Lekki%2C+Lagos%2C+Nigeria",
+      "linkUrl": "https://www.google.com/maps/search/?api=1&query=Elite+Royal+Suites+and+Hotel%2C+Rufia%2C+Elemoro%2C+by+Elemoro+police+station%2C+Ibeju-Lekki%2C+Lagos%2C+Nigeria"
+    }
+  ],
+  "mapLinkLabel": "Open in Google Maps"
 }

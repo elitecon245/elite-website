@@ -94,5 +94,13 @@
       "external": true,
       "srLabel": "(opens Google Maps in a new tab)"
     }
-  ]
+  ],
+  "mapLocations": [
+    {
+      "label": "Royal Retreat Bakery",
+      "embedUrl": "https://www.google.com/maps?output=embed&q=Royal+Retreat+Building%2C+Rufia%2C+Elemoro%2C+By+Elemoro+Police+Station%2C+Ibeju-Lekki%2C+Lagos+State%2C+Nigeria",
+      "linkUrl": "https://www.google.com/maps/search/?api=1&query=Royal+Retreat+Building%2C+Rufia%2C+Elemoro%2C+By+Elemoro+Police+Station%2C+Ibeju-Lekki%2C+Lagos+State%2C+Nigeria"
+    }
+  ],
+  "mapLinkLabel": "Open in Google Maps"
 }
