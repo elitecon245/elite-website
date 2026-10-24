@@ -21,6 +21,10 @@
       "variant": "hotel"
     },
     {
+      "id": "roomsGallery",
+      "variant": "hotel"
+    },
+    {
       "id": "contact",
       "variant": "hotel"
     },

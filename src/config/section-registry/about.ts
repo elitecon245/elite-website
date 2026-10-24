@@ -46,6 +46,13 @@ export const aboutSections: Record<string, SectionEntry> = {
       starling: { label: 'Starling Water', component: 'ProductionProcessBlock', dataKey: 'starling-process' },
     },
   },
+  roomsGallery: {
+    id: 'roomsGallery', label: 'Rooms gallery', groupId: 'about', hint: 'Image slider with a thumbnail strip', icon,
+    defaultVariant: 'hotel',
+    variants: {
+      hotel: { label: 'Elite Royal Suite and Hotel', component: 'RoomsGalleryBlock', dataKey: 'hotel-rooms' },
+    },
+  },
   aboutMarquee: {
     id: 'aboutMarquee', label: 'O nas z marquee', groupId: 'about', hint: 'Split tekstu, zdjęcia i przewijanych pasów', icon,
     defaultVariant: 'default',

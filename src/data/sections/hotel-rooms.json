@@ -1,0 +1,36 @@
+{
+  "sectionId": "rooms",
+  "eyebrow": "Gallery",
+  "title": "Explore our luxurious rooms",
+  "description": "Take a look around Elite Royal Suite and Hotel, from our welcoming reception to the poolside bar.",
+  "slides": [
+    {
+      "src": "/assets/images/elite/hotel-reception@1280.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-reception@480.webp",
+      "alt": "Reception desk with the hotel crest, marble floor and lounge seating",
+      "width": 1280,
+      "height": 956
+    },
+    {
+      "src": "/assets/images/elite/hotel-poolside-bar-day@1280.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-poolside-bar-day@480.webp",
+      "alt": "Poolside bar in daylight, with a marble counter and loungers by the pool",
+      "width": 1280,
+      "height": 956
+    },
+    {
+      "src": "/assets/images/elite/hotel-poolside-bar-evening@1280.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-poolside-bar-evening@480.webp",
+      "alt": "Poolside bar lit up in the evening",
+      "width": 1280,
+      "height": 956
+    },
+    {
+      "src": "/assets/images/elite/elite-royal-suite-hotel-exterior@1280.webp",
+      "thumbnailSrc": "/assets/images/elite/elite-royal-suite-hotel-exterior@480.webp",
+      "alt": "Hotel building with its pool, covered parking and Elite Royal Suites flag",
+      "width": 1280,
+      "height": 714
+    }
+  ]
+}

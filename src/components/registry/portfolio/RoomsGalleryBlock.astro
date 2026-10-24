@@ -1,0 +1,31 @@
+---
+import Section from "@components/ui/layout/Section.astro";
+import Container from "@components/ui/layout/Container.astro";
+import Heading from "@components/ui/atoms/Heading.astro";
+import Text from "@components/ui/atoms/Text.astro";
+import ThumbnailSlider, { type ThumbnailSlide } from "@components/ui/thumbnail-slider";
+
+interface Props {
+  sectionId?: string;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  slides: ThumbnailSlide[];
+  class?: string;
+}
+const props = Astro.props as Props;
+---
+
+{props.slides?.length > 0 && (
+<Section id={props.sectionId ?? "gallery"} tone="page" class:list={["py-12", props.class]}>
+  <Container class="w-full max-w-none px-[clamp(1.5rem,5vw,5rem)]">
+    <div class="mx-auto mb-8 flex max-w-2xl flex-col items-center gap-3 text-center">
+      {props.eyebrow && <p class="m-0 text-xs font-bold uppercase tracking-[0.14em] text-brand-primary">{props.eyebrow}</p>}
+      <Heading tag="h2" variant="section-title">{props.title}</Heading>
+      {props.description && <Text variant="lead">{props.description}</Text>}
+    </div>
+    {/* React island: the slider needs JavaScript for swiping and the thumbnail strip. */}
+    <ThumbnailSlider client:visible slides={props.slides} label={props.title} />
+  </Container>
+</Section>
+)}
