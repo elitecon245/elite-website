@@ -12,7 +12,7 @@ export const heroSections: Record<string, SectionEntry> = {
       legacyElite: { label: 'Hero Elite legacy', component: 'HeroBlock', dataKey: 'elite-hero-wireframe' },
       starling: { label: 'Hero Starling Water', component: 'EliteHeroResponsiveBlock', dataKey: 'starling-hero' },
       bakery: { label: 'Hero Royal Retreat Bakery', component: 'EliteHeroResponsiveBlock', dataKey: 'bakery-hero' },
-      hotel: { label: 'Hero Elite Royal Suite and Hotel', component: 'EliteHeroResponsiveBlock', dataKey: 'hotel-hero' },
+      hotel: { label: 'Hero Elite Royal Suite and Hotel', component: 'HeroSlideshowBlock', dataKey: 'hotel-hero' },
     },
   },
   heroVideo: {

@@ -40,3 +40,12 @@
   --color-primary-container: #f8e8dd;
   --color-on-primary-container: #9a4f1f;
 }
+
+/* Elite Royal Suite and Hotel page: the primary colour follows the hotel's wine signage. */
+.page-elite-hotel {
+  --color-primary: #6e1e2b;
+  --color-brand-primary: #6e1e2b;
+  --color-surface-tint: #6e1e2b;
+  --color-primary-container: #f3dfe2;
+  --color-on-primary-container: #6e1e2b;
+}

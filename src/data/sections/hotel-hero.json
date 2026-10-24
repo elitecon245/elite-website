@@ -10,7 +10,23 @@
   "secondaryCTA": null,
   "trustedBy": "",
   "trustItems": [],
-  "image": "/assets/images/elite/elite-royal-suite-hotel.webp",
-  "imageAlt": "Bed icon on an Elite Consolidated blue background",
-  "stats": []
+  "stats": [],
+  "slides": [
+    {
+      "src": "/assets/images/elite/elite-royal-suite-hotel-exterior.webp",
+      "alt": "Elite Royal Suites and Hotel building with its pool, covered parking and Elite Royal Suites flag",
+      "position": "center 60%"
+    },
+    {
+      "src": "/assets/images/elite/hotel-poolside-bar-day.webp",
+      "alt": "Elite Royal Suites and Hotel poolside bar in daylight, with a marble counter and loungers by the pool",
+      "position": "center 45%"
+    },
+    {
+      "src": "/assets/images/elite/hotel-poolside-bar-evening.webp",
+      "alt": "Elite Royal Suites and Hotel poolside bar lit up in the evening",
+      "position": "center 45%"
+    }
+  ],
+  "slideSeconds": 8
 }

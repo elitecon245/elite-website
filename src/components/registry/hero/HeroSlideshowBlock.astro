@@ -1,0 +1,154 @@
+---
+import Section from "@components/ui/layout/Section.astro";
+import Container from "@components/ui/layout/Container.astro";
+import Heading from "@components/ui/atoms/Heading.astro";
+import Text from "@components/ui/atoms/Text.astro";
+import Button from "@components/ui/atoms/Button.astro";
+import SmartImage from "@components/ui/atoms/SmartImage.astro";
+
+// Full-width hero with a slow, looping crossfade between photos. Each photo eases in,
+// drifts gently to the right while it is shown, then dissolves into the next. Pure CSS:
+// no script, and visitors who prefer reduced motion see the first photo only.
+type Slide = { src: string; alt: string; position?: string };
+type Cta = { label: string; href: string };
+
+interface Props {
+  sectionId?: string;
+  eyebrow?: string;
+  heading?: string;
+  headingAccent?: string;
+  description?: string;
+  primaryCTA?: Cta | null;
+  secondaryCTA?: Cta | null;
+  slides?: Slide[];
+  /** Seconds each photo stays on screen (the crossfade overlaps the next one). */
+  slideSeconds?: number;
+  class?: string;
+}
+
+const props = Astro.props as Props;
+const slides = props.slides ?? [];
+const slideSeconds = props.slideSeconds ?? 8;
+const cycleSeconds = slideSeconds * Math.max(slides.length, 1);
+// Crossfade length as a share of the whole cycle, so the timing works for any number of slides.
+const fadeSeconds = Math.min(2.5, slideSeconds / 2);
+const fadePct = (fadeSeconds / cycleSeconds) * 100;
+const holdPct = (slideSeconds / cycleSeconds) * 100;
+const outPct = holdPct + fadePct;
+const pct = (value: number) => `${value.toFixed(3)}%`;
+// Keyframe stops depend on the slide count, and CSS cannot take percentages from variables.
+const keyframes = `
+@keyframes hero-slide-fade {
+  0% { opacity: 0; }
+  ${pct(fadePct)} { opacity: 1; }
+  ${pct(holdPct)} { opacity: 1; }
+  ${pct(outPct)} { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes hero-slide-drift {
+  0% { transform: scale(1.1) translateX(-2.5%); }
+  ${pct(outPct)} { transform: scale(1.1) translateX(2.5%); }
+  100% { transform: scale(1.1) translateX(2.5%); }
+}`;
+---
+
+<style is:inline set:html={keyframes}></style>
+
+<Section
+  id={props.sectionId ?? "hero"}
+  tone="page"
+  class:list={["hero-section overflow-hidden pt-[calc(var(--site-header-height,5.75rem)+var(--hero-below-header-gap,0.75rem))] pb-0", props.class]}
+>
+  <Container class="w-full max-w-none px-0">
+    <div
+      class="hero-slideshow relative isolate grid min-h-[34rem] place-items-center overflow-hidden rounded-t-xl md:min-h-[38rem] lg:min-h-[44rem]"
+      style={`--slide-cycle: ${cycleSeconds}s;`}
+    >
+      <div class="absolute inset-0 -z-10">
+        {slides.map((slide, index) => (
+          <div class="hero-slideshow__slide absolute inset-0" style={`--slide-delay: ${index * slideSeconds - fadeSeconds}s;${slide.position ? ` --slide-position: ${slide.position};` : ""}`}>
+            <SmartImage
+              src={slide.src}
+              alt={slide.alt}
+              width={1920}
+              height={1080}
+              loading="eager"
+              fetchpriority={index === 0 ? "high" : undefined}
+              sizes="100vw"
+              class="hero-slideshow__img block h-full w-full object-cover"
+            />
+          </div>
+        ))}
+        <div class="hero-slideshow__overlay absolute inset-0"></div>
+      </div>
+
+      <div class="relative mx-auto flex max-w-[52rem] flex-col items-center gap-5 px-[clamp(1.25rem,5vw,3rem)] py-[clamp(4rem,10vw,7rem)] text-center" data-motion-sequence="fade">
+        {props.eyebrow && <Text tag="p" variant="accent-label" class="hero-slideshow__eyebrow m-0 font-sans font-semibold tracking-[0.22em]">{props.eyebrow}</Text>}
+        <Heading tag="h1" variant="hero" class="m-0 font-bold leading-[1] tracking-[-0.04em] text-white text-[clamp(2.5rem,9vw,4.75rem)]">
+          {props.heading}{' '}<span class="hero-slideshow__accent">{props.headingAccent}</span>
+        </Heading>
+        {props.description && <Text variant="lead" class="m-0 max-w-[38rem] text-white/85 md:text-[clamp(1.05rem,1.4vw,1.3rem)]">{props.description}</Text>}
+        {(props.primaryCTA || props.secondaryCTA) && (
+          <div class="mt-2 flex flex-wrap items-center justify-center gap-3">
+            {props.primaryCTA && <Button href={props.primaryCTA.href} variant="primary" size="lg" class="hero-slideshow__cta min-h-11 font-semibold tracking-normal">{props.primaryCTA.label}</Button>}
+            {props.secondaryCTA && <Button href={props.secondaryCTA.href} variant="outline" size="lg" class="min-h-11 !border-white/50 font-semibold tracking-normal !text-white">{props.secondaryCTA.label}</Button>}
+          </div>
+        )}
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  /* Each slide fades in, holds, then fades out while the next fades in; a negative delay
+     on the first slide means it is already fully visible when the page opens. */
+  .hero-slideshow__slide {
+    opacity: 0;
+    animation: hero-slide-fade var(--slide-cycle) linear infinite both;
+    animation-delay: var(--slide-delay);
+  }
+
+  .hero-slideshow__slide :global(img) {
+    animation: hero-slide-drift var(--slide-cycle) linear infinite both;
+    animation-delay: var(--slide-delay);
+    object-position: var(--slide-position, center);
+    will-change: transform;
+  }
+
+  /* Wine-tinted shade so white text stays readable on every photo. */
+  .hero-slideshow__overlay {
+    background:
+      radial-gradient(ellipse 60% 55% at 50% 50%, color-mix(in oklab, var(--color-brand-primary) 60%, transparent) 0%, transparent 100%),
+      linear-gradient(180deg, rgb(20 4 8 / 0.35) 0%, rgb(20 4 8 / 0.22) 50%, rgb(20 4 8 / 0.5) 100%);
+  }
+
+  /* Soft shadow keeps the centred text crisp over the brighter daytime photos. */
+  .hero-slideshow :global(h1),
+  .hero-slideshow :global(p) {
+    text-shadow: 0 2px 18px rgb(20 4 8 / 0.55), 0 1px 3px rgb(20 4 8 / 0.35);
+  }
+
+  .hero-slideshow__eyebrow {
+    color: var(--color-primary-container);
+  }
+
+  /* A blush tint of the page colour, light enough to read on the shaded photos. */
+  .hero-slideshow__accent {
+    color: color-mix(in oklab, var(--color-brand-primary) 22%, #ffe4e9);
+  }
+
+  .hero-slideshow :global(.hero-slideshow__cta) {
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.35), 0 12px 30px -10px rgb(0 0 0 / 0.5);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slideshow__slide,
+    .hero-slideshow__slide :global(img) {
+      animation: none;
+    }
+
+    .hero-slideshow__slide:first-child {
+      opacity: 1;
+    }
+  }
+</style>
