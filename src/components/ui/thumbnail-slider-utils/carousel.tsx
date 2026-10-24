@@ -14,6 +14,8 @@ type CarouselContextValue = {
   selectedIndex: number;
   thumbnails: { src: string; alt: string }[];
   onThumbClick: (index: number) => void;
+  /** Pauses autoplay while the visitor hovers, focuses or views the full-size image. */
+  setPaused: (paused: boolean) => void;
 };
 
 const CarouselContext = React.createContext<CarouselContextValue | null>(null);
@@ -29,13 +31,17 @@ export function Carousel({
   className,
   children,
   label = "Image gallery",
+  autoplayMs = 0,
 }: {
   options?: EmblaOptionsType;
   className?: string;
   children: React.ReactNode;
   label?: string;
+  /** Advance to the next slide every N ms (0 = off); wraps back to the first slide. */
+  autoplayMs?: number;
 }) {
   const [mainRef, mainApi] = useEmblaCarousel(options);
+  const [paused, setPaused] = React.useState(false);
   const [thumbsRef, thumbsApi] = useEmblaCarousel({ containScroll: "keepSnaps", dragFree: true });
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
@@ -70,6 +76,18 @@ export function Carousel({
     };
   }, [mainApi, thumbsApi]);
 
+  // Autoplay: skipped for reduced motion, paused on hover/focus/lightbox and in hidden tabs.
+  React.useEffect(() => {
+    if (!mainApi || !autoplayMs || paused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      if (mainApi.canScrollNext()) mainApi.scrollNext();
+      else mainApi.scrollTo(0);
+    }, autoplayMs);
+    return () => window.clearInterval(timer);
+  }, [mainApi, autoplayMs, paused, selectedIndex]);
+
   const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "ArrowLeft") {
       event.preventDefault();
@@ -81,8 +99,18 @@ export function Carousel({
   };
 
   return (
-    <CarouselContext.Provider value={{ mainRef, thumbsRef, mainApi, selectedIndex, thumbnails, onThumbClick }}>
-      <div className={cn("relative", className)} role="region" aria-roledescription="carousel" aria-label={label} onKeyDownCapture={onKeyDown}>
+    <CarouselContext.Provider value={{ mainRef, thumbsRef, mainApi, selectedIndex, thumbnails, onThumbClick, setPaused }}>
+      <div
+        className={cn("relative", className)}
+        role="region"
+        aria-roledescription="carousel"
+        aria-label={label}
+        onKeyDownCapture={onKeyDown}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocusCapture={() => setPaused(true)}
+        onBlurCapture={() => setPaused(false)}
+      >
         {children}
       </div>
     </CarouselContext.Provider>
@@ -167,3 +195,72 @@ export function ThumbsSlider({ className, thumbsClassName }: { className?: strin
     </div>
   );
 }
+
+/** Full-screen view of the gallery images, opened from the main slide. Uses a native <dialog>
+    so focus is trapped and Escape closes it; arrows and keys step through the same images. */
+export function Lightbox({
+  images,
+  index,
+  onIndexChange,
+  onClose,
+}: {
+  images: { src: string; alt: string }[];
+  index: number | null;
+  onIndexChange: (index: number) => void;
+  onClose: () => void;
+}) {
+  const dialogRef = React.useRef<HTMLDialogElement>(null);
+  const open = index !== null;
+
+  React.useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (open && !dialog.open) dialog.showModal();
+    if (!open && dialog.open) dialog.close();
+  }, [open]);
+
+  const step = (delta: number) => {
+    if (index === null) return;
+    onIndexChange((index + delta + images.length) % images.length);
+  };
+
+  const image = index !== null ? images[index] : undefined;
+
+  return (
+    <dialog
+      ref={dialogRef}
+      aria-label={image?.alt || "Image viewer"}
+      onClose={onClose}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft") step(-1);
+        if (event.key === "ArrowRight") step(1);
+      }}
+      className="m-0 h-dvh max-h-none w-screen max-w-none border-0 bg-[rgb(12_8_10/0.94)] p-0 backdrop:bg-transparent"
+    >
+      {image && (
+        <div className="pointer-events-none flex h-full w-full flex-col items-center justify-center gap-4 p-4 sm:p-10">
+          <img src={image.src} alt={image.alt} className="pointer-events-auto max-h-[82dvh] max-w-full rounded-[var(--ui-radius-lg)] object-contain shadow-2xl" />
+          <p className="m-0 text-sm text-white/80">{`${index! + 1} / ${images.length}`}{image.alt ? ` · ${image.alt}` : ""}</p>
+        </div>
+      )}
+      <button type="button" onClick={onClose} aria-label="Close image viewer" className="absolute right-4 top-4 grid size-11 place-items-center rounded-full bg-white/15 text-2xl text-white transition-colors hover:bg-white/30 focus-visible:outline-2 focus-visible:outline-white">
+        <i className="ph ph-x" aria-hidden="true"></i>
+      </button>
+      {images.length > 1 && (
+        <>
+          <button type="button" onClick={() => step(-1)} aria-label="Previous image" className="absolute left-3 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-white/15 text-xl text-white transition-colors hover:bg-white/30 focus-visible:outline-2 focus-visible:outline-white sm:left-6">
+            <i className="ph ph-caret-left" aria-hidden="true"></i>
+          </button>
+          <button type="button" onClick={() => step(1)} aria-label="Next image" className="absolute right-3 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-white/15 text-xl text-white transition-colors hover:bg-white/30 focus-visible:outline-2 focus-visible:outline-white sm:right-6">
+            <i className="ph ph-caret-right" aria-hidden="true"></i>
+          </button>
+        </>
+      )}
+    </dialog>
+  );
+}
+
+export { useCarouselContext };
