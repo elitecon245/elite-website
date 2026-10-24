@@ -4,10 +4,13 @@
   "headingAccent": "Suite and Hotel",
   "description": "Elite Royal Suite and Hotel is the hospitality business within the Elite Consolidated portfolio. Contact the team for information about accommodation and reservations.",
   "primaryCTA": {
-    "label": "Contact Us",
-    "href": "/#contact-form"
+    "label": "Book a Stay",
+    "href": "#order"
   },
-  "secondaryCTA": null,
+  "secondaryCTA": {
+    "label": "Contact Us",
+    "href": "#enquiry"
+  },
   "trustedBy": "",
   "trustItems": [],
   "stats": [],
