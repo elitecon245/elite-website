@@ -2,12 +2,15 @@
   "eyebrow": "PART OF ELITE CONSOLIDATED BUSINESS NIG LTD",
   "heading": "Royal Retreat",
   "headingAccent": "Bakery",
-  "description": "Royal Retreat Bakery is part of the Elite Consolidated business portfolio. Get in touch for information about available products and ordering options.",
+  "description": "Soft, freshly baked bread made with care in Elemoro, Ibeju-Lekki. From our oven to your table, every Royal Retreat loaf is baked to bring warmth and flavour to your everyday meals.",
   "primaryCTA": {
+    "label": "Make an Order",
+    "href": "#order"
+  },
+  "secondaryCTA": {
     "label": "Contact Us",
     "href": "#enquiry"
   },
-  "secondaryCTA": null,
   "trustedBy": "",
   "trustItems": [],
   "image": "/assets/images/elite/royal-retreat-bakery-counter.webp",
