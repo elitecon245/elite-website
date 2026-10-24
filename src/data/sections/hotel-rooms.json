@@ -2,7 +2,7 @@
   "sectionId": "rooms",
   "eyebrow": "Gallery",
   "title": "Explore our luxurious rooms",
-  "description": "Every room pairs crisp white linen and warm wood with a dedicated work desk, TV and air conditioning. Take a look around, from our rooms to the reception and poolside bar.",
+  "description": "Every room pairs crisp white linen and warm wood with a dedicated work desk, TV and air conditioning.",
   "slides": [
     {
       "src": "/assets/images/elite/hotel-room-1@1280.webp",
@@ -73,34 +73,6 @@
       "alt": "Room 14: double bed with a wooden headboard, work desk, TV and air conditioning",
       "width": 1280,
       "height": 956
-    },
-    {
-      "src": "/assets/images/elite/hotel-reception@1280.webp",
-      "thumbnailSrc": "/assets/images/elite/hotel-reception@480.webp",
-      "alt": "Reception desk with the hotel crest, marble floor and lounge seating",
-      "width": 1280,
-      "height": 956
-    },
-    {
-      "src": "/assets/images/elite/hotel-poolside-bar-day@1280.webp",
-      "thumbnailSrc": "/assets/images/elite/hotel-poolside-bar-day@480.webp",
-      "alt": "Poolside bar in daylight, with a marble counter and loungers by the pool",
-      "width": 1280,
-      "height": 956
-    },
-    {
-      "src": "/assets/images/elite/hotel-poolside-bar-evening@1280.webp",
-      "thumbnailSrc": "/assets/images/elite/hotel-poolside-bar-evening@480.webp",
-      "alt": "Poolside bar lit up in the evening",
-      "width": 1280,
-      "height": 956
-    },
-    {
-      "src": "/assets/images/elite/elite-royal-suite-hotel-exterior@1280.webp",
-      "thumbnailSrc": "/assets/images/elite/elite-royal-suite-hotel-exterior@480.webp",
-      "alt": "Hotel building with its pool, covered parking and Elite Royal Suites flag",
-      "width": 1280,
-      "height": 714
     }
   ]
 }
