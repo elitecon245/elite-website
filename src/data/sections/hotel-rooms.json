@@ -73,6 +73,34 @@
       "alt": "Room 14: double bed with a wooden headboard, work desk, TV and air conditioning",
       "width": 1280,
       "height": 956
+    },
+    {
+      "src": "/assets/images/elite/hotel-room-20-living.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-room-20-living@480.webp",
+      "alt": "Room 20 suite: lounge with a grey sectional sofa, TV and rug",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/assets/images/elite/hotel-room-20-kitchenette.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-room-20-kitchenette@480.webp",
+      "alt": "Room 20 suite: kitchenette with wooden cabinets, sink and microwave",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/assets/images/elite/hotel-room-20-bedroom.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-room-20-bedroom@480.webp",
+      "alt": "Room 20 suite: bedroom with a double bed, bedside lamps and air conditioning",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/assets/images/elite/hotel-room-20-bathroom.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-room-20-bathroom@480.webp",
+      "alt": "Room 20 suite: bathroom with a walk-in shower, basin and gold fittings",
+      "width": 800,
+      "height": 800
     }
   ]
 }
