@@ -2,8 +2,43 @@
   "sectionId": "rooms",
   "eyebrow": "Gallery",
   "title": "Explore our luxurious rooms",
-  "description": "Take a look around Elite Royal Suite and Hotel, from our welcoming reception to the poolside bar.",
+  "description": "Every room pairs crisp white linen and warm wood with a dedicated work desk, TV and air conditioning. Take a look around, from our rooms to the reception and poolside bar.",
   "slides": [
+    {
+      "src": "/assets/images/elite/hotel-room-1@1280.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-room-1@480.webp",
+      "alt": "Room 1: double bed with a wooden headboard, work desk, TV and air conditioning",
+      "width": 1280,
+      "height": 956
+    },
+    {
+      "src": "/assets/images/elite/hotel-room-2@1280.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-room-2@480.webp",
+      "alt": "Room 2: double bed with a wooden headboard, work desk, TV and air conditioning",
+      "width": 1280,
+      "height": 956
+    },
+    {
+      "src": "/assets/images/elite/hotel-room-3@1280.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-room-3@480.webp",
+      "alt": "Room 3: double bed with a wooden headboard, work desk, TV and air conditioning",
+      "width": 1280,
+      "height": 956
+    },
+    {
+      "src": "/assets/images/elite/hotel-room-5@1280.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-room-5@480.webp",
+      "alt": "Room 5: double bed with a wooden headboard, work desk, TV and air conditioning",
+      "width": 1280,
+      "height": 956
+    },
+    {
+      "src": "/assets/images/elite/hotel-room-8@1280.webp",
+      "thumbnailSrc": "/assets/images/elite/hotel-room-8@480.webp",
+      "alt": "Room 8: double bed with a wooden headboard, work desk, TV and air conditioning",
+      "width": 1280,
+      "height": 956
+    },
     {
       "src": "/assets/images/elite/hotel-reception@1280.webp",
       "thumbnailSrc": "/assets/images/elite/hotel-reception@480.webp",
